@@ -26,7 +26,7 @@ class ForgetPasswordController extends GetxController {
   TextEditingController emailController =
       TextEditingController(text: kDebugMode ? "user@gmail.com" : '');
   TextEditingController otpController =
-      TextEditingController(text: kDebugMode ? '123456' : '');
+      TextEditingController(text: kDebugMode ? '1234' : '');
   TextEditingController passwordController =
       TextEditingController(text: kDebugMode ? 'hello123' : '');
   TextEditingController confirmPasswordController =

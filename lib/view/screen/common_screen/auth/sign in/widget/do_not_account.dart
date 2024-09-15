@@ -35,13 +35,16 @@ class DoNotHaveAccount extends StatelessWidget {
                 ),
                 TextSpan(
                   text: AppString.signUp,
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Get.toNamed(AppRoutes.signUp);
+                    },
                   style: GoogleFonts.plusJakartaSans(
                       color: AppColors.primaryColor,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                       decoration: TextDecoration.underline,
-                    decorationColor: AppColors.primaryColor
-                  ),
+                      decorationColor: AppColors.primaryColor),
                 ),
                 TextSpan(
                   text: " ".tr,

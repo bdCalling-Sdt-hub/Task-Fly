@@ -51,3 +51,4 @@ class AppColors {
   static const Color textIcon_800 = Color(0xff11162d);
   static const Color textIcon_900 = Color(0xff0d1122);
 }
+

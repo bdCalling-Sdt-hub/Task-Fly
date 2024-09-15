@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_fly/utils/app_images.dart';
+import 'package:task_fly/view/component/image/common_image.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -32,10 +34,15 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                100.height,
+                CommonImage(
+                  imageSrc: AppImages.forgotImage,
+                  imageType: ImageType.png,
+                  height: 288,
+                  width: 288,
+                ).center,
                 CommonText(
                   text: AppString.email,
-                  top: 16.h,
+                  top: 30.h,
                   bottom: 8.h,
                 ),
                 CommonTextField(
@@ -52,7 +59,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
           child: CommonButton(
-            titleText: AppString.continues,
+            titleText: AppString.getOtp,
             isLoading: controller.isLoadingEmail,
             onTap: () {
               if (formKey.currentState!.validate()) {

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/extension/my_extension.dart';
 import '../../../../../controllers/common_controller/auth/forget_password_controller.dart';
 import '../../../../../utils/app_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../../../utils/app_images.dart';
 import '../../../../../utils/app_string.dart';
 import '../../../../component/button/common_button.dart';
+import '../../../../component/image/common_image.dart';
 import '../../../../component/text/common_text.dart';
 
 class VerifyScreen extends StatefulWidget {
@@ -42,21 +45,33 @@ class _VerifyScreenState extends State<VerifyScreen> {
             key: formKey,
             child: Column(
               children: [
-                Center(
-                  child: CommonText(
-                    text:
-                        "${AppString.codeHasBeenSendTo} ${controller.emailController.text}",
-                    fontSize: 18,
-                    top: 100,
-                    bottom: 60,
-                  ),
+                CommonImage(
+                  imageSrc: AppImages.verificationImage,
+                  imageType: ImageType.png,
+                  height: 288,
+                  width: 288,
+                ).center,
+                const CommonText(
+                  text: AppString.enterVerifyOTPCode,
+                  fontSize: 24,
+                  color: AppColors.p_400,
                 ),
-                Flexible(
-                  flex: 0,
+                CommonText(
+                  text:
+                      "${AppString.codeHasBeenSendTo} ${controller.emailController.text}",
+                  fontSize: 16,
+                  color: AppColors.textIcon_400,
+                  maxLines: 2,
+                  bottom: 24,
+                  textAlign: TextAlign.start,
+                  fontWeight: FontWeight.w400,
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
                   child: PinCodeTextField(
                     controller: controller.otpController,
                     validator: (value) {
-                      if (value != null && value.length == 6) {
+                      if (value != null && value.length == 4) {
                         return null;
                       } else {
                         return AppString.otpIsInValid;
@@ -71,36 +86,52 @@ class _VerifyScreenState extends State<VerifyScreen> {
                       borderRadius: BorderRadius.circular(8),
                       fieldHeight: 60.h,
                       fieldWidth: 60.w,
-                      activeFillColor: AppColors.transparent,
-                      selectedFillColor: AppColors.transparent,
-                      inactiveFillColor: AppColors.transparent,
-                      borderWidth: 0.5.w,
-                      selectedColor: AppColors.primaryColor,
-                      activeColor: AppColors.primaryColor,
-                      inactiveColor: AppColors.black,
+                      activeFillColor: AppColors.secondary,
+                      selectedFillColor: AppColors.secondary,
+                      inactiveFillColor: AppColors.secondary,
+                      borderWidth: 2,
+                      selectedColor: AppColors.transparent,
+                      activeColor: AppColors.transparent,
+                      inactiveColor: AppColors.transparent,
                     ),
-                    length: 6,
+                    length: 4,
                     keyboardType: TextInputType.number,
                     autovalidateMode: AutovalidateMode.disabled,
                     enableActiveFill: true,
                   ),
                 ),
-                GestureDetector(
-                  onTap: controller.time == '00:00'
-                      ? () {
-                          controller.startTimer();
-                          controller.forgotPasswordRepo();
-                        }
-                      : () {},
-                  child: CommonText(
-                    text: controller.time == '00:00'
-                        ? AppString.resendCode
-                        : "${AppString.resendCodeIn}  ${controller.time} ${AppString.minute}",
-                    top: 60,
-                    bottom: 100,
-                    fontSize: 18,
-                  ),
+                const CommonText(
+                  text: AppString.didNotReceiveTheOTP,
+                  color: AppColors.textIcon_400,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  bottom: 12,
+                ).start,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CommonText(
+                      text: controller.time,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.primaryColor,
+                    ),
+                    GestureDetector(
+                      onTap: () => print("fkjhdk"),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: AppColors.black)),
+                        child: const CommonText(
+                          text: AppString.resendCode,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+                50.height,
                 CommonButton(
                   titleText: AppString.verify,
                   isLoading: controller.isLoadingVerify,

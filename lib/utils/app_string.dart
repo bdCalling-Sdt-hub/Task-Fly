@@ -27,13 +27,21 @@ class AppString {
   static const String createYourNewPassword = "Create Your New Password";
   static const String password = "Password";
   static const String continues = "Continue";
+  static const String getOtp = "Get Otp";
+  static const String updatePassword = "Update password";
   static const String email = "Email";
-  static const String codeHasBeenSendTo = "Code has been send to";
+  static const String codeHasBeenSendTo =
+      "SMS automatically detected for your email: ";
+  static const String enterVerifyOTPCode = "Enter verify OTP Code";
   static const String otpIsInValid = "Otp is inValid";
   static const String resendCode = "Resend Code";
+  static const String resetPassword = "Reset Password";
+  static const String passwordMustCharacters =
+      "Password must have 8 characters.";
   static const String resendCodeIn = "Resend code in";
   static const String minute = "minute";
   static const String verify = "Verify";
+  static const String didNotReceiveTheOTP = "Did not receive the OTP ?";
   static const String signInToYourAccount = "Sign in to your \naccount.";
   static const String makeSureThatYouAlreadyHaveAccount =
       "Make sure that you already have an account.";

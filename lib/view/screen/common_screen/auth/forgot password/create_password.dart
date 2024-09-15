@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_fly/utils/app_colors.dart';
 import '../../../../../core/app_routes.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +23,7 @@ class CreatePassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const CommonText(
-          text: AppRoutes.createPassword,
+          text: AppString.resetPassword,
           fontWeight: FontWeight.w700,
           fontSize: 24,
         ),
@@ -36,22 +37,26 @@ class CreatePassword extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  64.height,
-                  Center(
-                    child: CommonImage(
-                      imageSrc: AppImages.noImage,
-                      imageType: ImageType.png,
-                      height: 297,
-                      width: 297,
-                    ),
-                  ),
+                  CommonImage(
+                    imageSrc: AppImages.verificationImage,
+                    imageType: ImageType.png,
+                    height: 288,
+                    width: 288,
+                  ).center,
                   const CommonText(
-                    text: AppString.createYourNewPassword,
-                    fontSize: 18,
+                    text: AppString.resetPassword,
+                    fontSize: 24,
+                    color: AppColors.p_500,
                     textAlign: TextAlign.start,
-                    top: 64,
-                    bottom: 24,
-                  ),
+                  ).center,
+                  const CommonText(
+                    text: AppString.passwordMustCharacters,
+                    fontSize: 16,
+                    color: AppColors.textIcon_400,
+                    textAlign: TextAlign.start,
+                    fontWeight: FontWeight.w400,
+                    maxLines: 2,
+                  ).center,
                   CommonText(
                     text: AppString.password,
                     top: 16.h,
@@ -79,7 +84,7 @@ class CreatePassword extends StatelessWidget {
                   ),
                   64.height,
                   CommonButton(
-                    titleText: AppString.continues,
+                    titleText: AppString.updatePassword,
                     isLoading: controller.isLoadingReset,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
