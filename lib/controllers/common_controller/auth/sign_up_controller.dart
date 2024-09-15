@@ -17,6 +17,7 @@ class SignUpController extends GetxController {
   bool isPopUpOpen = false;
   bool isLoading = false;
   bool isLoadingVerify = false;
+  bool isAgree = false;
 
   Timer? _timer;
   int start = 0;
@@ -35,8 +36,8 @@ class SignUpController extends GetxController {
 
   TextEditingController nameController =
       TextEditingController(text: kDebugMode ? "Namimul Hassan" : "");
-  TextEditingController emailController =
-      TextEditingController(text: kDebugMode ? "developernaimul00@gmail.com" : '');
+  TextEditingController emailController = TextEditingController(
+      text: kDebugMode ? "developernaimul00@gmail.com" : '');
   TextEditingController passwordController =
       TextEditingController(text: kDebugMode ? 'hello123' : '');
   TextEditingController confirmPasswordController =
@@ -45,11 +46,22 @@ class SignUpController extends GetxController {
       TextEditingController(text: kDebugMode ? '1865965581' : '');
   TextEditingController otpController =
       TextEditingController(text: kDebugMode ? '123456' : '');
+  TextEditingController taxNumberController =
+      TextEditingController(text: kDebugMode ? '123456' : '');
+  TextEditingController bsnNumberControlller =
+      TextEditingController(text: kDebugMode ? '123456' : '');
 
   @override
   void dispose() {
     _timer?.cancel();
     super.dispose();
+  }
+
+  changeAgree(value) {
+
+    print(value);
+    isAgree = value;
+    update();
   }
 
   onCountryChange(Country value) {

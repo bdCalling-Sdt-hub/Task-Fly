@@ -11,8 +11,8 @@ import '../../../../../../core/app_routes.dart';
 import '../../../../../../utils/app_colors.dart';
 import '../../../../../../utils/app_string.dart';
 
-class AlreadyAccountRichText extends StatelessWidget {
-  const AlreadyAccountRichText({
+class Terms extends StatelessWidget {
+  const Terms({
     super.key,
   });
 
@@ -27,31 +27,41 @@ class AlreadyAccountRichText extends StatelessWidget {
             TextSpan(
               children: [
                 TextSpan(
-                  text: AppString.alreadyHaveAccount,
-                  style: GoogleFonts.plusJakartaSans(
+                  text: AppString.iAgreeWith,
+                  style: GoogleFonts.urbanist(
                     color: AppColors.black,
-                    fontSize: 16,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 TextSpan(
-                  text: AppString.signIn,
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      Get.toNamed(AppRoutes.signIn);
-                    },
-                  style: GoogleFonts.plusJakartaSans(
-                      color: AppColors.primaryColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      decoration: TextDecoration.underline,
-                      decorationColor: AppColors.primaryColor),
+                  text: AppString.terms,
+                  style: GoogleFonts.urbanist(
+                    color: AppColors.primaryColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                TextSpan(
+                  text: AppString.ofServicesAnd,
+                  style: GoogleFonts.urbanist(
+                    color: AppColors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                TextSpan(
+                  text: AppString.privacyPolicy,
+                  style: GoogleFonts.urbanist(
+                    color: AppColors.primaryColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
             textAlign: TextAlign.center,
           ),
-          30.height
         ],
       ),
     );

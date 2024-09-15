@@ -27,7 +27,7 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
           children: [
             CommonText(
               text: AppString.fullName,
-              top: 30.h,
+              top: 16.h,
               bottom: 8.h,
             ),
             CommonTextField(
@@ -50,6 +50,40 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
               validator: OtherHelper.emailValidator,
             ),
             CommonText(
+              text: AppString.phoneNumber,
+              top: 16.h,
+              bottom: 8.h,
+            ),
+            CommonPhoneNumberTextFiled(
+              controller: controller.numberController,
+              countryChange: controller.onCountryChange,
+            ),
+            CommonText(
+              text: AppString.taxFileNumber,
+              bottom: 8.h,
+            ),
+            CommonTextField(
+              prefixIcon: const Icon(
+                Icons.library_books_sharp,
+              ),
+              hintText: AppString.taxFileNumber,
+              controller: controller.taxNumberController,
+              validator: OtherHelper.validator,
+            ),
+            CommonText(
+              text: AppString.bsnNumber,
+              top: 16.h,
+              bottom: 8.h,
+            ),
+            CommonTextField(
+              prefixIcon: const Icon(
+                Icons.credit_card_sharp,
+              ),
+              hintText: AppString.bsnNumber,
+              controller: controller.bsnNumberControlller,
+              validator: OtherHelper.validator,
+            ),
+            CommonText(
               text: AppString.password,
               top: 16.h,
               bottom: 8.h,
@@ -70,18 +104,9 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
               controller: controller.confirmPasswordController,
               prefixIcon: const Icon(Icons.lock, color: AppColors.black),
               isPassword: true,
-              labelText: AppString.confirmPassword,
+              hintText: AppString.confirmPassword,
               validator: (value) => OtherHelper.confirmPasswordValidator(
                   value, controller.passwordController),
-            ),
-            CommonText(
-              text: AppString.phoneNumber,
-              top: 16.h,
-              bottom: 8.h,
-            ),
-            CommonPhoneNumberTextFiled(
-              controller: controller.numberController,
-              countryChange: controller.onCountryChange,
             ),
           ],
         );

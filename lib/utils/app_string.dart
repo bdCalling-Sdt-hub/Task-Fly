@@ -49,9 +49,16 @@ class AppString {
   static const String signIn = "Sign in";
   static const String doNotHaveAccount = "Don’t have an account? ";
   static const String signUp = "Sign up";
-  static const String alreadyHaveAccount = "Already have an account";
+  static const String alreadyHaveAccount = "Already have an account? ";
+  static const String iAgreeWith = "I agree with ";
+  static const String terms = "terms ";
+  static const String ofServicesAnd = " of services and ";
+  static const String privacyPolicy = "privacy policy.";
   static const String fullName = "Full Name";
-  static const String createYourAccount = "Create Your Account";
+  static const String taxFileNumber = "Tax file number";
+  static const String bsnNumber = "BSN number";
+  static const String createYourAccount = "Create Your \nAccount";
+  static const String accountDetails = "Make sure your account keep secure";
   static const String otpVerify = "OTP Verify";
   static const String inbox = "Inbox";
   static const String searchDoctor = "search a doctor";
@@ -69,7 +76,6 @@ class AppString {
   static const String editProfile = "Edit Profile";
   static const String settings = "Settings";
   static const String logOut = "Log Out";
-  static const String privacyPolicy = "Privacy Policy";
   static const String deleteAccount = "Delete account";
   static const String termsOfServices = "Terms of Services";
 }

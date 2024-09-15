@@ -10,6 +10,7 @@ import '../../../../component/button/common_button.dart';
 import '../../../../component/text/common_text.dart';
 import 'widget/already_accunt_rich_text.dart';
 import 'widget/sign_up_all_filed.dart';
+import 'widget/terms.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
@@ -29,47 +30,28 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(children: [
                   const CommonText(
                     text: AppString.createYourAccount,
-                    fontSize: 32,
-                    bottom: 20,
+                    fontSize: 28,
+                    maxLines: 2,
+                    bottom: 8,
+                    color: AppColors.p_500,
+                  ),
+                  const CommonText(
+                    text: AppString.accountDetails,
+                    fontSize: 14,
+                    bottom: 8,
+                    maxLines: 2,
+                    color: AppColors.textIcon_400,
                   ),
                   const SignUpAllField(),
+                  16.height,
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Row(
-                        children: [
-                          Radio(
-                              value: controller.selectedOption[0],
-                              groupValue: controller.selectRole,
-                              activeColor: AppColors.primaryColor,
-                              onChanged: controller.setSelectedRole),
-                          CommonText(
-                            text: controller.selectedOption[0],
-                            fontSize: 18,
-                            color: controller.selectRole ==
-                                    controller.selectedOption[0]
-                                ? AppColors.primaryColor
-                                : AppColors.black,
-                          )
-                        ],
+                    children: [
+                      Checkbox(
+                        value: controller.isAgree,
+                        onChanged: (value) => print(value),
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
-                      Row(
-                        children: [
-                          Radio(
-                              value: controller.selectedOption[1],
-                              groupValue: controller.selectRole,
-                              activeColor: AppColors.primaryColor,
-                              onChanged: controller.setSelectedRole),
-                          CommonText(
-                            text: controller.selectedOption[1],
-                            fontSize: 18,
-                            color: controller.selectRole ==
-                                    controller.selectedOption[1]
-                                ? AppColors.primaryColor
-                                : AppColors.black,
-                          )
-                        ],
-                      ),
+                      const Expanded(child: Terms()),
                     ],
                   ),
                   16.height,
