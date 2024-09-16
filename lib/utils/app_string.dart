@@ -86,4 +86,6 @@ class AppString {
   static const String workplace = "Workplace";
   static const String viewAll = "View All";
   static const String price = "Price";
+  static const String category = "Category";
+  static const String apply = "Apply";
 }

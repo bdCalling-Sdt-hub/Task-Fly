@@ -1,10 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProviderHomeController extends GetxController {
-  double minPrice = 30;
-  double maxPrice = 500;
-  bool isRemote = false;
-  bool isInPerson = false;
+  RangeValues currentRangeValues = const RangeValues(30, 300);
   bool isBoth = false;
 
   List workPlace = [
@@ -18,6 +16,48 @@ class ProviderHomeController extends GetxController {
     },
     {
       "name": "Both",
+      "isSelected": false,
+    },
+  ];
+  List category = [
+    {
+      "name": "Cleaning",
+      "isSelected": false,
+    },
+    {
+      "name": "Assemble",
+      "isSelected": false,
+    },
+    {
+      "name": "Handyman",
+      "isSelected": false,
+    },
+    {
+      "name": "Delivery",
+      "isSelected": false,
+    },
+    {
+      "name": "Gardening",
+      "isSelected": false,
+    },
+    {
+      "name": "Removalists",
+      "isSelected": false,
+    },
+    {
+      "name": "Admin",
+      "isSelected": false,
+    },
+    {
+      "name": "IT",
+      "isSelected": false,
+    },
+    {
+      "name": "Photography",
+      "isSelected": false,
+    },
+    {
+      "name": "Others",
       "isSelected": false,
     },
   ];
