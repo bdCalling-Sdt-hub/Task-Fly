@@ -62,6 +62,7 @@ class AppString {
   static const String otpVerify = "OTP Verify";
   static const String inbox = "Inbox";
   static const String searchDoctor = "search a doctor";
+  static const String search = "Search";
   static const String activeNow = "Active Now";
   static const String messageHere = "message here";
   static const String notifications = "Notifications";
@@ -78,4 +79,8 @@ class AppString {
   static const String logOut = "Log Out";
   static const String deleteAccount = "Delete account";
   static const String termsOfServices = "Terms of Services";
+  static const String postTask = "Post task";
+  static const String filter = "Filter";
+  static const String sort = "Sort";
+  static const String availableTasks = "Available Tasks";
 }

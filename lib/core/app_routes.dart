@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:task_fly/view/screen/services_provider/home/provider_home.dart';
 
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
 import '../view/screen/common_screen/auth/forgot password/create_password.dart';
@@ -39,6 +40,7 @@ class AppRoutes {
   static const String privacyPolicy = "/privacy_policy_screen.dart";
   static const String termsOfServices = "/terms_of_services_screen.dart";
   static const String setting = "/setting_screen.dart";
+  static const String serviceProviderHome = "/provider_home.dart";
 
   static List<GetPage> routes = [
     GetPage(
@@ -112,6 +114,10 @@ class AppRoutes {
     GetPage(
         name: setting,
         page: () => SettingScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: serviceProviderHome,
+        page: () => ServiceProviderHome(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

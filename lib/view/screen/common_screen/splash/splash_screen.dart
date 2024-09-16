@@ -28,8 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
         //     Get.offAllNamed(AppRoutes.patientsHome);
         //   }
         // } else {
-          Get.offAllNamed(AppRoutes.onboarding);
-
+        Get.offAllNamed(AppRoutes.serviceProviderHome);
       },
     );
     super.initState();
@@ -44,16 +43,12 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(),
             Center(
                 child: CommonImage(
               imageSrc: AppImages.noImage,
               height: 70,
               imageType: ImageType.png,
             )),
-            const Spacer(),
-            const CommonLoader(),
-           20.height,
           ],
         ),
       ),
