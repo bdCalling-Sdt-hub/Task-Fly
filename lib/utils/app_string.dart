@@ -83,4 +83,7 @@ class AppString {
   static const String filter = "Filter";
   static const String sort = "Sort";
   static const String availableTasks = "Available Tasks";
+  static const String workplace = "Workplace";
+  static const String viewAll = "View All";
+  static const String price = "Price";
 }

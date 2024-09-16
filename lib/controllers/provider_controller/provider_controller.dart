@@ -7,5 +7,26 @@ class ProviderHomeController extends GetxController {
   bool isInPerson = false;
   bool isBoth = false;
 
-  static ProviderHomeController get instance => Get.put(ProviderHomeController());
+  List workPlace = [
+    {
+      "name": "Remotely",
+      "isSelected": false,
+    },
+    {
+      "name": "In person",
+      "isSelected": false,
+    },
+    {
+      "name": "Both",
+      "isSelected": false,
+    },
+  ];
+
+  selectItem(item) {
+    item["isSelected"] = !item["isSelected"];
+    update();
+  }
+
+  static ProviderHomeController get instance =>
+      Get.put(ProviderHomeController());
 }
