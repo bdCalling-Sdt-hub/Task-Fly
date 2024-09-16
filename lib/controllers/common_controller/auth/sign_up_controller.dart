@@ -59,7 +59,9 @@ class SignUpController extends GetxController {
 
   changeAgree(value) {
 
-    print(value);
+    if (kDebugMode) {
+      print(value);
+    }
     isAgree = value;
     update();
   }
