@@ -4,9 +4,9 @@ import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_icons.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/button_with_icon.dart';
-import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/available_task_card.dart';
+import 'package:task_fly/view/screen/services_provider/home/widgets/filter.dart';
 
 class ServiceProviderHome extends StatelessWidget {
   const ServiceProviderHome({super.key});
@@ -56,9 +56,12 @@ class ServiceProviderHome extends StatelessWidget {
             16.height,
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: ButtonWithIcon(
                     titleText: AppString.filter,
+                    onTap: () {
+                      filterPanel();
+                    },
                     iconData: Icons.tune,
                     borderColor: AppColors.p_500,
                     buttonColor: AppColors.transparent,
