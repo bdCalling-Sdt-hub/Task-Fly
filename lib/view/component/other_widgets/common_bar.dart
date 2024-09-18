@@ -5,9 +5,10 @@ import '../../../utils/app_string.dart';
 import '../text/common_text.dart';
 
 class CommonBar extends StatelessWidget {
-  const CommonBar({super.key, required this.title});
+  const CommonBar({super.key, required this.title, this.onTap});
 
   final String title;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +34,18 @@ class CommonBar extends StatelessWidget {
             fontSize: 20,
             color: AppColors.p_500,
           ),
-          const Row(
-            children: [
-              CommonText(
-                text: AppString.viewAll,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-              Icon(Icons.keyboard_arrow_down_outlined)
-            ],
+          InkWell(
+            onTap: onTap,
+            child: const Row(
+              children: [
+                CommonText(
+                  text: AppString.viewAll,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
+                Icon(Icons.keyboard_arrow_down_outlined)
+              ],
+            ),
           ),
         ],
       ),

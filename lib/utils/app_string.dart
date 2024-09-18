@@ -88,4 +88,6 @@ class AppString {
   static const String price = "Price";
   static const String category = "Category";
   static const String apply = "Apply";
+  static const String dueDate = "Due Date";
+  static const String postDate = "Post Date";
 }

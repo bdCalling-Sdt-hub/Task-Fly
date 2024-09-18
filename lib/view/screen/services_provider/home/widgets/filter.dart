@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:task_fly/controllers/provider_controller/provider_controller.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
@@ -12,6 +10,8 @@ import 'package:task_fly/view/component/other_widgets/common_bar.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/price_box.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/work_place_item.dart';
+
+import 'category_item.dart';
 
 filterPanel() {
   return showModalBottomSheet(
@@ -33,7 +33,7 @@ class _FilterState extends State<Filter> {
   Widget build(BuildContext context) {
     return GetBuilder<ProviderHomeController>(
       builder: (controller) => Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(12),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -47,68 +47,82 @@ class _FilterState extends State<Filter> {
                 color: AppColors.p_500,
                 bottom: 16,
               ),
-              const CommonBar(title: AppString.workplace),
-              20.height,
-              GridView.builder(
-                itemCount: controller.workPlace.length,
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisSpacing: 12,
-                    mainAxisExtent: 42,
-                    crossAxisCount: 3),
-                itemBuilder: (context, index) {
-                  return WorkPlaceItem(
-                    item: controller.workPlace[index],
-                  );
-                },
-              ),
-              20.height,
-              const CommonBar(title: AppString.price),
-              10.height,
-              RangeSlider(
-                values: controller.currentRangeValues,
-                min: 0,
-                max: 500,
-                divisions: 50,
-                activeColor: AppColors.clientColor,
-                inactiveColor: Colors.grey.shade300,
-                onChanged: (RangeValues values) {
-                  setState(() {
-                    controller.currentRangeValues = values;
-                  });
-                },
+              CommonBar(
+                title: AppString.workplace,
+                onTap: controller.showWorkOnTap,
               ),
               10.height,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  PriceBox(
-                      price: controller.currentRangeValues.start.toInt(),
-                      label: "Minimum"),
-                  PriceBox(
-                      price: controller.currentRangeValues.end.toInt(),
-                      label: "Maximum"),
-                ],
-              ),
-              20.height,
-              const CommonBar(title: AppString.category),
-              20.height,
-              GridView.builder(
-                  itemCount: controller.category.length,
+              if (controller.showWork)
+                GridView.builder(
+                  itemCount: controller.workPlace.length,
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisSpacing: 12,
-                      mainAxisSpacing: 12,
                       mainAxisExtent: 42,
                       crossAxisCount: 3),
                   itemBuilder: (context, index) {
                     return WorkPlaceItem(
-                      item: controller.category[index],
+                      title: controller.workPlace[index],
                     );
-                  }),
+                  },
+                ),
+              if (controller.showWork) 20.height,
+              CommonBar(
+                title: AppString.price,
+                onTap: controller.showPriceOnTap,
+              ),
+              10.height,
+              if (controller.showPrice)
+                RangeSlider(
+                  values: controller.currentRangeValues,
+                  min: 0,
+                  max: 500,
+                  divisions: 50,
+                  activeColor: AppColors.clientColor,
+                  inactiveColor: Colors.grey.shade300,
+                  onChanged: (RangeValues values) {
+                    setState(() {
+                      controller.currentRangeValues = values;
+                    });
+                  },
+                ),
+              if (controller.showPrice) 10.height,
+              if (controller.showPrice)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    PriceBox(
+                        price: controller.currentRangeValues.start.toInt(),
+                        label: "Minimum"),
+                    PriceBox(
+                        price: controller.currentRangeValues.end.toInt(),
+                        label: "Maximum"),
+                  ],
+                ),
+              if (controller.showPrice) 20.height,
+              CommonBar(
+                title: AppString.category,
+                onTap: controller.showCategoryOnTap,
+              ),
               20.height,
+              if (controller.showCategory)
+                GridView.builder(
+                    itemCount: controller.category.length,
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisSpacing: 12,
+                            mainAxisSpacing: 12,
+                            mainAxisExtent: 42,
+                            crossAxisCount: 3),
+                    itemBuilder: (context, index) {
+                      return CategoryItem(
+                        item: controller.category[index],
+                      );
+                    }),
+              if (controller.showCategory) 20.height,
               const CommonButton(titleText: AppString.apply)
             ],
           ),
