@@ -64,6 +64,8 @@ class _FilterState extends State<Filter> {
                   itemBuilder: (context, index) {
                     return WorkPlaceItem(
                       title: controller.workPlace[index],
+                      selectedItem: controller.selectWorkPlace,
+                      onTap: controller.selectItem,
                     );
                   },
                 ),

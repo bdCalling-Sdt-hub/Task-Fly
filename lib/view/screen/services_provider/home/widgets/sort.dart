@@ -66,6 +66,8 @@ class _FilterState extends State<Sort> {
                   itemBuilder: (context, index) {
                     return WorkPlaceItem(
                       title: controller.sortPrice[index],
+                      selectedItem: controller.selectedPrice,
+                      onTap: controller.selectSortPrice,
                     );
                   },
                 ),
@@ -87,6 +89,8 @@ class _FilterState extends State<Sort> {
                   itemBuilder: (context, index) {
                     return WorkPlaceItem(
                       title: controller.dueDate[index],
+                      selectedItem: controller.selectedDueDate,
+                      onTap: controller.selectDueDate,
                     );
                   },
                 ),
@@ -108,6 +112,8 @@ class _FilterState extends State<Sort> {
                   itemBuilder: (context, index) {
                     return WorkPlaceItem(
                       title: controller.postDate[index],
+                      selectedItem: controller.selectedPostDate,
+                      onTap: controller.selectPostDate,
                     );
                   },
                 ),

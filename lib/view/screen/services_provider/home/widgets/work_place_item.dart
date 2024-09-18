@@ -6,9 +6,15 @@ import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
 class WorkPlaceItem extends StatefulWidget {
-  WorkPlaceItem({super.key, required this.title});
+  WorkPlaceItem(
+      {super.key,
+      required this.title,
+      required this.selectedItem,
+      required this.onTap});
 
-  String title;
+  final String title;
+  final String selectedItem;
+  final Function(String title) onTap;
 
   @override
   State<WorkPlaceItem> createState() => _WorkPlaceItemState();
@@ -18,12 +24,12 @@ class _WorkPlaceItemState extends State<WorkPlaceItem> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => ProviderHomeController.instance.selectItem(widget.title),
+      onTap: () => widget.onTap(widget.title),
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: ShapeDecoration(
-          color: widget.title == ProviderHomeController.instance.selectWorkPlace
+          color: widget.title == widget.selectedItem
               ? AppColors.clientColor
               : AppColors.transparent,
           shape: RoundedRectangleBorder(
@@ -32,7 +38,7 @@ class _WorkPlaceItemState extends State<WorkPlaceItem> {
         ),
         child: CommonText(
           text: widget.title,
-          color: widget.title == ProviderHomeController.instance.selectWorkPlace
+          color: widget.title == widget.selectedItem
               ? AppColors.white
               : AppColors.p_500,
           textAlign: TextAlign.center,

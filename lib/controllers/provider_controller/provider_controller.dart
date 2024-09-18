@@ -6,18 +6,21 @@ import '../../utils/app_icons.dart';
 class ProviderHomeController extends GetxController {
   RangeValues currentRangeValues = const RangeValues(30, 300);
   String selectWorkPlace = "";
+  String selectedPrice = "";
+  String selectedDueDate = "";
+  String selectedPostDate = "";
 
-  bool showWork = false;
+  bool showWork = true;
 
-  bool showPrice = false;
+  bool showPrice = true;
 
-  bool showCategory = false;
+  bool showCategory = true;
 
-  bool showSortPrice = false;
+  bool showSortPrice = true;
 
-  bool showDueDate = false;
+  bool showDueDate = true;
 
-  bool showPostDate = false;
+  bool showPostDate = true;
 
   showSortPriceOnTap() {
     showSortPrice = !showSortPrice;
@@ -123,6 +126,22 @@ class ProviderHomeController extends GetxController {
 
   selectItem(item) {
     selectWorkPlace = item;
+    update();
+  }
+
+  selectSortPrice(title) {
+    selectedPrice = title;
+    update();
+  }
+
+  selectDueDate(title) {
+    selectedDueDate = title;
+    update();
+  }
+
+  selectPostDate(title) {
+    print(title);
+    selectedPostDate = title;
     update();
   }
 
