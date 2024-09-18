@@ -53,7 +53,7 @@ class _FilterState extends State<Sort> {
                 title: AppString.price,
                 onTap: controller.showSortPriceOnTap,
               ),
-              10.height,
+              20.height,
               if (controller.showSortPrice)
                 GridView.builder(
                   itemCount: controller.sortPrice.length,
@@ -74,7 +74,7 @@ class _FilterState extends State<Sort> {
                 title: AppString.dueDate,
                 onTap: controller.showDueDateOnTap,
               ),
-              10.height,
+              20.height,
               if (controller.showDueDate)
                 GridView.builder(
                   itemCount: controller.dueDate.length,
@@ -90,7 +90,7 @@ class _FilterState extends State<Sort> {
                     );
                   },
                 ),
-              if (controller.showDueDate) 10.height,
+              if (controller.showDueDate) 20.height,
               CommonBar(
                 title: AppString.postDate,
                 onTap: controller.showPostDateOnTap,
