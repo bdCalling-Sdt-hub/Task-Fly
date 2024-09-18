@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_icons.dart';
@@ -88,7 +90,9 @@ class ServiceProviderHome extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return const AvailableTaskCard();
+                  return GestureDetector(
+                      onTap: () => Get.toNamed(AppRoutes.taskDetails),
+                      child: const AvailableTaskCard());
                 },
               ),
             )

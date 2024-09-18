@@ -90,4 +90,13 @@ class AppString {
   static const String apply = "Apply";
   static const String dueDate = "Due Date";
   static const String postDate = "Post Date";
+  static const String sendYourOffer = "Send Your Offer";
+  static const String acceptTask = "Accept Task";
+  static const String taskProvider = "Task provider";
+  static const String location = "Location";
+  static const String taskDetails = "Task details";
+  static const String taskType = "Task Type";
+  static const String date = "Date";
+  static const String time = "Time";
+  static const String attachments = "Attachments";
 }
