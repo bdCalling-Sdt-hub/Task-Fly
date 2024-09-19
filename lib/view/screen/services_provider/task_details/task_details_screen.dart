@@ -9,6 +9,7 @@ import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/all_filed.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/provider%20info.dart';
+import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_offer.dart';
 
 class TaskDetailsScreen extends StatelessWidget {
   const TaskDetailsScreen({super.key});
@@ -35,6 +36,7 @@ class TaskDetailsScreen extends StatelessWidget {
                 children: [
                   const Expanded(
                     child: CommonButton(
+                      onTap: sendOfferPanel,
                       titleText: AppString.sendYourOffer,
                       buttonColor: AppColors.textIcon_500,
                       titleColor: AppColors.white,

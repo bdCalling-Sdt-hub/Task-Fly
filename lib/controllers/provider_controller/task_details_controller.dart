@@ -16,5 +16,12 @@ class TaskDetailsController extends GetxController {
   TextEditingController timeController =
       TextEditingController(text: kDebugMode ? "Evening, 7Pm -09 Pm" : "");
 
+  TextEditingController taskNameController =
+      TextEditingController(text: kDebugMode ? "Cleaning My car" : "");
+TextEditingController priceController =
+      TextEditingController(text: kDebugMode ? "10" : "");
+TextEditingController descriptionController =
+      TextEditingController(text: kDebugMode ? "Reason" : "");
+
   static TaskDetailsController get instance => Get.put(TaskDetailsController());
 }

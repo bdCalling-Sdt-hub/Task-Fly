@@ -99,4 +99,7 @@ class AppString {
   static const String date = "Date";
   static const String time = "Time";
   static const String attachments = "Attachments";
+  static const String taskName = "Task name";
+  static const String inputYourOfferPrice = "Input your offer price";
+  static const String reasonForOfferPrice = "Reason for offer price";
 }
