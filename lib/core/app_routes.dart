@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:task_fly/view/screen/services_provider/home/provider_home.dart';
+import 'package:task_fly/view/screen/services_provider/location/location_screen.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/task_details_screen.dart';
 
 import '../view/screen/common_screen/auth/change_password/change_password_screen.dart';
@@ -42,6 +43,7 @@ class AppRoutes {
   static const String setting = "/setting_screen.dart";
   static const String serviceProviderHome = "/provider_home.dart";
   static const String taskDetails = "/task_details_screen.dart";
+  static const String location = "/location_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(
@@ -123,6 +125,10 @@ class AppRoutes {
     GetPage(
         name: taskDetails,
         page: () => TaskDetailsScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: location,
+        page: () => LocationScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

@@ -102,4 +102,5 @@ class AppString {
   static const String taskName = "Task name";
   static const String inputYourOfferPrice = "Input your offer price";
   static const String reasonForOfferPrice = "Reason for offer price";
+  static const String map = "Map";
 }

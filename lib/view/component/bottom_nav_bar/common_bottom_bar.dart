@@ -5,11 +5,8 @@ import 'package:get/get.dart';
 import '../../../core/app_routes.dart';
 import '../../../utils/app_colors.dart';
 
-
 class CommonBottomNavBar extends StatefulWidget {
-  final int currentIndex;
-
-  const CommonBottomNavBar({required this.currentIndex, super.key});
+  const CommonBottomNavBar({super.key});
 
   @override
   State<CommonBottomNavBar> createState() => _CommonBottomNavBarState();
@@ -18,22 +15,21 @@ class CommonBottomNavBar extends StatefulWidget {
 class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   var bottomNavIndex = 0;
   List<Widget> unselectedIcons = [
-    const Icon(Icons.settings_outlined, color: AppColors.black),
-    const Icon(Icons.notifications_outlined, color: AppColors.black),
-    const Icon(Icons.chat, color: AppColors.black),
-    const Icon(Icons.person_2_outlined, color: AppColors.black),
+    const Icon(Icons.home_outlined, color: AppColors.white),
+    const Icon(Icons.notifications_outlined, color: AppColors.white),
+    const Icon(Icons.chat, color: AppColors.white),
+    const Icon(Icons.person_2_outlined, color: AppColors.white),
   ];
 
   List<Widget> selectedIcons = [
-    const Icon(Icons.settings_outlined, color: AppColors.primaryColor),
-    const Icon(Icons.notifications, color: AppColors.primaryColor),
-    const Icon(Icons.chat, color: AppColors.primaryColor),
-    const Icon(Icons.person, color: AppColors.primaryColor),
+    const Icon(Icons.home, color: AppColors.white),
+    const Icon(Icons.notifications, color: AppColors.white),
+    const Icon(Icons.chat, color: AppColors.white),
+    const Icon(Icons.person, color: AppColors.white),
   ];
 
   @override
   void initState() {
-    bottomNavIndex = widget.currentIndex;
     super.initState();
   }
 
@@ -46,7 +42,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
         alignment: Alignment.center,
         padding: EdgeInsets.all(12.sp),
         decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.bottomNavColor,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.r),
                 topRight: Radius.circular(20.r))),
@@ -73,25 +69,14 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   }
 
   void onTap(int index) async {
-    if (kDebugMode) {
-      print(widget.currentIndex);
-    }
     if (index == 0) {
-      if (!(widget.currentIndex == 0)) {
-        Get.toNamed(AppRoutes.setting);
-      }
+      Get.toNamed(AppRoutes.serviceProviderHome);
     } else if (index == 1) {
-      if (!(widget.currentIndex == 1)) {
-        Get.toNamed(AppRoutes.notifications);
-      }
+      Get.toNamed(AppRoutes.notifications);
     } else if (index == 2) {
-      if (!(widget.currentIndex == 2)) {
-        Get.toNamed(AppRoutes.chat);
-      }
+      Get.toNamed(AppRoutes.chat);
     } else if (index == 3) {
-      if (!(widget.currentIndex == 3)) {
-        Get.toNamed(AppRoutes.profile);
-      }
+      Get.toNamed(AppRoutes.profile);
     }
   }
 }

@@ -13,4 +13,5 @@ class AppIcons {
   static const String photography = "$baseurl/Photography.svg";
   static const String removeLists = "$baseurl/Removalists.svg";
   static const String other = "$baseurl/other.svg";
+  static const String location = "$baseurl/location.svg";
 }

@@ -77,7 +77,7 @@ class SendOffer extends StatelessWidget {
                   GestureDetector(
                     child: const Icon(Icons.keyboard_arrow_up),
                     onTap: () {
-                      double currentValue = double.tryParse(
+                      int currentValue = int.tryParse(
                               TaskDetailsController
                                   .instance.priceController.text) ??
                           0;
@@ -88,7 +88,7 @@ class SendOffer extends StatelessWidget {
                   GestureDetector(
                     child: const Icon(Icons.keyboard_arrow_down_outlined),
                     onTap: () {
-                      double currentValue = double.tryParse(
+                      int currentValue = int.tryParse(
                               TaskDetailsController
                                   .instance.priceController.text) ??
                           0;
