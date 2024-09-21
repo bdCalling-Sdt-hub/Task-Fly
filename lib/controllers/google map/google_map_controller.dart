@@ -1,9 +1,13 @@
 import 'dart:async';
+import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:task_fly/utils/app_icons.dart';
 
 import '../../services/location_service.dart';
+import '../../utils/app_images.dart';
 
 class ShowGoogleMapController extends GetxController {
   List<Marker> marker = [];
@@ -16,8 +20,6 @@ class ShowGoogleMapController extends GetxController {
   List selectedOption = ["Paint Shop", "Remove Paint"];
 
   String selectRole = "Paint Shop";
-
-
 
   static ShowGoogleMapController get instance =>
       Get.put(ShowGoogleMapController());
@@ -55,6 +57,15 @@ class ShowGoogleMapController extends GetxController {
           .animateCamera(CameraUpdate.newCameraPosition(newCameraPosition));
       update();
     }
+  }
+
+  Future<BitmapDescriptor> customMarkerImage() async {
+    return await BitmapDescriptor.asset(
+        ImageConfiguration(
+            devicePixelRatio: MediaQuery.of(Get.context!).devicePixelRatio),
+        AppIcons.removeLists,
+        height: 40,
+        width: 40);
   }
 
 /*  Future<void> fetchNearbyPlaces() async {
@@ -114,16 +125,21 @@ class ShowGoogleMapController extends GetxController {
   }*/
 
   Future<void> fetchNearbyRemovePaint({Position? positions}) async {
-    for (int i = 0; i < 10; i++) {
+    final BitmapDescriptor customMarker = await customMarkerImage();
+    for (int i = 0; i < 5; i++) {
+      Random random = Random();
+      double randomLatitudeOffset =
+          (random.nextDouble() * 0.010) * (random.nextBool() ? 1 : -1);
+      double randomLongitudeOffset =
+          (random.nextDouble() * 0.010) * (random.nextBool() ? 1 : -1);
+
+      double latitude = (positions?.latitude ?? 0) + randomLatitudeOffset;
+      double longitude = (positions?.longitude ?? 0) + randomLongitudeOffset;
       Marker newMarker = Marker(
           markerId: MarkerId("${marker.length}"),
-          infoWindow: InfoWindow(
-            title: "hgfhgfhg",
-            onTap: () => print("dfdsaf"),
-            // onTap: () => MakePayment.makePaymentSheet(placeModel),
-          ),
-          position:
-              LatLng(positions?.latitude ?? 0, positions?.longitude ?? 0));
+          icon: customMarker,
+          onTap: () => print("dkfjhdf"),
+          position: LatLng(latitude, longitude));
 
       marker.add(newMarker);
     }
