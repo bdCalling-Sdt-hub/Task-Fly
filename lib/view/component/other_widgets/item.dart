@@ -14,7 +14,7 @@ class Item extends StatelessWidget {
       this.onTap,
       this.color = AppColors.black,
       this.vertical = 4,
-      this.horizontal = 24,
+      this.horizontal = 16,
       this.disableIcon = false});
 
   final IconData? icon;
@@ -31,37 +31,54 @@ class Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: horizontal.w, vertical: vertical.h),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                icon != null
-                    ? Icon(
-                        icon,
-                        color: color,
-                      )
-                    : CommonImage(imageSrc: image),
-                CommonText(
-                  text: title,
-                  color: color,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 18,
-                  left: 16,
-                ),
-                const Spacer(),
-                disableIcon
-                    ? const SizedBox()
-                    : Icon(
-                        Icons.arrow_forward_ios_outlined,
-                        size: 20.sp,
-                      )
-              ],
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+        padding: const EdgeInsets.all(6),
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1), // Light shadow color
+              offset: const Offset(0, 2), // Slight vertical shadow
+              blurRadius: 6, // Softening the edges of the shadow
+              spreadRadius: 1, // Light spread
             ),
-            disableDivider ? const SizedBox() : const Divider()
           ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: horizontal.w, vertical: vertical.h),
+          child: Row(
+            children: [
+              icon != null
+                  ? CircleAvatar(
+                      backgroundColor: AppColors.textIcon_100,
+                      radius: 14,
+                      child: ClipOval(
+                        child: Icon(
+                          icon,
+                          color: color,
+                        ),
+                      ),
+                    )
+                  : CommonImage(imageSrc: image),
+              CommonText(
+                text: title,
+                color: color,
+                fontWeight: FontWeight.w400,
+                fontSize: 18,
+                left: 16,
+              ),
+              const Spacer(),
+              disableIcon
+                  ? const SizedBox()
+                  : Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      size: 20.sp,
+                    )
+            ],
+          ),
         ),
       ),
     );

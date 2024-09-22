@@ -74,7 +74,7 @@ class AppString {
   static const String gender = "Gender";
   static const String profile = "Profile";
   static const String saveAndChanges = "Save and Changes";
-  static const String editProfile = "Edit Profile";
+  static const String personalInformation = "Personal information";
   static const String settings = "Settings";
   static const String logOut = "Log Out";
   static const String deleteAccount = "Delete account";
