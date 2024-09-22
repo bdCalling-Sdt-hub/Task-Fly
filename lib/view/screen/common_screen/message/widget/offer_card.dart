@@ -5,6 +5,7 @@ import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
+import 'package:task_fly/view/screen/common_screen/message/widget/adjust_offer.dart';
 
 class OfferCard extends StatelessWidget {
   const OfferCard({super.key, this.isShow = false});
@@ -106,6 +107,7 @@ class OfferCard extends StatelessWidget {
                                 borderColor: AppColors.transparent,
                                 buttonColor: AppColors.p_500,
                                 titleColor: AppColors.white,
+                                onTap: adjustOffer         ,
                               )),
                           20.width,
                           const SizedBox(
