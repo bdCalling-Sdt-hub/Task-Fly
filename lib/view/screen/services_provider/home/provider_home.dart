@@ -120,7 +120,7 @@ class ServiceProviderHome extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const CommonBottomNavBar(),
+      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 0,),
     );
   }
 }

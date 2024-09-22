@@ -6,14 +6,15 @@ import '../../../core/app_routes.dart';
 import '../../../utils/app_colors.dart';
 
 class CommonBottomNavBar extends StatefulWidget {
-  const CommonBottomNavBar({super.key});
+  final int currentIndex;
+  const CommonBottomNavBar({super.key, required this.currentIndex});
 
   @override
   State<CommonBottomNavBar> createState() => _CommonBottomNavBarState();
 }
 
 class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
-  var bottomNavIndex = 0;
+
   List<Widget> unselectedIcons = [
     const Icon(Icons.home_outlined, color: AppColors.white),
     const Icon(Icons.article_outlined, color: AppColors.white),
@@ -55,7 +56,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
                 margin: EdgeInsetsDirectional.all(12.sp),
                 child: Column(
                   children: [
-                    index == bottomNavIndex
+                    index == widget.currentIndex
                         ? selectedIcons[index]
                         : unselectedIcons[index],
                   ],
@@ -69,14 +70,25 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   }
 
   void onTap(int index) async {
+    if (kDebugMode) {
+      print(widget.currentIndex);
+    }
     if (index == 0) {
-      Get.toNamed(AppRoutes.serviceProviderHome);
+      if (!(widget.currentIndex == 0)) {
+        Get.toNamed(AppRoutes.serviceProviderHome);
+      }
     } else if (index == 1) {
-      Get.toNamed(AppRoutes.myTask);
+      if (!(widget.currentIndex == 1)) {
+        Get.toNamed(AppRoutes.myTask);
+      }
     } else if (index == 2) {
-      Get.toNamed(AppRoutes.chat);
+      if (!(widget.currentIndex == 2)) {
+        Get.toNamed(AppRoutes.chat);
+      }
     } else if (index == 3) {
-      Get.toNamed(AppRoutes.profile);
+      if (!(widget.currentIndex == 3)) {
+        Get.toNamed(AppRoutes.profile);
+      }
     }
   }
 }

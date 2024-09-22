@@ -50,7 +50,7 @@ class NotificationScreen extends StatelessWidget {
           };
         },
       ),
-      bottomNavigationBar: const CommonBottomNavBar(
+      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 9,
 
       ),
     );

@@ -19,7 +19,7 @@ class TaskDetailsScreen extends StatelessWidget {
 
   final String isCompleted = Get.parameters["isCompleted"] ?? "";
 
-  final String showOfferButton = Get.parameters["showOfferButton"] ?? "";
+  final String showOfferButton = Get.parameters["showOfferButton"] ?? "show";
 
   @override
   Widget build(BuildContext context) {

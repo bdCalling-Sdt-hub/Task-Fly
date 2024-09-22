@@ -98,7 +98,9 @@ class _LocationScreenState extends State<LocationScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const CommonBottomNavBar(),
+      bottomNavigationBar: const CommonBottomNavBar(
+        currentIndex: 9,
+      ),
     );
   }
 }
