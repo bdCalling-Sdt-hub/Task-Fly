@@ -11,6 +11,7 @@ import '../controllers/common_controller/profile/profile_controller.dart';
 import '../controllers/common_controller/setting/privacy_policy_controller.dart';
 import '../controllers/common_controller/setting/setting_controller.dart';
 import '../controllers/common_controller/setting/terms_of_services_controller.dart';
+import '../controllers/provider_controller/my_task_controller.dart';
 import '../controllers/provider_controller/provider_controller.dart';
 import '../controllers/provider_controller/task_details_controller.dart';
 
@@ -30,5 +31,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => TermsOfServicesController(), fenix: true);
     Get.lazyPut(() => ProviderHomeController(), fenix: true);
     Get.lazyPut(() => TaskDetailsController(), fenix: true);
+    Get.lazyPut(() => MyTaskController(), fenix: true);
   }
 }

@@ -16,14 +16,14 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   var bottomNavIndex = 0;
   List<Widget> unselectedIcons = [
     const Icon(Icons.home_outlined, color: AppColors.white),
-    const Icon(Icons.notifications_outlined, color: AppColors.white),
+    const Icon(Icons.article_outlined, color: AppColors.white),
     const Icon(Icons.chat, color: AppColors.white),
     const Icon(Icons.person_2_outlined, color: AppColors.white),
   ];
 
   List<Widget> selectedIcons = [
     const Icon(Icons.home, color: AppColors.white),
-    const Icon(Icons.notifications, color: AppColors.white),
+    const Icon(Icons.article, color: AppColors.white),
     const Icon(Icons.chat, color: AppColors.white),
     const Icon(Icons.person, color: AppColors.white),
   ];
@@ -72,7 +72,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
     if (index == 0) {
       Get.toNamed(AppRoutes.serviceProviderHome);
     } else if (index == 1) {
-      Get.toNamed(AppRoutes.notifications);
+      Get.toNamed(AppRoutes.myTask);
     } else if (index == 2) {
       Get.toNamed(AppRoutes.chat);
     } else if (index == 3) {

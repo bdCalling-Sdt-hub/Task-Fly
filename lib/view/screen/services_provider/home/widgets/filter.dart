@@ -18,12 +18,14 @@ filterPanel() {
     backgroundColor: Colors.white,
     context: Get.context!,
     builder: (context) {
-      return Filter();
+      return const Filter();
     },
   );
 }
 
 class Filter extends StatefulWidget {
+  const Filter({super.key});
+
   @override
   State<Filter> createState() => _FilterState();
 }
@@ -125,7 +127,10 @@ class _FilterState extends State<Filter> {
                       );
                     }),
               if (controller.showCategory) 20.height,
-              const CommonButton(titleText: AppString.apply)
+              CommonButton(
+                titleText: AppString.apply,
+                onTap: () => Get.back(),
+              )
             ],
           ),
         ),

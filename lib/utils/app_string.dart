@@ -103,4 +103,17 @@ class AppString {
   static const String inputYourOfferPrice = "Input your offer price";
   static const String reasonForOfferPrice = "Reason for offer price";
   static const String map = "Map";
+  static const String myTask = "My task";
+  static const String onboarding = "Onboarding";
+  static const String ongoing = "Ongoing";
+  static const String pending = "Pending";
+  static const String completed = "Completed";
+  static const String canceled = "Canceled";
+  static const String thereNoTasks = "There’s no Tasks!";
+  static const String noTaskDetails =
+      "Your tasks will appear here on  this page after posting.";
+
+  static const String pendingReview = "Pending Review";
+  static const String sendReviewDetails = "Your work has been done. Now, Give stars to Service Provider";
+  static const String thankYou = "Thank You";
 }

@@ -10,9 +10,16 @@ import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/all_filed.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/provider%20info.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_offer.dart';
+import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_review.dart';
 
 class TaskDetailsScreen extends StatelessWidget {
-  const TaskDetailsScreen({super.key});
+  TaskDetailsScreen({
+    super.key,
+  });
+
+  final String isCompleted = Get.parameters["isCompleted"] ?? "";
+
+  final String showOfferButton = Get.parameters["showOfferButton"] ?? "";
 
   @override
   Widget build(BuildContext context) {
@@ -32,28 +39,35 @@ class TaskDetailsScreen extends StatelessWidget {
                   fontSize: 52,
                 ),
               ),
-              Row(
-                children: [
-                  const Expanded(
-                    child: CommonButton(
-                      onTap: sendOfferPanel,
-                      titleText: AppString.sendYourOffer,
-                      buttonColor: AppColors.textIcon_500,
-                      titleColor: AppColors.white,
-                      borderColor: AppColors.transparent,
-                    ),
-                  ),
-                  16.width,
-                  const Expanded(
-                    child: CommonButton(
-                      titleText: AppString.acceptTask,
-                      buttonColor: AppColors.p_500,
-                      titleColor: AppColors.white,
-                      borderColor: AppColors.transparent,
-                    ),
-                  ),
-                ],
-              ),
+              showOfferButton == "show"
+                  ? Row(
+                      children: [
+                        const Expanded(
+                          child: CommonButton(
+                            onTap: sendOfferPanel,
+                            titleText: AppString.sendYourOffer,
+                            buttonColor: AppColors.textIcon_500,
+                            titleColor: AppColors.white,
+                            borderColor: AppColors.transparent,
+                          ),
+                        ),
+                        16.width,
+                        const Expanded(
+                          child: CommonButton(
+                            titleText: AppString.acceptTask,
+                            buttonColor: AppColors.p_500,
+                            titleColor: AppColors.white,
+                            borderColor: AppColors.transparent,
+                          ),
+                        ),
+                      ],
+                    )
+                  : 0.height,
+              if (isCompleted == "isCompleted")
+                const CommonButton(
+                  titleText: AppString.pendingReview,
+                  onTap: sendReview,
+                ),
               24.height,
               const CommonButton(
                 titleText: "Clean my car",
