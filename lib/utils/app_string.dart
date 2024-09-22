@@ -116,4 +116,6 @@ class AppString {
   static const String pendingReview = "Pending Review";
   static const String sendReviewDetails = "Your work has been done. Now, Give stars to Service Provider";
   static const String thankYou = "Thank You";
+  static const String adjust = "Adjust";
+  static const String accept = "Accept";
 }

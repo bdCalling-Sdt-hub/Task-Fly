@@ -12,7 +12,6 @@ import '../../../../controllers/google map/google_map_controller.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../component/google_map/google_map.dart';
-import '../../../component/text/common_text.dart';
 
 class LocationScreen extends StatefulWidget {
   const LocationScreen({super.key});

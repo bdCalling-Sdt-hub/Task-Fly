@@ -12,6 +12,7 @@ class AppColors {
   static const Color black = Colors.black;
   static const Color red = Colors.red;
   static const Color bottomNavColor = Color(0xff023E8A);
+  static const Color gray = Color(0xffCFCFCF);
 
   ///====================Blue =============================
 

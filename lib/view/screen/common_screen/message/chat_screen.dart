@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/utils/app_colors.dart';
 import '../../../../controllers/common_controller/message/chat_controller.dart';
 import '../../../../core/app_routes.dart';
 import '../../../../extension/my_extension.dart';
@@ -39,7 +40,8 @@ class ChatListScreen extends StatelessWidget {
                 children: [
                   CommonTextField(
                     prefixIcon: const Icon(Icons.search),
-                    hintText: AppString.searchDoctor,
+                    hintText: AppString.search,
+                    fillColor: AppColors.s_500,
                   ),
                   controller.activeUsers.isNotEmpty
                       ? const CommonText(
@@ -73,6 +75,7 @@ class ChatListScreen extends StatelessWidget {
                             "chatId": item.id,
                             "name": item.participant.fullName,
                             "image": item.participant.image,
+                            "title": "fhdsfhdsfklsdjfkjl",
                           }),
                           child: chatListItem(
                             item: controller.chats[index],
@@ -87,8 +90,7 @@ class ChatListScreen extends StatelessWidget {
         },
       ),
       bottomNavigationBar: const CommonBottomNavBar(
-        currentIndex: 9,
-
+        currentIndex: 2,
       ),
     );
   }

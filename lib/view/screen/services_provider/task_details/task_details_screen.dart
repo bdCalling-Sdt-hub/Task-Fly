@@ -37,6 +37,7 @@ class TaskDetailsScreen extends StatelessWidget {
                 child: const CommonText(
                   text: " 120 € ",
                   fontSize: 52,
+
                 ),
               ),
               showOfferButton == "show"

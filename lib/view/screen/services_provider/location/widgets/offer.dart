@@ -6,10 +6,7 @@ import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
-import 'package:task_fly/view/component/other_widgets/common_bar.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
-import 'package:task_fly/view/screen/services_provider/home/widgets/price_box.dart';
-import 'package:task_fly/view/screen/services_provider/home/widgets/work_place_item.dart';
 
 import '../../task_details/widgets/send_offer.dart';
 

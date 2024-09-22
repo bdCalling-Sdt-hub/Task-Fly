@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:task_fly/controllers/provider_controller/provider_controller.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/view/component/text/common_text.dart';

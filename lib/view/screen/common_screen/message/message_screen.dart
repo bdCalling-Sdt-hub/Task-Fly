@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_fly/utils/app_colors.dart';
+import 'package:task_fly/utils/app_images.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -9,6 +11,7 @@ import '../../../component/image/common_image.dart';
 import '../../../component/text/common_text.dart';
 import '../../../component/text_field/common_text_field.dart';
 import 'widget/chat_bubble_message.dart';
+import 'widget/offer_card.dart';
 
 class MessageScreen extends StatefulWidget {
   const MessageScreen({super.key});
@@ -21,6 +24,7 @@ class _MessageScreenState extends State<MessageScreen> {
   String chatId = Get.parameters["chatId"] ?? "";
   String name = Get.parameters["name"] ?? "";
   String image = Get.parameters["image"] ?? "";
+  String title = Get.parameters["title"] ?? "";
 
   @override
   void initState() {
@@ -42,21 +46,33 @@ class _MessageScreenState extends State<MessageScreen> {
                 children: [
                   CircleAvatar(
                     radius: 30.sp,
-                    backgroundColor: Colors.transparent,
+                    backgroundColor: Colors.grey,
                     child: ClipOval(
                       child: CommonImage(
                         imageSrc: image,
                         imageType: ImageType.network,
+                        defaultImage: AppImages.profile,
                         height: 60,
                         width: 60,
                       ),
                     ),
                   ),
                   12.width,
-                  CommonText(
-                    text: name,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 18,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CommonText(
+                        text: name,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                      ),
+                      CommonText(
+                        text: title,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -65,29 +81,40 @@ class _MessageScreenState extends State<MessageScreen> {
           ),
           body: controller.isLoading
               ? const Center(child: CircularProgressIndicator())
-              : ListView.builder(
-                  reverse: true,
-                  controller: controller.scrollController,
-                  itemCount: controller.isMoreLoading
-                      ? controller.messages.length + 1
-                      : controller.messages.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    if (index < controller.messages.length) {
-                      ChatMessageModel message = controller.messages[index];
-                      return ChatBubbleMessage(
-                        index: index,
-                        image: message.image,
-                        isCall: message.isCall,
-                        isNotice: message.isNotice,
-                        time: message.time,
-                        text: message.text,
-                        isMe: message.isMe,
-                        onTap: () {},
-                      );
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  }),
+              : Column(
+                  children: [
+                    OfferCard(
+                      isShow: controller.showCard,
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                          reverse: true,
+                          controller: controller.scrollController,
+                          itemCount: controller.isMoreLoading
+                              ? controller.messages.length + 1
+                              : controller.messages.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            if (index < controller.messages.length) {
+                              ChatMessageModel message =
+                                  controller.messages[index];
+                              return ChatBubbleMessage(
+                                index: index,
+                                image: message.image,
+                                isCall: message.isCall,
+                                isNotice: message.isNotice,
+                                time: message.time,
+                                text: message.text,
+                                isMe: message.isMe,
+                                onTap: () {},
+                              );
+                            } else {
+                              return const Center(
+                                  child: CircularProgressIndicator());
+                            }
+                          }),
+                    ),
+                  ],
+                ),
           bottomNavigationBar: AnimatedPadding(
             padding: MediaQuery.of(context).viewInsets,
             duration: const Duration(milliseconds: 100),
@@ -103,7 +130,7 @@ class _MessageScreenState extends State<MessageScreen> {
                     child: const Icon(Icons.send),
                   ),
                 ),
-                borderColor: Colors.white,
+                borderColor: AppColors.textIcon_500,
                 borderRadius: 8,
                 controller: controller.messageController,
                 onSubmitted: (p0) => controller.addNewMessage(),

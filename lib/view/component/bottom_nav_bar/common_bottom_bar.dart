@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import '../../../utils/app_colors.dart';
 
 class CommonBottomNavBar extends StatefulWidget {
   final int currentIndex;
+
   const CommonBottomNavBar({super.key, required this.currentIndex});
 
   @override
@@ -14,18 +16,17 @@ class CommonBottomNavBar extends StatefulWidget {
 }
 
 class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
-
   List<Widget> unselectedIcons = [
     const Icon(Icons.home_outlined, color: AppColors.white),
     const Icon(Icons.article_outlined, color: AppColors.white),
-    const Icon(Icons.chat, color: AppColors.white),
+    const Icon(CupertinoIcons.chat_bubble_text, color: AppColors.white),
     const Icon(Icons.person_2_outlined, color: AppColors.white),
   ];
 
   List<Widget> selectedIcons = [
     const Icon(Icons.home, color: AppColors.white),
     const Icon(Icons.article, color: AppColors.white),
-    const Icon(Icons.chat, color: AppColors.white),
+    const Icon(CupertinoIcons.chat_bubble_text_fill, color: AppColors.white),
     const Icon(Icons.person, color: AppColors.white),
   ];
 

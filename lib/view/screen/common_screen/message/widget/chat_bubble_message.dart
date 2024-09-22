@@ -6,7 +6,6 @@ import '../../../../../utils/app_images.dart';
 import '../../../../component/image/common_image.dart';
 import '../../../../component/text/common_text.dart';
 
-
 class ChatBubbleMessage extends StatelessWidget {
   final DateTime time;
   final String text;
@@ -72,6 +71,7 @@ class ChatBubbleMessage extends StatelessWidget {
                           CommonImage(
                             imageSrc: AppImages.noImage,
                             fill: BoxFit.contain,
+                            defaultImage: AppImages.profile,
                             height: 60,
                           ),
                           Container(
@@ -106,13 +106,14 @@ class ChatBubbleMessage extends StatelessWidget {
                       children: [
                         if (isMe == false && isCall == false)
                           CircleAvatar(
-                              backgroundColor: AppColors.white,
+                              backgroundColor: Colors.grey,
                               radius: 20,
                               child: ClipOval(
                                   child: CommonImage(
                                 imageSrc: image,
                                 width: 36,
                                 height: 36,
+                                defaultImage: AppImages.profile,
                                 imageType: ImageType.network,
                               ))),
                         const SizedBox(
@@ -127,36 +128,49 @@ class ChatBubbleMessage extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 GestureDetector(
-                                  onLongPress: () {
-                                    onTap();
-                                  },
+                                  onLongPress: onTap,
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 10),
+                                    padding: EdgeInsets.only(
+                                        left: isMe ? 30 : 10,
+                                        right: isMe ? 10 : 30,
+                                        top: 10,
+                                        bottom: 10),
                                     decoration: BoxDecoration(
                                       color: isMe
-                                          ? AppColors.primaryColor
-                                          : AppColors.white,
+                                          ? AppColors.p_500
+                                          : AppColors.p_50,
                                       border: Border.all(
-                                          color: AppColors.primaryColor,
+                                          color: AppColors.transparent,
                                           width: 0.5),
                                       borderRadius: BorderRadius.circular(10.r),
                                     ),
-                                    child: CommonText(
-                                      maxLines: 10,
-                                      textAlign: TextAlign.left,
-                                      fontWeight: FontWeight.w400,
-                                      text: text,
+                                    child: Column(
+                                      crossAxisAlignment: isMe
+                                          ? CrossAxisAlignment.end
+                                          : CrossAxisAlignment.start,
+                                      children: [
+                                        CommonText(
+                                          maxLines: 10,
+                                          textAlign: TextAlign.left,
+                                          fontWeight: FontWeight.w400,
+                                          text: text,
+                                          color: isMe
+                                              ? AppColors.white
+                                              : AppColors.black,
+                                        ),
+                                        CommonText(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w400,
+                                          text: time.time,
+                                          color: isMe
+                                              ? AppColors.white
+                                              : AppColors.black,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
                                 const SizedBox(height: 4),
-                                CommonText(
-                                  fontSize: 8,
-                                  fontWeight: FontWeight.w400,
-                                  text: time.time,
-                                  color: AppColors.black,
-                                ),
                               ],
                             ),
                           ),

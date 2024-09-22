@@ -15,6 +15,7 @@ import '../../../utils/app_utils.dart';
 class MessageController extends GetxController {
   bool isLoading = false;
   bool isMoreLoading = false;
+  bool showCard = false;
   String? video;
 
   List messages = [];
@@ -29,6 +30,11 @@ class MessageController extends GetxController {
   bool isMessage = false;
   bool isInputField = false;
 
+  changeShowCard() {
+    showCard = !showCard;
+    update();
+  }
+
   ScrollController scrollController = ScrollController();
   TextEditingController messageController = TextEditingController();
 
@@ -37,7 +43,35 @@ class MessageController extends GetxController {
   MessageModel messageModel = MessageModel.fromJson({});
 
   Future<void> getMessageRepo() async {
-    return ;
+    messages.add(ChatMessageModel(
+        time: messageModel.createdAt.toLocal(),
+        text: "Hi",
+        image: messageModel.sender.image,
+        isNotice: messageModel.type == "notice" ? true : false,
+        isMe: false));
+
+    messages.add(ChatMessageModel(
+        time: messageModel.createdAt.toLocal(),
+        text: "Hello",
+        image: messageModel.sender.image,
+        isNotice: false,
+        isMe: true));
+
+    messages.add(ChatMessageModel(
+        time: messageModel.createdAt.toLocal(),
+        text: "How are you?",
+        image: messageModel.sender.image,
+        isNotice: messageModel.type == "notice" ? true : false,
+        isMe: false));
+
+    messages.add(ChatMessageModel(
+        time: messageModel.createdAt.toLocal(),
+        text: "find",
+        image: messageModel.sender.image,
+        isNotice: messageModel.type == "notice" ? true : false,
+        isMe: true));
+
+    return;
     if (page == 1) {
       messages.clear();
       status = Status.loading;
@@ -108,7 +142,6 @@ class MessageController extends GetxController {
       }
     });
   }
-
 
   listenMessage(String chatId) async {
     SocketServices.socket.on('new-message::$chatId', (data) {

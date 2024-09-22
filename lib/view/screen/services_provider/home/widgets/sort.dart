@@ -8,10 +8,8 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/other_widgets/common_bar.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
-import 'package:task_fly/view/screen/services_provider/home/widgets/price_box.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/work_place_item.dart';
 
-import 'category_item.dart';
 
 sortPanel() {
   return showModalBottomSheet(

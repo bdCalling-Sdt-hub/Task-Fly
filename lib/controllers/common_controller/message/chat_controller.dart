@@ -40,6 +40,32 @@ class ChatController extends GetxController {
   }
 
   Future<void> getChatRepo() async {
+    chats.add(Chat(id: "1",
+        participant: Participant(
+            id: "1", fullName: "Naimul", image: PrefsHelper.myImage),
+        latestMessage: LatestMessage(
+            id: "1", message: "Hi", createdAt: DateTime.now()))) ;
+    chats.add(Chat(id: "1",
+        participant: Participant(
+            id: "1", fullName: "Siam", image: PrefsHelper.myImage),
+        latestMessage: LatestMessage(
+            id: "1", message: "Hi", createdAt: DateTime.now()))) ;
+    chats.add(Chat(id: "1",
+        participant: Participant(
+            id: "1", fullName: "Niloy", image: PrefsHelper.myImage),
+        latestMessage: LatestMessage(
+            id: "1", message: "Hi", createdAt: DateTime.now()))) ;
+    chats.add(Chat(id: "1",
+        participant: Participant(
+            id: "1", fullName: "Emon", image: PrefsHelper.myImage),
+        latestMessage: LatestMessage(
+            id: "1", message: "Hi", createdAt: DateTime.now()))) ;
+    chats.add(Chat(id: "1",
+        participant: Participant(
+            id: "1", fullName: "Sakib", image: PrefsHelper.myImage),
+        latestMessage: LatestMessage(
+            id: "1", message: "Hi", createdAt: DateTime.now()))) ;
+
     return;
     if (page == 1) {
       status = Status.loading;
