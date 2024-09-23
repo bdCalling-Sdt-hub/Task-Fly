@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/utils/app_string.dart';
+import 'package:task_fly/view/screen/common_screen/notifications/widget/empty_notification.dart';
 import '../../../../controllers/common_controller/notifications/notifications_controller.dart';
 import '../../../../models/api_response_model.dart';
 import '../../../../models/notification_model.dart';
@@ -22,7 +24,7 @@ class NotificationScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: CommonText(
-          text: AppUrls.notifications,
+          text: AppString.notifications,
           fontWeight: FontWeight.w600,
           fontSize: 24.sp,
         ),
@@ -34,7 +36,7 @@ class NotificationScreen extends StatelessWidget {
             Status.error => ErrorScreen(
                 onTap: NotificationsController.instance.getNotificationsRepo),
             Status.completed => controller.notifications.isEmpty
-                ? const NoData()
+                ? const EmptyNotification()
                 : ListView.builder(
                     padding: EdgeInsets.symmetric(
                         horizontal: 20.sp, vertical: 10.sp),

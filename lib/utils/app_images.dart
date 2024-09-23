@@ -24,4 +24,5 @@ class AppImages {
   static const String locationPhotography = "$baseurl/location_photography.png";
   static const String locationRemovailsts = "$baseurl/location_removailsts.png";
   static const String noTask = "$baseurl/no_task.png";
+  static const String emptyNotification = "$baseurl/empty_notification.png";
 }

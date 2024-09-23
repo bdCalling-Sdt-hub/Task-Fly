@@ -13,6 +13,16 @@ class NotificationsController extends GetxController {
   Status status = Status.completed;
 
   getNotificationsRepo() async {
+    // notifications.add(NotificationModel(
+    //     id: "01",
+    //     message: "Dakat Siam Vai accepted your task.",
+    //     linkId: "45665",
+    //     type: "notification",
+    //     role: "worker",
+    //     receiver: "2425",
+    //     v: 1,
+    //     createdAt: DateTime.now(),
+    //     updatedAt: DateTime.now()));
     return;
     status = Status.loading;
     update();

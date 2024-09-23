@@ -27,7 +27,7 @@ class ServiceProviderHome extends StatelessWidget {
               onPressed: () => print("vdfasf"),
               icon: const Icon(Icons.headset_mic_outlined)),
           IconButton(
-              onPressed: () => print("vdfasf"),
+              onPressed: () => Get.toNamed(AppRoutes.notifications),
               icon: const Icon(
                 Icons.notifications,
                 color: AppColors.primaryColor,
@@ -120,7 +120,9 @@ class ServiceProviderHome extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 0,),
+      bottomNavigationBar: const CommonBottomNavBar(
+        currentIndex: 0,
+      ),
     );
   }
 }

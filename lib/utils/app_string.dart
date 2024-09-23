@@ -7,11 +7,12 @@ class AppString {
   static const String no = "No";
   static const String yes = "Yes";
   static const String areYouSure = "Are you sure";
+  static const String deleteTitle = "Want to delete account !";
   static const String enterYouPassword = "Enter you password";
   static const String cancel = "Cancel";
   static const String done = "Done";
   static const String deleteDetails =
-      "All your changes will be deleted and you will no longer be able to access them.";
+      "Please confirm your password to remove your account.";
 
   static const String someThingWrong = "Some Thing Wrong";
   static const String tryAgain = "Try Again";
@@ -78,6 +79,7 @@ class AppString {
   static const String settings = "Settings";
   static const String logOut = "Log Out";
   static const String deleteAccount = "Delete account";
+  static const String delete = "Delete";
   static const String termsOfServices = "Terms of Services";
   static const String postTask = "Post task";
   static const String filter = "Filter";
@@ -122,4 +124,6 @@ class AppString {
   static const String contactNumber = "Contact number";
   static const String address = "Address";
   static const String edit = "Edit";
+  static const String thereAreNoNotificationsAvailable = "There Are No Notifications Available";
+  static const String emptyNotificationDetails = "No notifications available at the moment, once it’s available, it will appear here.";
 }

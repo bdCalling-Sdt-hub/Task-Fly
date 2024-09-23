@@ -34,39 +34,65 @@ class ChangePasswordScreen extends StatelessWidget {
             child: Form(
               key: formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  70.height,
-                  CommonTextField(
-                    controller: controller.currentPasswordController,
-                    hintText: AppString.currentPassword,
-                    validator: OtherHelper.passwordValidator,
-                    isPassword: true,
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      size: 20.sp,
+                  20.height,
+                  const CommonText(
+                    text: AppString.currentPassword,
+                    fontSize: 20,
+                    bottom: 8,
+                  ),
+                  textFieldDecoration(
+                    CommonTextField(
+                      controller: controller.currentPasswordController,
+                      hintText: AppString.currentPassword,
+                      validator: OtherHelper.passwordValidator,
+                      isPassword: true,
+                      fillColor: AppColors.s_500,
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        size: 20.sp,
+                      ),
                     ),
                   ),
-                  16.height,
-                  CommonTextField(
-                    controller: controller.newPasswordController,
-                    hintText: AppString.newPassword,
-                    validator: OtherHelper.passwordValidator,
-                    isPassword: true,
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      size: 20.sp,
+                  const CommonText(
+                    text: AppString.newPassword,
+                    fontSize: 20,
+                    bottom: 8,
+                    top: 20,
+                  ),
+                  textFieldDecoration(
+                    CommonTextField(
+                      controller: controller.newPasswordController,
+                      hintText: AppString.newPassword,
+                      validator: OtherHelper.passwordValidator,
+                      isPassword: true,
+                      fillColor: AppColors.s_500,
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        size: 20.sp,
+                      ),
                     ),
                   ),
-                  16.height,
-                  CommonTextField(
-                    controller: controller.confirmPasswordController,
-                    hintText: AppString.confirmPassword,
-                    validator: (value) => OtherHelper.confirmPasswordValidator(
-                        value, controller.newPasswordController),
-                    isPassword: true,
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      size: 20.sp,
+                  const CommonText(
+                    text: AppString.confirmPassword,
+                    fontSize: 20,
+                    bottom: 8,
+                    top: 20,
+                  ),
+                  textFieldDecoration(
+                    CommonTextField(
+                      controller: controller.confirmPasswordController,
+                      hintText: AppString.confirmPassword,
+                      validator: (value) =>
+                          OtherHelper.confirmPasswordValidator(
+                              value, controller.newPasswordController),
+                      isPassword: true,
+                      fillColor: AppColors.s_500,
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        size: 20.sp,
+                      ),
                     ),
                   ),
                   Align(
@@ -83,8 +109,9 @@ class ChangePasswordScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  50.height,
                   CommonButton(
-                    titleText: AppString.confirm,
+                    titleText: AppString.changePassword      ,
                     isLoading: controller.isLoading,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
@@ -98,6 +125,24 @@ class ChangePasswordScreen extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  textFieldDecoration(Widget child) {
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.s_100,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            offset: const Offset(0, 1),
+            blurRadius: 6,
+            spreadRadius: 1,
+          ),
+        ],
+      ),
+      child: child,
     );
   }
 }

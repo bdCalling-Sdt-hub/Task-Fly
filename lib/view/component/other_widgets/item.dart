@@ -12,6 +12,8 @@ class Item extends StatelessWidget {
       this.image = "",
       this.onTap,
       this.color = AppColors.black,
+      this.backgroundColor = AppColors.textIcon_100,
+      this.itemColor = AppColors.white,
       this.vertical = 4,
       this.horizontal = 16,
       this.disableIcon = false});
@@ -23,6 +25,8 @@ class Item extends StatelessWidget {
   final bool disableIcon;
   final VoidCallback? onTap;
   final Color color;
+  final Color itemColor;
+  final Color backgroundColor;
   final double vertical;
   final double horizontal;
 
@@ -34,7 +38,7 @@ class Item extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
         padding: const EdgeInsets.all(6),
         decoration: BoxDecoration(
-          color: AppColors.white,
+          color: itemColor,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
@@ -53,7 +57,7 @@ class Item extends StatelessWidget {
               if (!disableIcon)
                 icon != null
                     ? CircleAvatar(
-                        backgroundColor: AppColors.textIcon_100,
+                        backgroundColor: backgroundColor,
                         radius: 14,
                         child: ClipOval(
                           child: Icon(

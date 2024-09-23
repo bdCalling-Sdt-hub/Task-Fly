@@ -16,17 +16,18 @@ class NotificationItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 12.h),
       padding: EdgeInsets.all(12.sp),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(color: AppColors.primaryColor)),
+        borderRadius: BorderRadius.circular(8.r),
+      ),
       child: Row(
         children: [
           CircleAvatar(
-            backgroundColor: AppColors.background,
+            backgroundColor: AppColors.white,
             radius: 35.r,
             child: const ClipOval(
               child: Icon(
-                Icons.date_range,
+                Icons.notifications_outlined,
                 color: AppColors.primaryColor,
+                size: 36,
               ),
             ),
           ),
@@ -35,37 +36,22 @@ class NotificationItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: CommonText(
-                        text: item.type,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        textAlign: TextAlign.start,
-                        maxLines: 1,
-                      ),
-                    ),
-                    CommonText(
-                      text: item.createdAt.checkTime,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      textAlign: TextAlign.start,
-                      color: AppColors.black,
-                      maxLines: 1,
-                    ),
-                  ],
-                ),
                 CommonText(
                   text: item.message,
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  maxLines: 2,
                   color: AppColors.black,
                   textAlign: TextAlign.start,
-                  bottom: 10,
                   top: 4,
+                  bottom: 4,
+                ),
+                CommonText(
+                  text: item.createdAt.checkTime,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  textAlign: TextAlign.start,
+                  color: AppColors.black,
+                  maxLines: 1,
                 ),
               ],
             ),

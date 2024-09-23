@@ -153,29 +153,36 @@ deletePopUp(
           key: formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Center(
-                child: CommonText(
-                  text: AppString.areYouSure,
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.black,
-                  maxLines: 1,
-                  bottom: 24.h,
-                ),
+              CommonText(
+                text: AppString.deleteTitle,
+                    fontSize: 20.sp,
+                fontWeight: FontWeight.w700,
+                color: AppColors.black,
+                maxLines: 1,
+                bottom: 24.h,
               ),
               CommonText(
                 text: AppString.deleteDetails,
-                fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
                 color: AppColors.black,
+                textAlign: TextAlign.start,
                 maxLines: 2,
                 bottom: 20.h,
+              ),
+              const CommonText(
+                text: AppString.password,
+                fontWeight: FontWeight.w500,
+                color: AppColors.black,
+                fontSize: 20,
+                bottom: 8,
               ),
               CommonTextField(
                 controller: controller,
                 labelText: AppString.enterYouPassword,
                 validator: OtherHelper.validator,
+                isPassword: true,
               )
             ],
           ),
@@ -189,8 +196,7 @@ deletePopUp(
                   titleColor: AppColors.black,
                   borderColor: AppColors.black,
                   buttonColor: AppColors.transparent,
-                  buttonRadius: 4.r,
-                  buttonHeight: 48.h,
+                  buttonHeight: 48,
                   onTap: () => Get.back(),
                 ),
               ),
@@ -199,10 +205,9 @@ deletePopUp(
               ),
               Expanded(
                 child: CommonButton(
-                  titleText: AppString.done,
-                  titleColor: AppColors.white,
-                  buttonRadius: 4.r,
-                  buttonHeight: 48.h,
+                  titleText: AppString.delete,
+                  titleColor: AppColors.black,
+                  buttonHeight: 48,
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       onTap();
