@@ -119,4 +119,7 @@ class AppString {
   static const String adjust = "Adjust";
   static const String adjustOffer = "Adjust Offer";
   static const String accept = "Accept";
+  static const String contactNumber = "Contact number";
+  static const String address = "Address";
+  static const String edit = "Edit";
 }

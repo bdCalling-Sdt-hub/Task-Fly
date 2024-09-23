@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
+import 'package:task_fly/view/screen/common_screen/profile/widget/profile_image.dart';
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_images.dart';
@@ -30,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
                 color: AppColors.clientColor,
               ),
               Positioned(
-                top: 200,
+                top: 170,
                 left: 0,
                 right: 0,
                 child: Container(
@@ -47,13 +48,12 @@ class ProfileScreen extends StatelessWidget {
                         text: "Naimul Hassan",
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
-                        top: 20,
                         bottom: 24,
                       ),
                       Item(
                         icon: Icons.person,
                         title: AppString.personalInformation,
-                        onTap: () => Get.toNamed(AppRoutes.editProfile),
+                        onTap: () => Get.toNamed(AppRoutes.personalInfo),
                       ),
                       Item(
                         icon: Icons.settings,
@@ -75,52 +75,9 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 130,
+                top: 100,
                 left: (Get.width - 140.sp) / 2,
-                child: Container(
-                  width: 140.sp,
-                  height: 140.sp,
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 8,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: CircleAvatar(
-                      radius: 70.sp,
-                      backgroundColor: Colors.white,
-                      child: ClipOval(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.5),
-                                offset: const Offset(0, 2),
-                                blurRadius: 6,
-                                spreadRadius: 1, // Light spread
-                              ),
-                            ],
-                          ),
-                          child: CommonImage(
-                            imageSrc: AppImages.profile,
-                            imageType: ImageType.png,
-                            height: 130,
-                            width: 130,
-                            defaultImage: AppImages.profile,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                child: const ProfileImage(),
               )
             ],
           );

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:task_fly/view/screen/common_screen/profile/personal_info_screen.dart';
 import 'package:task_fly/view/screen/services_provider/home/provider_home.dart';
 import 'package:task_fly/view/screen/services_provider/location/location_screen.dart';
 import 'package:task_fly/view/screen/services_provider/my_task/my_task_screen.dart';
@@ -46,6 +47,7 @@ class AppRoutes {
   static const String taskDetails = "/task_details_screen.dart";
   static const String location = "/location_screen.dart";
   static const String myTask = "/my_task_screen.dart";
+  static const String personalInfo = "/personal_info_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(
@@ -135,6 +137,10 @@ class AppRoutes {
     GetPage(
         name: myTask,
         page: () => MyTaskScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: personalInfo,
+        page: () => PersonalInfoScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

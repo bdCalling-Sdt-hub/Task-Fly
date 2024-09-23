@@ -10,7 +10,6 @@ class Item extends StatelessWidget {
       this.icon,
       required this.title,
       this.image = "",
-      this.disableDivider = false,
       this.onTap,
       this.color = AppColors.black,
       this.vertical = 4,
@@ -20,7 +19,7 @@ class Item extends StatelessWidget {
   final IconData? icon;
   final String title;
   final String image;
-  final bool disableDivider;
+
   final bool disableIcon;
   final VoidCallback? onTap;
   final Color color;
@@ -39,10 +38,10 @@ class Item extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1), // Light shadow color
-              offset: const Offset(0, 2), // Slight vertical shadow
-              blurRadius: 6, // Softening the edges of the shadow
-              spreadRadius: 1, // Light spread
+              color: Colors.black.withOpacity(0.1),
+              offset: const Offset(0, 2),
+              blurRadius: 6,
+              spreadRadius: 1,
             ),
           ],
         ),
@@ -51,32 +50,26 @@ class Item extends StatelessWidget {
               horizontal: horizontal.w, vertical: vertical.h),
           child: Row(
             children: [
-              icon != null
-                  ? CircleAvatar(
-                      backgroundColor: AppColors.textIcon_100,
-                      radius: 14,
-                      child: ClipOval(
-                        child: Icon(
-                          icon,
-                          color: color,
+              if (!disableIcon)
+                icon != null
+                    ? CircleAvatar(
+                        backgroundColor: AppColors.textIcon_100,
+                        radius: 14,
+                        child: ClipOval(
+                          child: Icon(
+                            icon,
+                            color: color,
+                          ),
                         ),
-                      ),
-                    )
-                  : CommonImage(imageSrc: image),
+                      )
+                    : CommonImage(imageSrc: image),
               CommonText(
                 text: title,
                 color: color,
                 fontWeight: FontWeight.w400,
                 fontSize: 18,
-                left: 16,
+                left: disableIcon ? 0 : 16,
               ),
-              const Spacer(),
-              disableIcon
-                  ? const SizedBox()
-                  : Icon(
-                      Icons.arrow_forward_ios_outlined,
-                      size: 20.sp,
-                    )
             ],
           ),
         ),
