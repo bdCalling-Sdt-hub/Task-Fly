@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:task_fly/controllers/provider_controller/my_task_controller.dart';
 import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/my_task/widgets/no_task.dart';
 
+import '../../../../controllers/provider/my_task_controller.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../home/widgets/available_task_card.dart';

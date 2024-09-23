@@ -4,8 +4,7 @@ import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
-
-import '../../../../../controllers/provider_controller/task_details_controller.dart';
+import '../../../../../controllers/provider/task_details_controller.dart';
 import '../../../../../helpers/other_helper.dart';
 import '../../../../../utils/app_colors.dart';
 import '../../../../component/text_field/common_text_field.dart';

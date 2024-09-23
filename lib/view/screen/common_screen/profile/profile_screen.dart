@@ -56,11 +56,11 @@ class ProfileScreen extends StatelessWidget {
                         title: AppString.personalInformation,
                         onTap: () => Get.toNamed(AppRoutes.personalInfo),
                       ),
-                      if (PrefsHelper.myRole == "worker0")
+                      if (PrefsHelper.myRole == "worker")
                         Item(
                           icon: Icons.wallet,
                           title: AppString.wallet,
-                          onTap: () => Get.toNamed(AppRoutes.personalInfo),
+                          onTap: () => Get.toNamed(AppRoutes.myWallet),
                         ),
                       Item(
                         icon: Icons.settings,

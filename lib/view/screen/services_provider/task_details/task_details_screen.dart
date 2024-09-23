@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_fly/controllers/provider_controller/task_details_controller.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
@@ -11,6 +10,8 @@ import 'package:task_fly/view/screen/services_provider/task_details/widgets/all_
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/provider%20info.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_offer.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_review.dart';
+
+import '../../../../controllers/provider/task_details_controller.dart';
 
 class TaskDetailsScreen extends StatelessWidget {
   TaskDetailsScreen({

@@ -116,7 +116,8 @@ class AppString {
       "Your tasks will appear here on  this page after posting.";
 
   static const String pendingReview = "Pending Review";
-  static const String sendReviewDetails = "Your work has been done. Now, Give stars to Service Provider";
+  static const String sendReviewDetails =
+      "Your work has been done. Now, Give stars to Service Provider";
   static const String thankYou = "Thank You";
   static const String adjust = "Adjust";
   static const String requestForPayment = "Request for Payment";
@@ -127,8 +128,18 @@ class AppString {
   static const String address = "Address";
   static const String edit = "Edit";
   static const String cancelTitle = "Do you want to cancel this offer?";
-  static const String cancelDetails = "Please confirm to yes button to cancel the task.";
-  static const String thereAreNoNotificationsAvailable = "There Are No Notifications Available";
-  static const String emptyNotificationDetails = "No notifications available at the moment, once it’s available, it will appear here.";
+  static const String cancelDetails =
+      "Please confirm to yes button to cancel the task.";
+  static const String thereAreNoNotificationsAvailable =
+      "There Are No Notifications Available";
+  static const String emptyNotificationDetails =
+      "No notifications available at the moment, once it’s available, it will appear here.";
   static const String wallet = "Wallet";
+  static const String myWallet = "My wallet";
+  static const String yourBalance = "Your balance";
+  static const String withdraw = "Withdraw";
+  static const String history = "History";
+  static const String accountHolderName = "Account holder Name";
+  static const String accountNumber = "Account Number";
+  static const String amount = "Amount";
 }

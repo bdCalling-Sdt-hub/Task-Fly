@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_fly/controllers/provider_controller/task_details_controller.dart';
 import 'package:task_fly/helpers/other_helper.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_images.dart';
@@ -7,6 +6,8 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/image/common_image.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/component/text_field/common_text_field.dart';
+
+import '../../../../../controllers/provider/task_details_controller.dart';
 
 class AllFiled extends StatelessWidget {
   const AllFiled({super.key});

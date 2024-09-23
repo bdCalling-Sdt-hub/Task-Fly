@@ -2,11 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:task_fly/controllers/provider_controller/provider_controller.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
+
+import '../../../../../controllers/provider/provider_controller.dart';
 
 
 sendReview() {
