@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_fly/helpers/prefs_helper.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_images.dart';
+import 'package:task_fly/view/screen/common_screen/message/widget/bottom_add.dart';
 import '../../../../../extension/my_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -121,19 +123,41 @@ class _MessageScreenState extends State<MessageScreen> {
             curve: Curves.decelerate,
             child: Padding(
               padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 24.h),
-              child: CommonTextField(
-                hintText: AppString.messageHere,
-                suffixIcon: GestureDetector(
-                  onTap: controller.addNewMessage,
-                  child: Padding(
-                    padding: EdgeInsets.all(16.sp),
-                    child: const Icon(Icons.send),
+              child: Row(
+                children: [
+                  if(PrefsHelper.myRole =="worker")
+                  GestureDetector(
+                    onTap: bottomAdd,
+                    child: Container(
+                      height: 42,
+                      width: 42,
+                      margin: const EdgeInsets.only(right: 12),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: AppColors.textIcon_500)),
+                      child: const Icon(
+                        Icons.add,
+                        size: 36,
+                      ),
+                    ),
                   ),
-                ),
-                borderColor: AppColors.textIcon_500,
-                borderRadius: 8,
-                controller: controller.messageController,
-                onSubmitted: (p0) => controller.addNewMessage(),
+                  Expanded(
+                    child: CommonTextField(
+                      hintText: AppString.messageHere,
+                      suffixIcon: GestureDetector(
+                        onTap: controller.addNewMessage,
+                        child: Padding(
+                          padding: EdgeInsets.all(16.sp),
+                          child: const Icon(Icons.send),
+                        ),
+                      ),
+                      borderColor: AppColors.textIcon_500,
+                      borderRadius: 8,
+                      controller: controller.messageController,
+                      onSubmitted: (p0) => controller.addNewMessage(),
+                    ),
+                  ),
+                ],
               ),
             ),
           ));

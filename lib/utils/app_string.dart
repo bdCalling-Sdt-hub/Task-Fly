@@ -119,11 +119,16 @@ class AppString {
   static const String sendReviewDetails = "Your work has been done. Now, Give stars to Service Provider";
   static const String thankYou = "Thank You";
   static const String adjust = "Adjust";
+  static const String requestForPayment = "Request for Payment";
+  static const String adjustPrice = "Adjust Price";
   static const String adjustOffer = "Adjust Offer";
   static const String accept = "Accept";
   static const String contactNumber = "Contact number";
   static const String address = "Address";
   static const String edit = "Edit";
+  static const String cancelTitle = "Do you want to cancel this offer?";
+  static const String cancelDetails = "Please confirm to yes button to cancel the task.";
   static const String thereAreNoNotificationsAvailable = "There Are No Notifications Available";
   static const String emptyNotificationDetails = "No notifications available at the moment, once it’s available, it will appear here.";
+  static const String wallet = "Wallet";
 }

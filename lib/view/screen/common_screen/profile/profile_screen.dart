@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/extension/my_extension.dart';
+import 'package:task_fly/helpers/prefs_helper.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/view/screen/common_screen/profile/widget/profile_image.dart';
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
@@ -55,6 +56,12 @@ class ProfileScreen extends StatelessWidget {
                         title: AppString.personalInformation,
                         onTap: () => Get.toNamed(AppRoutes.personalInfo),
                       ),
+                      if (PrefsHelper.myRole == "worker0")
+                        Item(
+                          icon: Icons.wallet,
+                          title: AppString.wallet,
+                          onTap: () => Get.toNamed(AppRoutes.personalInfo),
+                        ),
                       Item(
                         icon: Icons.settings,
                         title: AppString.settings,

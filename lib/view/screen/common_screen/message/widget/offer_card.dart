@@ -6,6 +6,7 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/common_screen/message/widget/adjust_offer.dart';
+import 'package:task_fly/view/screen/common_screen/message/widget/canecl_bottom_sheet.dart';
 
 class OfferCard extends StatelessWidget {
   const OfferCard({super.key, this.isShow = false});
@@ -107,7 +108,7 @@ class OfferCard extends StatelessWidget {
                                 borderColor: AppColors.transparent,
                                 buttonColor: AppColors.p_500,
                                 titleColor: AppColors.white,
-                                onTap: adjustOffer         ,
+                                onTap: adjustOffer,
                               )),
                           20.width,
                           const SizedBox(
@@ -124,14 +125,14 @@ class OfferCard extends StatelessWidget {
 
                       12.height,
 
-                      CommonButton(
+                      const CommonButton(
                         titleText: AppString.cancel,
                         buttonColor: AppColors.gray,
                         borderColor: AppColors.transparent,
                         buttonWidth: 100,
                         buttonHeight: 40,
                         buttonRadius: 25,
-                        onTap: MessageController.instance.changeShowCard,
+                        onTap: cancelBottomSheet,
                       ).center
                     ],
                   ),
