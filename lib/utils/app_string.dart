@@ -142,4 +142,5 @@ class AppString {
   static const String accountHolderName = "Account holder Name";
   static const String accountNumber = "Account Number";
   static const String amount = "Amount";
+  static const String overview = "Overview";
 }

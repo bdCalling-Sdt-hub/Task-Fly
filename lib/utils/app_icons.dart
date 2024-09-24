@@ -15,5 +15,8 @@ class AppIcons {
   static const String other = "$baseurl/other.svg";
   static const String location = "$baseurl/location.svg";
   static const String filter = "$baseurl/filter.svg";
-
+  static const String cancel = "$baseurl/cancel.svg";
+  static const String completed = "$baseurl/completed.svg";
+  static const String ongoing = "$baseurl/task-planning 2.svg";
+  static const String pending = "$baseurl/pending.svg";
 }

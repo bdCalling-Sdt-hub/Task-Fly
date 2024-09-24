@@ -4,6 +4,7 @@ import 'package:task_fly/view/screen/services_provider/home/provider_home.dart';
 import 'package:task_fly/view/screen/services_provider/location/location_screen.dart';
 import 'package:task_fly/view/screen/services_provider/my_task/my_task_screen.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/task_details_screen.dart';
+import 'package:task_fly/view/screen/worker/Post_task/worker_post_task_screen.dart';
 import 'package:task_fly/view/screen/worker/wallet/my_wallet.dart';
 import 'package:task_fly/view/screen/worker/wallet/withdraw_screen.dart';
 
@@ -52,6 +53,7 @@ class AppRoutes {
   static const String personalInfo = "/personal_info_screen.dart";
   static const String myWallet = "/my_wallet.dart";
   static const String withdraw = "/withdraw_screen.dart";
+  static const String workerPostTask = "/worker_post_task_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(
@@ -154,5 +156,10 @@ class AppRoutes {
         name: AppRoutes.withdraw,
         page: () => WithdrawScreen(),
         transition: Transition.rightToLeftWithFade),
+     GetPage(
+        name: AppRoutes.workerPostTask,
+        page: () => WorkerPostTaskScreen(),
+        transition: Transition.rightToLeftWithFade),
+
   ];
 }

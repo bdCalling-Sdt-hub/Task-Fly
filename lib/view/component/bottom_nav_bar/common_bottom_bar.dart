@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/helpers/prefs_helper.dart';
 import '../../../core/app_routes.dart';
 import '../../../utils/app_colors.dart';
 
@@ -80,7 +81,11 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
       }
     } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {
-        Get.toNamed(AppRoutes.myTask);
+        if (PrefsHelper.myRole == "worker") {
+          Get.toNamed(AppRoutes.workerPostTask);
+        } else {
+          Get.toNamed(AppRoutes.myTask);
+        }
       }
     } else if (index == 2) {
       if (!(widget.currentIndex == 2)) {

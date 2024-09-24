@@ -14,6 +14,7 @@ import '../controllers/common_controller/setting/terms_of_services_controller.da
 import '../controllers/provider/my_task_controller.dart';
 import '../controllers/provider/provider_controller.dart';
 import '../controllers/provider/task_details_controller.dart';
+import '../controllers/worker/post_task/worker_post_task_controller.dart';
 import '../controllers/worker/wallet/my_wallet_controller.dart';
 import '../controllers/worker/wallet/withdraw_controller.dart';
 
@@ -37,5 +38,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => MyTaskController(), fenix: true);
     Get.lazyPut(() => MyWalletController(), fenix: true);
     Get.lazyPut(() => WithdrawController(), fenix: true);
+    Get.lazyPut(() => WorkerPostTaskController(), fenix: true);
   }
 }

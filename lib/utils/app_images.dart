@@ -26,4 +26,9 @@ class AppImages {
   static const String noTask = "$baseurl/no_task.png";
   static const String emptyNotification = "$baseurl/empty_notification.png";
   static const String wallet = "$baseurl/wallet.png";
+  static const String cancel = "$baseurl/cancel.png";
+  static const String completed = "$baseurl/completed.png";
+  static const String ongoing = "$baseurl/ongoing.png";
+  static const String pending = "$baseurl/pending.png";
+  static const String ongoingIcon = "$baseurl/ongoing_icon.png";
 }
