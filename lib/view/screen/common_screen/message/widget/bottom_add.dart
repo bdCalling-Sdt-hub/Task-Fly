@@ -7,7 +7,7 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_offer.dart';
 
-import '../../../../../controllers/provider/provider_controller.dart';
+import '../../../../../controllers/provider/provider_home_controller.dart';
 
 bottomAdd() {
   return showModalBottomSheet(

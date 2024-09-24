@@ -56,7 +56,7 @@ class ProfileScreen extends StatelessWidget {
                         title: AppString.personalInformation,
                         onTap: () => Get.toNamed(AppRoutes.personalInfo),
                       ),
-                      if (PrefsHelper.myRole == "worker")
+                      if (PrefsHelper.myRole == "tasker")
                         Item(
                           icon: Icons.wallet,
                           title: AppString.wallet,
@@ -69,9 +69,12 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       Item(
                         icon: Icons.sync_alt,
-                        title: AppString.settings,
-                        onTap: () => Get.toNamed(AppRoutes.setting),
+                        title: PrefsHelper.myRole == "tasker"
+                            ? "Switch to Poster"
+                            : "Switch to Tasker",
+                        onTap: PrefsHelper.changeRole,
                       ),
+                      100.height,
                       Item(
                         icon: Icons.logout,
                         title: AppString.logOut,

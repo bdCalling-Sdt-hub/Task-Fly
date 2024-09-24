@@ -190,7 +190,8 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                         itemCount: 3,
                         itemBuilder: (context, index) {
                           return GestureDetector(
-                              onTap: () => Get.toNamed(AppRoutes.taskDetails),
+                              onTap: () => Get.toNamed(AppRoutes.taskDetails,
+                                  parameters: {"type": "ongoing"}),
                               child: const TaskCard(
                                 colors: Color(0xFF9CA6F2),
                               ));
@@ -202,7 +203,9 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                         itemCount: 3,
                         itemBuilder: (context, index) {
                           return GestureDetector(
-                              onTap: () => Get.toNamed(AppRoutes.taskDetails),
+                              onTap: () => Get.toNamed(
+                                    AppRoutes.taskDetails,
+                                  ),
                               child: const TaskCard(
                                 colors: Color(0xFFFFAC76),
                               ));
@@ -215,10 +218,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                         itemBuilder: (context, index) {
                           return GestureDetector(
                               onTap: () => Get.toNamed(AppRoutes.taskDetails,
-                                      parameters: {
-                                        "isCompleted": "isCompleted",
-                                        "showOfferButton": "not show"
-                                      }),
+                                  parameters: {"type": "completed"}),
                               child: const TaskCard(
                                 colors: Color(0xFFB0EDC6),
                               ));

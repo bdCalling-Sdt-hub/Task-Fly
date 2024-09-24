@@ -69,126 +69,127 @@ class AppRoutes {
     GetPage(
         name: test,
         page: () => TestScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: splash,
         page: () => SplashScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: onboarding,
         page: () => OnboardingScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: signUp,
         page: () => SignUpScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: verifyUser,
         page: () => VerifyUser(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: signIn,
         page: () => SignInScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: forgotPassword,
         page: () => ForgotPasswordScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: verifyEmail,
         page: () => VerifyScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: createPassword,
         page: () => CreatePassword(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: changePassword,
         page: () => ChangePasswordScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: notifications,
         page: () => NotificationScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: chat,
         page: () => ChatListScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: message,
         page: () => MessageScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: profile,
         page: () => ProfileScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: editProfile,
         page: () => EditProfile(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: privacyPolicy,
         page: () => PrivacyPolicyScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: termsOfServices,
         page: () => TermsOfServicesScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: setting,
         page: () => SettingScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: serviceProviderHome,
         page: () => ServiceProviderHome(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: taskDetails,
         page: () => TaskDetailsScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: location,
         page: () => LocationScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: myTask,
         page: () => MyTaskScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: personalInfo,
         page: () => PersonalInfoScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.myWallet,
         page: () => MyWallet(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.withdraw,
         page: () => WithdrawScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.workerPostTask,
         page: () => WorkerPostTaskScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.report,
         page: () => ReportScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.cancelScreen,
         page: () => CancelScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.completedScreen,
         page: () => CompletedScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.ongoingScreen,
         page: () => OngoingScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
     GetPage(
         name: AppRoutes.pendingScreen,
         page: () => const PendingScreen(),
-        transition: Transition.rightToLeftWithFade),
+        transition: Transition.cupertino),
   ];
+
 }

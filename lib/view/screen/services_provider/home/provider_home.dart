@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/controllers/provider/provider_home_controller.dart';
 import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
@@ -34,90 +35,94 @@ class ServiceProviderHome extends StatelessWidget {
               ))
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Row(
-                  children: [
-                    const Expanded(
-                      child: ButtonWithIcon(
-                        titleText: AppString.postTask,
-                        iconData: Icons.add_photo_alternate_sharp,
-                        buttonColor: AppColors.p_500,
-                        titleColor: AppColors.white,
-                        iconColor: AppColors.white,
+      body: GetBuilder<ProviderHomeController>(
+        builder: (controller) => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ButtonWithIcon(
+                          onTap: controller.postTaskOnTap,
+                          titleText: AppString.postTask,
+                          iconData: Icons.add_photo_alternate_sharp,
+                          borderColor: AppColors.transparent,
+                          buttonColor: AppColors.p_500,
+                          titleColor: AppColors.white,
+                          iconColor: AppColors.white,
+                        ),
                       ),
-                    ),
-                    16.width,
-                    const Expanded(
-                      child: ButtonWithIcon(
-                        titleText: AppString.search,
-                        iconData: Icons.search,
-                        buttonColor: AppColors.transparent,
-                        borderColor: AppColors.s_600,
+                      16.width,
+                      const Expanded(
+                        child: ButtonWithIcon(
+                          titleText: AppString.search,
+                          iconData: Icons.search,
+                          buttonColor: AppColors.transparent,
+                          borderColor: AppColors.s_600,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                16.height,
-                Row(
-                  children: [
-                    const Expanded(
-                      child: ButtonWithIcon(
-                        titleText: AppString.filter,
-                        onTap: filterPanel,
-                        iconData: Icons.tune,
-                        borderColor: AppColors.p_500,
-                        buttonColor: AppColors.transparent,
+                    ],
+                  ),
+                  16.height,
+                  Row(
+                    children: [
+                      const Expanded(
+                        child: ButtonWithIcon(
+                          titleText: AppString.filter,
+                          onTap: filterPanel,
+                          iconData: Icons.tune,
+                          borderColor: AppColors.p_500,
+                          buttonColor: AppColors.transparent,
+                        ),
                       ),
-                    ),
-                    16.width,
-                    const Expanded(
-                      child: ButtonWithIcon(
-                        onTap: sortPanel,
-                        titleText: AppString.sort,
-                        svg: AppIcons.sort,
-                        buttonColor: AppColors.transparent,
-                        borderColor: AppColors.p_500,
+                      16.width,
+                      const Expanded(
+                        child: ButtonWithIcon(
+                          onTap: sortPanel,
+                          titleText: AppString.sort,
+                          svg: AppIcons.sort,
+                          buttonColor: AppColors.transparent,
+                          borderColor: AppColors.p_500,
+                        ),
                       ),
+                    ],
+                  ),
+                  const CommonText(
+                    text: AppString.availableTasks,
+                    fontSize: 24,
+                    top: 16,
+                    color: AppColors.textIcon_500,
+                  ).start,
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                            onTap: () => Get.toNamed(AppRoutes.taskDetails, parameters: {"type" : "sendOffer"}),
+                            child: const AvailableTaskCard());
+                      },
                     ),
-                  ],
-                ),
-                const CommonText(
-                  text: AppString.availableTasks,
-                  fontSize: 24,
-                  top: 16,
-                  color: AppColors.textIcon_500,
-                ).start,
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                          onTap: () => Get.toNamed(AppRoutes.taskDetails),
-                          child: const AvailableTaskCard());
-                    },
+                  ),
+                ],
+              ),
+              Positioned(
+                bottom: 0,
+                right: (MediaQuery.of(context).size.width / 2) - 60.w,
+                child: GestureDetector(
+                  onTap: () => Get.toNamed(AppRoutes.location),
+                  child: CommonImage(
+                    imageSrc: AppIcons.location,
+                    imageType: ImageType.svg,
+                    height: 40,
+                    width: 80,
                   ),
                 ),
-              ],
-            ),
-            Positioned(
-              bottom: 0,
-              right: (MediaQuery.of(context).size.width / 2) - 60.w,
-              child: GestureDetector(
-                onTap: () => Get.toNamed(AppRoutes.location),
-                child: CommonImage(
-                  imageSrc: AppIcons.location,
-                  imageType: ImageType.svg,
-                  height: 40,
-                  width: 80,
-                ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const CommonBottomNavBar(

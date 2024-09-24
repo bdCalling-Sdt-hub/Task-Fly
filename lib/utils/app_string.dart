@@ -3,7 +3,8 @@ class AppString {
   static const String noInternet = "No Internet";
   static const String checkInternet = "Check Internet";
   static const String back = "Back";
-  static const String youSureWantToLogout = "You sure want to logout";
+  static const String youSureWantToLogout = "Want to logout account !";
+  static const String logoutDetails = "Please confirm to logout button to logout your account.";
   static const String no = "No";
   static const String yes = "Yes";
   static const String areYouSure = "Are you sure";
@@ -146,4 +147,6 @@ class AppString {
   static const String report = "Report";
   static const String taskOverview = "Task overview";
   static const String exportData = "Export Data";
+  static const String switchDetails = "If you want to post a task, then you should switch your profile to “Poster”.";
+  static const String switchTaskerDetails = "If you want to make a task, then you should switch your profile to “Tasker”.";
 }

@@ -55,7 +55,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
             return GestureDetector(
               onTap: () => onTap(index),
               child: Container(
-                margin: EdgeInsetsDirectional.all(12.sp),
+                padding: EdgeInsets.all(12.sp),
                 child: Column(
                   children: [
                     index == widget.currentIndex
@@ -81,7 +81,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
       }
     } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {
-        if (PrefsHelper.myRole == "worker") {
+        if (PrefsHelper.myRole == "tasker") {
           Get.toNamed(AppRoutes.workerPostTask);
         } else {
           Get.toNamed(AppRoutes.myTask);

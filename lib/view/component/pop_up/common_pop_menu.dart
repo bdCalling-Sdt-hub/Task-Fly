@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/extension/my_extension.dart';
 import '../../../helpers/prefs_helper.dart';
 import '../../../helpers/reg_exp_helper.dart';
 import '../../../utils/app_colors.dart';
@@ -103,17 +104,33 @@ logOutPopUp() {
           borderRadius: BorderRadius.circular(20.r),
         ),
         contentPadding: EdgeInsets.all(12.sp),
-        title: const CommonText(
-          text: AppString.youSureWantToLogout,
-          maxLines: 2,
-          fontWeight: FontWeight.w600,
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            20.height,
+            const CommonText(
+              text: AppString.youSureWantToLogout,
+              maxLines: 2,
+              fontWeight: FontWeight.w600,
+              textAlign: TextAlign.start,
+              fontSize: 20,
+              bottom: 12,
+            ).start,
+            const CommonText(
+              text: AppString.logoutDetails,
+              maxLines: 2,
+              fontWeight: FontWeight.w400,
+              textAlign: TextAlign.start,
+              bottom: 16,
+            ).start,
+          ],
         ),
         actions: [
           Row(
             children: [
               Expanded(
                   child: CommonButton(
-                titleText: AppString.no,
+                titleText: AppString.cancel,
                 borderWidth: 1.5,
                 borderColor: AppColors.primaryColor,
                 buttonColor: AppColors.transparent,
@@ -125,7 +142,7 @@ logOutPopUp() {
               ),
               Expanded(
                   child: CommonButton(
-                titleText: AppString.yes,
+                titleText: AppString.logOut,
                 onTap: () => PrefsHelper.removeAllPrefData(),
               ))
             ],
@@ -157,7 +174,7 @@ deletePopUp(
             children: [
               CommonText(
                 text: AppString.deleteTitle,
-                    fontSize: 20.sp,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
                 color: AppColors.black,
                 maxLines: 1,

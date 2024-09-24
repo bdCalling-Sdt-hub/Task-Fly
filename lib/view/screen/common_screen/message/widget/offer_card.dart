@@ -54,11 +54,32 @@ class OfferCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const CommonText(
-                        text: 'Task: Car wash',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        bottom: 8,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CommonText(
+                            text: 'Car wash',
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            bottom: 8,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 3),
+                            decoration: BoxDecoration(
+                                color: AppColors.p_500,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: const Center(
+                              child: CommonText(
+                                text: '\$120',
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       // Task description
                       const CommonText(
@@ -68,7 +89,15 @@ class OfferCard extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         maxLines: 2,
                         textAlign: TextAlign.start,
-                        bottom: 8,
+                        bottom: 4 ,
+                      ),
+                      const CommonText(
+                        text: 'Offer price : \$120',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.textIcon_200,
+                        textAlign: TextAlign.start,
+                        bottom: 4,
                       ),
                       const CommonText(
                         text: 'Due date',

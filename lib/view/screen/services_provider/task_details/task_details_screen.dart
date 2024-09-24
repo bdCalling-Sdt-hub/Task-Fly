@@ -18,12 +18,11 @@ class TaskDetailsScreen extends StatelessWidget {
     super.key,
   });
 
-  final String isCompleted = Get.parameters["isCompleted"] ?? "";
-
-  final String showOfferButton = Get.parameters["showOfferButton"] ?? "show";
+  final String type = Get.parameters["type"] ?? "";
 
   @override
   Widget build(BuildContext context) {
+    print("type : $type");
     return Scaffold(
       appBar: AppBar(),
       body: GetBuilder<TaskDetailsController>(
@@ -38,39 +37,43 @@ class TaskDetailsScreen extends StatelessWidget {
                 child: const CommonText(
                   text: " 120 € ",
                   fontSize: 52,
-
                 ),
               ),
-              showOfferButton == "show"
-                  ? Row(
-                      children: [
-                        const Expanded(
-                          child: CommonButton(
-                            onTap: sendOfferPanel,
-                            titleText: AppString.sendYourOffer,
-                            buttonColor: AppColors.textIcon_500,
-                            titleColor: AppColors.white,
-                            borderColor: AppColors.transparent,
-                          ),
-                        ),
-                        16.width,
-                        const Expanded(
-                          child: CommonButton(
-                            titleText: AppString.acceptTask,
-                            buttonColor: AppColors.p_500,
-                            titleColor: AppColors.white,
-                            borderColor: AppColors.transparent,
-                          ),
-                        ),
-                      ],
-                    )
-                  : 0.height,
-              if (isCompleted == "isCompleted")
+              if (type == "sendOffer")
+                Row(
+                  children: [
+                    const Expanded(
+                      child: CommonButton(
+                        onTap: sendOfferPanel,
+                        titleText: AppString.sendYourOffer,
+                        buttonColor: AppColors.textIcon_500,
+                        titleColor: AppColors.white,
+                        borderColor: AppColors.transparent,
+                      ),
+                    ),
+                    16.width,
+                    Expanded(
+                      child: CommonButton(
+                        onTap: controller.acceptTaskOnTap,
+                        titleText: AppString.acceptTask,
+                        buttonColor: AppColors.p_500,
+                        titleColor: AppColors.white,
+                        borderColor: AppColors.transparent,
+                      ),
+                    ),
+                  ],
+                ),
+              if (type == "completed")
                 const CommonButton(
                   titleText: AppString.pendingReview,
                   onTap: sendReview,
                 ),
-              24.height,
+              if (type == "ongoing")
+                const CommonButton(
+                  titleText: AppString.requestForPayment,
+                  onTap: sendReview,
+                ),
+              if (type.isNotEmpty) 24.height,
               const CommonButton(
                 titleText: "Clean my car",
                 titleSize: 24,

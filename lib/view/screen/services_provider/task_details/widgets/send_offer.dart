@@ -35,6 +35,9 @@ class SendOffer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            GestureDetector(
+                    onTap: () => Get.back(), child: const Icon(Icons.clear))
+                .end,
             const CommonText(
               text: AppString.sendYourOffer,
               fontSize: 24,
@@ -76,9 +79,8 @@ class SendOffer extends StatelessWidget {
                   GestureDetector(
                     child: const Icon(Icons.keyboard_arrow_up),
                     onTap: () {
-                      int currentValue = int.tryParse(
-                              TaskDetailsController
-                                  .instance.priceController.text) ??
+                      int currentValue = int.tryParse(TaskDetailsController
+                              .instance.priceController.text) ??
                           0;
                       TaskDetailsController.instance.priceController.text =
                           (currentValue + 1).toString();
@@ -87,9 +89,8 @@ class SendOffer extends StatelessWidget {
                   GestureDetector(
                     child: const Icon(Icons.keyboard_arrow_down_outlined),
                     onTap: () {
-                      int currentValue = int.tryParse(
-                              TaskDetailsController
-                                  .instance.priceController.text) ??
+                      int currentValue = int.tryParse(TaskDetailsController
+                              .instance.priceController.text) ??
                           0;
                       if (currentValue > 0) {
                         TaskDetailsController.instance.priceController.text =
@@ -122,12 +123,13 @@ class SendOffer extends StatelessWidget {
                   onTap: () => Get.back(),
                   buttonHeight: 44,
                 )),
-                SizedBox(width: 16),
-                const Expanded(
+                16.width,
+                              Expanded(
                     child: CommonButton(
                   titleText: AppString.sendYourOffer,
                   buttonColor: AppColors.primaryColor,
                   buttonHeight: 44,
+                  onTap: () => Get.back(),
                 )),
               ],
             )

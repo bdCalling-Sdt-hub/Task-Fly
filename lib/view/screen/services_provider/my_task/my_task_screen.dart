@@ -205,11 +205,8 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                   onTap: () => Get.toNamed(
-                                          AppRoutes.taskDetails,
-                                          parameters: {
-                                            "isCompleted": "isCompleted",
-                                            "showOfferButton": "not show"
-                                          }),
+                                      AppRoutes.taskDetails,
+                                      parameters: {"type": "completed "}),
                                   child: const AvailableTaskCard());
                             },
                           ),
@@ -222,7 +219,9 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                   ),
                 ),
               ])),
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 1,),
+      bottomNavigationBar: const CommonBottomNavBar(
+        currentIndex: 1,
+      ),
     );
   }
 }

@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
+import '../../helpers/prefs_helper.dart';
+import '../../view/screen/services_provider/home/widgets/switch_role.dart';
+
 class TaskDetailsController extends GetxController {
   TextEditingController locationController =
       TextEditingController(text: kDebugMode ? "Banashree, Dhaka" : "");
@@ -24,4 +27,14 @@ TextEditingController descriptionController =
       TextEditingController(text: kDebugMode ? "Reason" : "");
 
   static TaskDetailsController get instance => Get.put(TaskDetailsController());
+
+  acceptTaskOnTap() {
+    if (!PrefsHelper.isLogIn) {
+      print("kjfdsjf");
+      if (PrefsHelper.myRole == 'tasker') {
+      } else {
+        switchTaskerRole();
+      }
+    }
+  }
 }

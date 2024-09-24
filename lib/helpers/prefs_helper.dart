@@ -1,18 +1,21 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:task_fly/core/app_routes.dart';
 
 class PrefsHelper extends GetxController {
   static String token = "";
-  static bool isLogIn = false;
+  static bool isLogIn = true;
   static bool isNotifications = true;
   static String refreshToken = "";
   static String userId = "";
   static String myImage = "";
   static String myName = "";
   static String myEmail = "";
-  static String myRole = "worker";
+  static String myRole = "tasker";
+
+  //worker----> tasker
+  //provider----> poster
   static String mySubscription = "shopping";
   static String localizationLanguageCode = 'en';
   static String localizationCountryCode = 'US';
@@ -27,8 +30,8 @@ class PrefsHelper extends GetxController {
     myImage = preferences.getString("myImage") ?? "";
     myName = preferences.getString("myName") ?? "";
     myEmail = preferences.getString("myEmail") ?? "";
-    myRole = preferences.getString("myRole") ?? "worker";
-    isLogIn = preferences.getBool("isLogIn") ?? false;
+    myRole = preferences.getString("myRole") ?? "tasker";
+    isLogIn = preferences.getBool("isLogIn") ?? true;
     isNotifications = preferences.getBool("isNotifications") ?? true;
     mySubscription = preferences.getString("mySubscription") ?? "shopping";
     localizationCountryCode =
@@ -38,13 +41,26 @@ class PrefsHelper extends GetxController {
     isLogIn = preferences.getBool("isLogIn") ?? false;
     isNotifications = preferences.getBool("isNotifications") ?? true;
     mySubscription = preferences.getString("mySubscription") ?? "shopping";
-    localizationCountryCode = preferences.getString("localizationCountryCode") ?? "US";
-    localizationLanguageCode = preferences.getString("localizationLanguageCode") ?? "en";
-
+    localizationCountryCode =
+        preferences.getString("localizationCountryCode") ?? "US";
+    localizationLanguageCode =
+        preferences.getString("localizationLanguageCode") ?? "en";
 
     if (kDebugMode) {
       print(userId);
     }
+  }
+
+  static changeRole() async {
+    if (myRole == 'tasker') {
+      myRole = 'poster';
+      await setString("myRole", myRole);
+    } else {
+      myRole = 'tasker';
+      await setString("myRole", myRole);
+    }
+
+    Get.toNamed(AppRoutes.serviceProviderHome);
   }
 
   ///<<<======================== Get All Data Form Shared Preference ============>
@@ -61,8 +77,8 @@ class PrefsHelper extends GetxController {
     preferences.setBool("isNotifications", true);
     preferences.setString("mySubscription", "shopping");
 
-    // Get.offAllNamed(AppRoutes.login);
-    getAllPrefData();
+    Get.offAllNamed(AppRoutes.signIn);
+    // getAllPrefData();
   }
 
   ///<<<======================== Get Data Form Shared Preference ==============>

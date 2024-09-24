@@ -11,13 +11,13 @@ import '../../../utils/app_url.dart';
 class SignInController extends GetxController {
   bool isLoading = false;
 
-  TextEditingController emailController =
-      TextEditingController(text: kDebugMode ? 'developernaimul00@gmail.com' : '');
+  TextEditingController emailController = TextEditingController(
+      text: kDebugMode ? 'developernaimul00@gmail.com' : '');
   TextEditingController passwordController =
       TextEditingController(text: kDebugMode ? 'hello123' : "");
 
   Future<void> signInUser() async {
-    Get.toNamed(AppRoutes.profile);
+    Get.toNamed(AppRoutes.serviceProviderHome);
     return;
     isLoading = true;
     update();

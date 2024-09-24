@@ -9,15 +9,15 @@ import 'package:task_fly/view/component/other_widgets/common_bar.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/work_place_item.dart';
 
-import '../../../../../controllers/provider/provider_controller.dart';
-
+import '../../../../../controllers/provider/provider_home_controller.dart';
 
 sortPanel() {
   return showModalBottomSheet(
     backgroundColor: Colors.white,
     context: Get.context!,
+    isScrollControlled: true,
     builder: (context) {
-      return Sort();
+      return const Sort();
     },
   );
 }
@@ -117,7 +117,10 @@ class _FilterState extends State<Sort> {
                   },
                 ),
               if (controller.showPostDate) 20.height,
-              const CommonButton(titleText: AppString.apply)
+                     CommonButton(
+                titleText: AppString.apply,
+                onTap: () => Get.back(),
+              )
             ],
           ),
         ),

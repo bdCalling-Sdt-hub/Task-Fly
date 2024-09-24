@@ -27,7 +27,8 @@ class OngoingScreen extends StatelessWidget {
           itemCount: 3,
           itemBuilder: (context, index) {
             return GestureDetector(
-                onTap: () => Get.toNamed(AppRoutes.taskDetails),
+                onTap: () => Get.toNamed(AppRoutes.taskDetails,
+                    parameters: {"type": "ongoing"}),
                 child: const TaskCard(
                   colors: Color(0xFF9CA6F2),
                 ));

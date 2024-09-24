@@ -10,13 +10,14 @@ import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/price_box.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/work_place_item.dart';
 
-import '../../../../../controllers/provider/provider_controller.dart';
+import '../../../../../controllers/provider/provider_home_controller.dart';
 import 'category_item.dart';
 
 filterPanel() {
   return showModalBottomSheet(
     backgroundColor: Colors.white,
     context: Get.context!,
+    isScrollControlled: true,
     builder: (context) {
       return const Filter();
     },

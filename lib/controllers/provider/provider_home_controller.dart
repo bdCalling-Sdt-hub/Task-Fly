@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/helpers/prefs_helper.dart';
+import 'package:task_fly/view/component/pop_up/common_pop_menu.dart';
+import 'package:task_fly/view/screen/services_provider/home/widgets/switch_role.dart';
 
 import '../../utils/app_icons.dart';
 
@@ -21,6 +24,18 @@ class ProviderHomeController extends GetxController {
   bool showDueDate = true;
 
   bool showPostDate = true;
+
+  postTaskOnTap() {
+    if (!PrefsHelper.isLogIn) {
+      print("kjfdsjf");
+      if (PrefsHelper.myRole == 'poster') {
+      } else {
+        switchPosterRole();
+      }
+    }
+  }
+
+
 
   showSortPriceOnTap() {
     showSortPrice = !showSortPrice;

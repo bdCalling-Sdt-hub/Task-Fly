@@ -125,7 +125,7 @@ class _MessageScreenState extends State<MessageScreen> {
               padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 24.h),
               child: Row(
                 children: [
-                  if(PrefsHelper.myRole =="worker")
+                  if(PrefsHelper.myRole =="tasker")
                   GestureDetector(
                     onTap: bottomAdd,
                     child: Container(
