@@ -5,6 +5,9 @@ import 'package:task_fly/view/screen/services_provider/location/location_screen.
 import 'package:task_fly/view/screen/services_provider/my_task/my_task_screen.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/task_details_screen.dart';
 import 'package:task_fly/view/screen/worker/Post_task/worker_post_task_screen.dart';
+import 'package:task_fly/view/screen/worker/report/completed_screen.dart';
+import 'package:task_fly/view/screen/worker/report/ongoing_screen.dart';
+import 'package:task_fly/view/screen/worker/report/report_screen.dart';
 import 'package:task_fly/view/screen/worker/wallet/my_wallet.dart';
 import 'package:task_fly/view/screen/worker/wallet/withdraw_screen.dart';
 
@@ -26,6 +29,8 @@ import '../view/screen/common_screen/setting/setting_screen.dart';
 import '../view/screen/common_screen/setting/terms_of_services_screen.dart';
 import '../view/screen/common_screen/splash/splash_screen.dart';
 import '../view/screen/test_screen.dart';
+import '../view/screen/worker/report/cancel_screen.dart';
+import '../view/screen/worker/report/pending_screen.dart';
 
 class AppRoutes {
   static const String test = "/test_screen.dart";
@@ -54,6 +59,11 @@ class AppRoutes {
   static const String myWallet = "/my_wallet.dart";
   static const String withdraw = "/withdraw_screen.dart";
   static const String workerPostTask = "/worker_post_task_screen.dart";
+  static const String report = "/report_screen.dart";
+  static const String cancelScreen = "/cancel_screen.dart";
+  static const String completedScreen = "/completed_screen.dart";
+  static const String ongoingScreen = "/ongoing_screen.dart";
+  static const String pendingScreen = "/pending_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(
@@ -156,10 +166,29 @@ class AppRoutes {
         name: AppRoutes.withdraw,
         page: () => WithdrawScreen(),
         transition: Transition.rightToLeftWithFade),
-     GetPage(
+    GetPage(
         name: AppRoutes.workerPostTask,
         page: () => WorkerPostTaskScreen(),
         transition: Transition.rightToLeftWithFade),
-
+    GetPage(
+        name: AppRoutes.report,
+        page: () => ReportScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: AppRoutes.cancelScreen,
+        page: () => CancelScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: AppRoutes.completedScreen,
+        page: () => CompletedScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: AppRoutes.ongoingScreen,
+        page: () => OngoingScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: AppRoutes.pendingScreen,
+        page: () => const PendingScreen(),
+        transition: Transition.rightToLeftWithFade),
   ];
 }

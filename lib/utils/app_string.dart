@@ -143,4 +143,7 @@ class AppString {
   static const String accountNumber = "Account Number";
   static const String amount = "Amount";
   static const String overview = "Overview";
+  static const String report = "Report";
+  static const String taskOverview = "Task overview";
+  static const String exportData = "Export Data";
 }

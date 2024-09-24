@@ -1,18 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/controllers/worker/post_task/worker_post_task_controller.dart';
-import 'package:task_fly/extension/my_extension.dart';
-import 'package:task_fly/utils/app_images.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/worker/Post_task/widgets/task_card.dart';
-
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
-import '../../services_provider/home/widgets/available_task_card.dart';
-import '../../services_provider/my_task/widgets/no_task.dart';
 import 'widgets/overview_item.dart';
 
 class WorkerPostTaskScreen extends StatefulWidget {
@@ -46,15 +42,18 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CommonText(
+                  const CommonText(
                     text: AppString.overview,
                     fontSize: 24,
                   ),
-                  CommonText(
-                    text: AppString.viewAll,
+                  GestureDetector(
+                    onTap: () => Get.toNamed(AppRoutes.report),
+                    child: const CommonText(
+                      text: AppString.viewAll,
+                    ),
                   ),
                 ],
               ),
@@ -210,7 +209,6 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                         },
                       ),
                     ),
-
                     Center(
                       child: ListView.builder(
                         itemCount: 3,

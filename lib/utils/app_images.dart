@@ -31,4 +31,8 @@ class AppImages {
   static const String ongoing = "$baseurl/ongoing.png";
   static const String pending = "$baseurl/pending.png";
   static const String ongoingIcon = "$baseurl/ongoing_icon.png";
+  static const String cancelReport = "$baseurl/cancel_report.png";
+  static const String completedReport = "$baseurl/completed_report.png";
+  static const String ongoingReport = "$baseurl/ongoing_report.png";
+  static const String pendingReport = "$baseurl/pending_report.png";
 }
