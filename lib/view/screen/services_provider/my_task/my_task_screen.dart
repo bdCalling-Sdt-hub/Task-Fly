@@ -27,6 +27,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
   void initState() {
     super.initState();
     incomeController.tabController = TabController(length: 5, vsync: this);
+    incomeController.changeTab();
   }
 
   @override
