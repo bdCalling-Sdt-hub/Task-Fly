@@ -7,10 +7,8 @@ import '../../../../controllers/common_controller/notifications/notifications_co
 import '../../../../models/api_response_model.dart';
 import '../../../../models/notification_model.dart';
 
-import '../../../../utils/app_url.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../component/other_widgets/common_loader.dart';
-import '../../../component/other_widgets/no_data.dart';
 import '../../../component/screen/error_screen.dart';
 import '../../../component/text/common_text.dart';
 import 'widget/notification_item.dart';

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/controllers/worker/wallet/my_wallet_controller.dart';
@@ -24,7 +23,7 @@ class MyWallet extends StatelessWidget {
       ),
       body: GetBuilder<MyWalletController>(
         builder: (controller) => Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               const BalanceCard(),

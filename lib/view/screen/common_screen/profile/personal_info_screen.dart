@@ -3,13 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
-import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/screen/common_screen/profile/widget/profile_image.dart';
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
 import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_images.dart';
 import '../../../../utils/app_string.dart';
-import '../../../component/image/common_image.dart';
 import '../../../component/other_widgets/item.dart';
 import '../../../component/text/common_text.dart';
 

@@ -31,7 +31,9 @@ class TaskDetailsController extends GetxController {
 
   acceptTaskOnTap() {
     if (PrefsHelper.isLogIn) {
-      print("kjfdsjf");
+      if (kDebugMode) {
+        print("kjfdsjf");
+      }
       if (PrefsHelper.myRole == 'tasker') {
       } else {
         switchTaskerRole();

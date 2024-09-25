@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_string.dart';
@@ -50,7 +50,9 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                   padding: EdgeInsets.zero,
                   labelPadding: const EdgeInsets.only(left: 16),
                   onTap: (value) {
-                    print(controller.tabController.index);
+                    if (kDebugMode) {
+                      print(controller.tabController.index);
+                    }
                     setState(() {});
                   },
                   tabs: [

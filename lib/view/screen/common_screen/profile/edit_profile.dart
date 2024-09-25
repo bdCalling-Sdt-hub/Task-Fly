@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:task_fly/view/component/text_field/common_text_field.dart';
 import 'package:task_fly/view/screen/common_screen/profile/widget/profile_image.dart';
@@ -8,10 +7,8 @@ import 'package:get/get.dart';
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_images.dart';
 import '../../../../utils/app_string.dart';
 import '../../../component/button/common_button.dart';
-import '../../../component/image/common_image.dart';
 import '../../../component/text/common_text.dart';
 
 class EditProfile extends StatelessWidget {

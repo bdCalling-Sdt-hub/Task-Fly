@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/helpers/prefs_helper.dart';
@@ -27,7 +28,9 @@ class ProviderHomeController extends GetxController {
 
   postTaskOnTap() {
     if (PrefsHelper.isLogIn) {
-      print("kjfdsjf");
+      if (kDebugMode) {
+        print("kjfdsjf");
+      }
       if (PrefsHelper.myRole == 'poster') {
       } else {
         switchPosterRole();
@@ -155,7 +158,9 @@ class ProviderHomeController extends GetxController {
   }
 
   selectPostDate(title) {
-    print(title);
+    if (kDebugMode) {
+      print(title);
+    }
     selectedPostDate = title;
     update();
   }

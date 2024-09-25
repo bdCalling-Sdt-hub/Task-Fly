@@ -111,7 +111,7 @@ class Panel extends StatelessWidget {
                   onTap: () => Get.back(),
                   buttonHeight: 44,
                 )),
-                SizedBox(width: 16),
+                16.width,
                 const Expanded(
                     child: CommonButton(
                   titleText: AppString.adjust,

@@ -6,7 +6,6 @@ import 'core/dependency_injection.dart';
 import 'helpers/prefs_helper.dart';
 import 'languages/language.dart';
 import 'services/notification_service.dart';
-import 'services/socket_service.dart';
 import 'theme/light_theme.dart';
 
 Future<void> main() async {

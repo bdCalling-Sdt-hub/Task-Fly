@@ -5,7 +5,6 @@ import 'package:task_fly/helpers/prefs_helper.dart';
 
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_string.dart';
-import '../../../../component/button/common_button.dart';
 import '../../../../component/text/common_text.dart';
 
 switchPosterRole() {

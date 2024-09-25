@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/extension/my_extension.dart';
@@ -22,7 +21,6 @@ class TaskDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("type : $type");
     return Scaffold(
       appBar: AppBar(),
       body: GetBuilder<TaskDetailsController>(
