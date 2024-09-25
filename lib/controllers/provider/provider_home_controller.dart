@@ -26,16 +26,16 @@ class ProviderHomeController extends GetxController {
   bool showPostDate = true;
 
   postTaskOnTap() {
-    if (!PrefsHelper.isLogIn) {
+    if (PrefsHelper.isLogIn) {
       print("kjfdsjf");
       if (PrefsHelper.myRole == 'poster') {
       } else {
         switchPosterRole();
       }
+    } else {
+      loginPopUp();
     }
   }
-
-
 
   showSortPriceOnTap() {
     showSortPrice = !showSortPrice;

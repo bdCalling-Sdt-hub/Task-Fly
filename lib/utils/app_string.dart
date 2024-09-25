@@ -149,4 +149,5 @@ class AppString {
   static const String exportData = "Export Data";
   static const String switchDetails = "If you want to post a task, then you should switch your profile to “Poster”.";
   static const String switchTaskerDetails = "If you want to make a task, then you should switch your profile to “Tasker”.";
+  static const String loginPopDetails = "To use the whole app, you have to create an account first.";
 }

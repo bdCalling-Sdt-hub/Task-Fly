@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import '../../../helpers/prefs_helper.dart';
 import '../../../helpers/reg_exp_helper.dart';
@@ -235,6 +236,48 @@ deletePopUp(
             ],
           ),
         ],
+      );
+    },
+  );
+}
+
+loginPopUp() {
+  showDialog(
+    context: Get.context!,
+    builder: (context) {
+      return AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        contentPadding: const EdgeInsets.only(bottom: 12),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            GestureDetector(
+                    onTap: () => Get.back(), child: const Icon(Icons.clear))
+                .end,
+            const CommonText(
+              text: AppString.loginPopDetails,
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+              color: AppColors.black,
+              maxLines: 4,
+              top: 8,
+              bottom: 24,
+            ),
+            CommonButton(
+              titleText: AppString.signIn,
+              onTap: () => Get.toNamed(AppRoutes.signIn),
+            ),
+            16.height,
+            CommonButton(
+              titleText: AppString.signUp,
+              buttonColor: AppColors.transparent,
+              onTap: () => Get.toNamed(AppRoutes.signUp),
+            ),
+          ],
+        ),
       );
     },
   );

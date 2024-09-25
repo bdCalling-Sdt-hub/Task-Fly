@@ -17,6 +17,8 @@ class SignInController extends GetxController {
       TextEditingController(text: kDebugMode ? 'hello123' : "");
 
   Future<void> signInUser() async {
+    PrefsHelper.isLogIn = true;
+    PrefsHelper.setBool("isLogIn", PrefsHelper.isLogIn);
     Get.toNamed(AppRoutes.serviceProviderHome);
     return;
     isLoading = true;
