@@ -12,13 +12,13 @@ import '../controllers/common_controller/setting/privacy_policy_controller.dart'
 import '../controllers/common_controller/setting/setting_controller.dart';
 import '../controllers/common_controller/setting/terms_of_services_controller.dart';
 import '../controllers/provider/my_task_controller.dart';
+import '../controllers/provider/post_task_controller.dart';
 import '../controllers/provider/provider_home_controller.dart';
 import '../controllers/provider/task_details_controller.dart';
 import '../controllers/worker/post_task/worker_post_task_controller.dart';
 import '../controllers/worker/report_controller.dart';
 import '../controllers/worker/wallet/my_wallet_controller.dart';
 import '../controllers/worker/wallet/withdraw_controller.dart';
-
 
 class DependencyInjection extends Bindings {
   @override
@@ -41,5 +41,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => WithdrawController(), fenix: true);
     Get.lazyPut(() => WorkerPostTaskController(), fenix: true);
     Get.lazyPut(() => ReportController(), fenix: true);
+    Get.lazyPut(() => PostTaskController(), fenix: true);
   }
 }

@@ -3,6 +3,8 @@ import 'package:task_fly/view/screen/common_screen/profile/personal_info_screen.
 import 'package:task_fly/view/screen/services_provider/home/provider_home.dart';
 import 'package:task_fly/view/screen/services_provider/location/location_screen.dart';
 import 'package:task_fly/view/screen/services_provider/my_task/my_task_screen.dart';
+import 'package:task_fly/view/screen/services_provider/post_task/post_task_info.dart';
+import 'package:task_fly/view/screen/services_provider/post_task/post_task_screen.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/task_details_screen.dart';
 import 'package:task_fly/view/screen/worker/Post_task/worker_post_task_screen.dart';
 import 'package:task_fly/view/screen/worker/report/completed_screen.dart';
@@ -64,12 +66,12 @@ class AppRoutes {
   static const String completedScreen = "/completed_screen.dart";
   static const String ongoingScreen = "/ongoing_screen.dart";
   static const String pendingScreen = "/pending_screen.dart";
+  static const String postTask = "/post_task_screen.dart";
+  static const String postTaskInfo = "/post_task_info.dart";
 
   static List<GetPage> routes = [
     GetPage(
-        name: test,
-        page: () => TestScreen(),
-        transition: Transition.cupertino),
+        name: test, page: () => TestScreen(), transition: Transition.cupertino),
     GetPage(
         name: splash,
         page: () => SplashScreen(),
@@ -190,6 +192,13 @@ class AppRoutes {
         name: AppRoutes.pendingScreen,
         page: () => const PendingScreen(),
         transition: Transition.cupertino),
+    GetPage(
+        name: AppRoutes.postTask,
+        page: () => const PostTaskScreen(),
+        transition: Transition.cupertino),
+    GetPage(
+        name: AppRoutes.postTaskInfo,
+        page: () => const PostTaskInfo(),
+        transition: Transition.cupertino),
   ];
-
 }

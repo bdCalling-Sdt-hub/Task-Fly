@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/helpers/prefs_helper.dart';
 import 'package:task_fly/view/component/pop_up/common_pop_menu.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/switch_role.dart';
@@ -38,6 +39,7 @@ class ProviderHomeController extends GetxController {
         print("kjfdsjf");
       }
       if (PrefsHelper.myRole == 'poster') {
+        Get.toNamed(AppRoutes.postTask);
       } else {
         switchPosterRole();
       }

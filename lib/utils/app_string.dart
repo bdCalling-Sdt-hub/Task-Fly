@@ -154,4 +154,17 @@ class AppString {
       "If you want to make a task, then you should switch your profile to “Tasker”.";
   static const String loginPopDetails =
       "To use the whole app, you have to create an account first.";
+
+  static const String selectYourCategory = "Select your category :";
+  static const String stepOneAppbarTitle = "Tell us what you need to be done?";
+  static const String stepTwoAppbarTitle = "Say where and when ";
+  static const String stepThreeAppbarTitle = "How much should the task cost?";
+  static const String stepOne = "Step 1";
+  static const String stepTwo = "Step 2";
+  static const String stepThree = "Step 3";
+  static const String whatDoYouNeed = "What do you need?";
+  static const String enterYourTaskName = "Enter your task name";
+  static const String giveDetailsAboutYourTask = "Give details about your task";
+  static const String uploadImage = "Upload image";
+  static const String optional = "(Optional)";
 }

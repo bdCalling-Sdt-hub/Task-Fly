@@ -22,6 +22,13 @@ class ReportScreen extends StatelessWidget {
           fontSize: 24,
           fontWeight: FontWeight.w700,
         ),
+        actions: [
+          const Icon(
+            Icons.date_range,
+            color: AppColors.p_500,
+          ),
+          20.width
+        ],
       ),
       body: GetBuilder<ReportController>(
         builder: (controller) => SingleChildScrollView(
@@ -67,6 +74,39 @@ class ReportScreen extends StatelessWidget {
                   );
                 },
               ),
+              SizedBox(
+                  height: 30,
+                  child: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade400),
+                      // Border color
+                      borderRadius: BorderRadius.circular(20), // Rounded edges
+                    ),
+                    child: DropdownButton<String>(
+                      value: controller.dropdownValue,
+                      icon: Icon(Icons.arrow_drop_down,
+                          color: Colors.grey.shade600),
+                      // Arrow icon
+                      underline: SizedBox(),
+                      // Removes underline
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      onChanged: controller.changeFilter,
+                      items: controller.filterList
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
+                  )).end,
+              20.height,
               const SizedBox(height: 350, child: TaskOverviewChart()),
               const SizedBox(height: 300, child: IncomeChartPage()),
               const CommonButton(

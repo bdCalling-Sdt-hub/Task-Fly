@@ -17,6 +17,7 @@ class CommonTextField extends StatelessWidget {
       this.textInputAction = TextInputAction.next,
       this.keyboardType = TextInputType.text,
       this.mexLength,
+      this.maxLines = 1,
       this.validator,
       this.prefixText,
       this.paddingHorizontal = 16,
@@ -49,6 +50,7 @@ class CommonTextField extends StatelessWidget {
   final double paddingVertical;
   final double borderRadius;
   final int? mexLength;
+  final int maxLines;
 
   final bool isPassword;
   RxBool obscureText = false.obs;
@@ -78,6 +80,7 @@ class CommonTextField extends StatelessWidget {
         style: TextStyle(fontSize: 14, color: textColor),
         onFieldSubmitted: onSubmitted,
         onTap: onTap,
+        maxLines: maxLines,
         decoration: InputDecoration(
           errorMaxLines: 2,
           filled: true,

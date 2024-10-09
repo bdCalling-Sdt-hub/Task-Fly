@@ -3,6 +3,10 @@ import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/utils/app_images.dart';
 
 class ReportController extends GetxController {
+  String dropdownValue = "Weekly";
+
+  List<String> filterList = ['Weekly', 'Monthly', 'Yearly'];
+
   List overviewList = [
     {
       "image": AppImages.ongoingReport,
@@ -29,4 +33,9 @@ class ReportController extends GetxController {
       "route": AppRoutes.cancelScreen
     },
   ];
+
+  changeFilter(String? newValue) {
+    dropdownValue = newValue ?? dropdownValue;
+    update();
+  }
 }
