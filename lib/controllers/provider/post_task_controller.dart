@@ -76,4 +76,11 @@ class PostTaskController extends GetxController {
     update();
     Get.toNamed(AppRoutes.postTaskInfo);
   }
+
+  changeStep(int pageNumber) {
+    tabController.index = pageNumber;
+
+    appbarTitle = appbarTitleList[pageNumber];
+    update();
+  }
 }

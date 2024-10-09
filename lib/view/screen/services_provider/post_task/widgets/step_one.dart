@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:task_fly/controllers/provider/post_task_controller.dart';
+import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
+import 'package:task_fly/view/component/button/button_with_icon.dart';
+import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/component/text_field/common_text_field.dart';
 
@@ -31,7 +35,6 @@ class StepOne extends StatelessWidget {
           hintText: AppString.giveDetailsAboutYourTask,
           fillColor: AppColors.p_50,
           maxLines: 5,
-
         ),
         const Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +52,23 @@ class StepOne extends StatelessWidget {
             ),
           ],
         ),
-        Container()
+        Container(
+          decoration: BoxDecoration(
+              color: AppColors.p_50, borderRadius: BorderRadius.circular(8)),
+          padding: const EdgeInsets.all(8),
+          child: const Center(
+            child: Icon(
+              Icons.photo_library_outlined,
+              size: 55,
+            ),
+          ),
+        ),
+        const Spacer(),
+        CommonButton(
+          titleText: AppString.next,
+          onTap: () => PostTaskController.instance.changeStep(1),
+        ),
+        30.height
       ],
     );
   }

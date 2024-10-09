@@ -167,4 +167,14 @@ class AppString {
   static const String giveDetailsAboutYourTask = "Give details about your task";
   static const String uploadImage = "Upload image";
   static const String optional = "(Optional)";
+  static const String next = "Next";
+  static const String whereDoYouNeedItDone = "Where do you need it done?";
+  static const String inPerson = "In-person";
+  static const String inPersonDetails = "Select this if you need the worker physically there.";
+  static const String online = "Online";
+  static const String onlineDetails = "Select this if the worker can do it from home.";
+  static const String needCertainTimeDay = "I need certain time of day";
+  static const String whatTimeDoYouNeedTheWorker = "What time do you need the Worker?";
+  static const String whatIsYourBudget = "What is your budget?";
+  static const String priceDetails = "This is just an estimate. You can negotiate the final price later.";
 }

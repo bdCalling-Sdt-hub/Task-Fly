@@ -8,6 +8,8 @@ import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
 import '../../worker/Post_task/widgets/task_card.dart';
+import 'widgets/step_three.dart';
+import 'widgets/step_two.dart';
 
 class PostTaskInfo extends StatefulWidget {
   const PostTaskInfo({super.key});
@@ -110,36 +112,15 @@ class _PostTaskInfoState extends State<PostTaskInfo>
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TabBarView(
                   controller: controller.tabController,
-                  children: [
+                  children: const [
                     Center(
                       child: StepOne(),
                     ),
                     Center(
-                      child: ListView.builder(
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                              onTap: () => Get.toNamed(
-                                    AppRoutes.taskDetails,
-                                  ),
-                              child: const TaskCard(
-                                colors: Color(0xFFFFAC76),
-                              ));
-                        },
-                      ),
+                      child: StepTwo(),
                     ),
                     Center(
-                      child: ListView.builder(
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                              onTap: () => Get.toNamed(AppRoutes.taskDetails,
-                                  parameters: {"type": "completed"}),
-                              child: const TaskCard(
-                                colors: Color(0xFFB0EDC6),
-                              ));
-                        },
-                      ),
+                      child: StepThree(),
                     ),
                   ],
                 ),

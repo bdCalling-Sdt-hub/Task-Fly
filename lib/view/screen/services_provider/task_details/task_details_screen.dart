@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/extension/my_extension.dart';
+import 'package:task_fly/helpers/prefs_helper.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
@@ -40,16 +41,17 @@ class TaskDetailsScreen extends StatelessWidget {
               if (type == "sendOffer")
                 Row(
                   children: [
-                    const Expanded(
-                      child: CommonButton(
-                        onTap: sendOfferPanel,
-                        titleText: AppString.sendYourOffer,
-                        buttonColor: AppColors.textIcon_500,
-                        titleColor: AppColors.white,
-                        borderColor: AppColors.transparent,
+                    if (PrefsHelper.myRole == 'tasker')
+                      const Expanded(
+                        child: CommonButton(
+                          onTap: sendOfferPanel,
+                          titleText: AppString.sendYourOffer,
+                          buttonColor: AppColors.textIcon_500,
+                          titleColor: AppColors.white,
+                          borderColor: AppColors.transparent,
+                        ),
                       ),
-                    ),
-                    16.width,
+                    if (PrefsHelper.myRole == 'tasker') 16.width,
                     Expanded(
                       child: CommonButton(
                         onTap: controller.acceptTaskOnTap,
