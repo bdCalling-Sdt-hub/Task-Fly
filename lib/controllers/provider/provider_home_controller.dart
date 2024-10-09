@@ -15,6 +15,7 @@ class ProviderHomeController extends GetxController {
   String selectedPostDate = "";
 
   bool showWork = true;
+  bool isSearch = false;
 
   bool showPrice = true;
 
@@ -25,6 +26,11 @@ class ProviderHomeController extends GetxController {
   bool showDueDate = true;
 
   bool showPostDate = true;
+
+  tapSearch() {
+    isSearch = true;
+    update();
+  }
 
   postTaskOnTap() {
     if (PrefsHelper.isLogIn) {

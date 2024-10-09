@@ -10,6 +10,7 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/button_with_icon.dart';
 import 'package:task_fly/view/component/image/common_image.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
+import 'package:task_fly/view/component/text_field/common_text_field.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/available_task_card.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/filter.dart';
 import 'package:task_fly/view/screen/services_provider/home/widgets/sort.dart';
@@ -56,14 +57,19 @@ class ServiceProviderHome extends StatelessWidget {
                         ),
                       ),
                       16.width,
-                      const Expanded(
-                        child: ButtonWithIcon(
-                          titleText: AppString.search,
-                          iconData: Icons.search,
-                          buttonColor: AppColors.transparent,
-                          borderColor: AppColors.s_600,
+                      Expanded(
+                          child: SizedBox(
+                        height: 34,
+                        child: CommonTextField(
+                          paddingVertical: 0,
+                          paddingHorizontal: 4,
+                          prefixIcon: const Icon(
+                            Icons.search,
+                            size: 20,
+                          ),
+                          hintText: AppString.search,
                         ),
-                      ),
+                      )),
                     ],
                   ),
                   16.height,
@@ -101,7 +107,8 @@ class ServiceProviderHome extends StatelessWidget {
                       itemCount: 10,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                            onTap: () => Get.toNamed(AppRoutes.taskDetails, parameters: {"type" : "sendOffer"}),
+                            onTap: () => Get.toNamed(AppRoutes.taskDetails,
+                                parameters: {"type": "sendOffer"}),
                             child: const AvailableTaskCard());
                       },
                     ),

@@ -35,4 +35,5 @@ class AppImages {
   static const String completedReport = "$baseurl/completed_report.png";
   static const String ongoingReport = "$baseurl/ongoing_report.png";
   static const String pendingReport = "$baseurl/pending_report.png";
+  static const String logo = "$baseurl/logo.png";
 }

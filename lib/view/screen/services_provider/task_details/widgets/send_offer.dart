@@ -42,26 +42,26 @@ class SendOffer extends StatelessWidget {
               text: AppString.sendYourOffer,
               fontSize: 24,
             ).center,
-            const CommonText(
-              text: AppString.taskName,
-              bottom: 12,
-            ),
-            CommonTextField(
-              hintText: AppString.taskName,
-              controller: TaskDetailsController.instance.taskNameController,
-              validator: OtherHelper.validator,
-              fillColor: AppColors.p_50,
-            ),
-            const CommonText(
-              text: AppString.taskDetails,
-              bottom: 12,
-            ),
-            CommonTextField(
-              hintText: AppString.taskDetails,
-              controller: TaskDetailsController.instance.taskDetailsController,
-              validator: OtherHelper.validator,
-              fillColor: AppColors.p_50,
-            ),
+            // const CommonText(
+            //   text: AppString.taskName,
+            //   bottom: 12,
+            // ),
+            // CommonTextField(
+            //   hintText: AppString.taskName,
+            //   controller: TaskDetailsController.instance.taskNameController,
+            //   validator: OtherHelper.validator,
+            //   fillColor: AppColors.p_50,
+            // ),
+            // const CommonText(
+            //   text: AppString.taskDetails,
+            //   bottom: 12,
+            // ),
+            // CommonTextField(
+            //   hintText: AppString.taskDetails,
+            //   controller: TaskDetailsController.instance.taskDetailsController,
+            //   validator: OtherHelper.validator,
+            //   fillColor: AppColors.p_50,
+            // ),
             const CommonText(
               text: AppString.inputYourOfferPrice,
               bottom: 12,

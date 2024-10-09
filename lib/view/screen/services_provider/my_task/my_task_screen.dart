@@ -26,7 +26,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
   @override
   void initState() {
     super.initState();
-    incomeController.tabController = TabController(length: 5, vsync: this);
+    incomeController.tabController = TabController(length: 4, vsync: this);
     incomeController.changeTab();
   }
 
@@ -72,7 +72,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         ),
                         child: Center(
                           child: CommonText(
-                            text: AppString.onboarding,
+                            text: AppString.ongoing,
                             color: controller.tabController.index == 0
                                 ? Colors.white
                                 : AppColors.black,
@@ -96,7 +96,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         ),
                         child: Center(
                           child: CommonText(
-                            text: AppString.ongoing,
+                            text: AppString.pending,
                             color: controller.tabController.index == 1
                                 ? Colors.white
                                 : AppColors.black,
@@ -120,7 +120,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         ),
                         child: Center(
                           child: CommonText(
-                            text: AppString.pending,
+                            text: AppString.completed,
                             color: controller.tabController.index == 2
                                 ? Colors.white
                                 : AppColors.black,
@@ -144,32 +144,8 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         ),
                         child: Center(
                           child: CommonText(
-                            text: AppString.completed,
-                            color: controller.tabController.index == 3
-                                ? Colors.white
-                                : AppColors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        decoration: BoxDecoration(
-                          color: controller.tabController.index == 4
-                              ? AppColors.clientColor
-                              : Colors.transparent,
-                          borderRadius: BorderRadius.circular(8.0),
-                          border: Border.all(
-                            color: controller.tabController.index == 4
-                                ? Colors.transparent
-                                : AppColors.clientColor,
-                          ),
-                        ),
-                        child: Center(
-                          child: CommonText(
                             text: AppString.canceled,
-                            color: controller.tabController.index == 4
+                            color: controller.tabController.index == 3
                                 ? Colors.white
                                 : AppColors.black,
                           ),
@@ -185,9 +161,6 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                     child: TabBarView(
                       controller: controller.tabController,
                       children: [
-                        const Center(
-                          child: NoTask(),
-                        ),
                         Center(
                           child: ListView.builder(
                             itemCount: 3,

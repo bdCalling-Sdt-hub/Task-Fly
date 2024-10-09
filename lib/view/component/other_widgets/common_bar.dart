@@ -12,31 +12,31 @@ class CommonBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-      decoration: ShapeDecoration(
-        color: AppColors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        shadows: const [
-          BoxShadow(
-            color: Color(0x3F000000),
-            blurRadius: 4,
-          )
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          CommonText(
-            text: title,
-            fontSize: 20,
-            color: AppColors.p_500,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        decoration: ShapeDecoration(
+          color: AppColors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
           ),
-          InkWell(
-            onTap: onTap,
-            child: const Row(
+          shadows: const [
+            BoxShadow(
+              color: Color(0x3F000000),
+              blurRadius: 4,
+            )
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CommonText(
+              text: title,
+              fontSize: 20,
+              color: AppColors.p_500,
+            ),
+            const Row(
               children: [
                 CommonText(
                   text: AppString.viewAll,
@@ -46,8 +46,8 @@ class CommonBar extends StatelessWidget {
                 Icon(Icons.keyboard_arrow_down_outlined)
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

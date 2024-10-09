@@ -4,7 +4,8 @@ class AppString {
   static const String checkInternet = "Check Internet";
   static const String back = "Back";
   static const String youSureWantToLogout = "Want to logout account !";
-  static const String logoutDetails = "Please confirm to logout button to logout your account.";
+  static const String logoutDetails =
+      "Please confirm to logout button to logout your account.";
   static const String no = "No";
   static const String yes = "Yes";
   static const String areYouSure = "Are you sure";
@@ -104,7 +105,7 @@ class AppString {
   static const String attachments = "Attachments";
   static const String taskName = "Task name";
   static const String inputYourOfferPrice = "Input your offer price";
-  static const String reasonForOfferPrice = "Reason for offer price";
+  static const String reasonForOfferPrice = "Reason for offer price (Optional)";
   static const String map = "Map";
   static const String myTask = "My task";
   static const String onboarding = "Onboarding";
@@ -147,7 +148,10 @@ class AppString {
   static const String report = "Report";
   static const String taskOverview = "Task overview";
   static const String exportData = "Export Data";
-  static const String switchDetails = "If you want to post a task, then you should switch your profile to “Poster”.";
-  static const String switchTaskerDetails = "If you want to make a task, then you should switch your profile to “Tasker”.";
-  static const String loginPopDetails = "To use the whole app, you have to create an account first.";
+  static const String switchDetails =
+      "If you want to post a task, then you should switch your profile to “Poster”.";
+  static const String switchTaskerDetails =
+      "If you want to make a task, then you should switch your profile to “Tasker”.";
+  static const String loginPopDetails =
+      "To use the whole app, you have to create an account first.";
 }

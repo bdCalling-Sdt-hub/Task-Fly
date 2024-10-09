@@ -43,8 +43,10 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Center(
                 child: CommonImage(
-              imageSrc: AppImages.noImage,
-              height: 70,
+              imageSrc: AppImages.logo,
+              height: 170,
+              width:  170,
+
               imageType: ImageType.png,
             )),
           ],
