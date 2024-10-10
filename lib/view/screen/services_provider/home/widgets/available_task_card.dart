@@ -78,7 +78,7 @@ class AvailableTaskCard extends StatelessWidget {
                       color: Colors.grey[600],
                     ),
                     CommonText(
-                      text: 'Wed, 6 Feb 2022',
+                      text: 'Wed, 6 Feb 2022, Dhaka',
                       fontSize: 14,
                       left: 4,
                       color: AppColors.black.withOpacity(0.7),
