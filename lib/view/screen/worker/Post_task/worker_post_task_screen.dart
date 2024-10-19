@@ -30,7 +30,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
     return Scaffold(
       appBar: AppBar(
         title: const CommonText(
-          text: AppString.postTask,
+          text: AppString.myTasks,
           fontSize: 24,
           fontWeight: FontWeight.w700,
         ),
@@ -50,7 +50,8 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                   GestureDetector(
                     onTap: () => Get.toNamed(AppRoutes.report),
                     child: const CommonText(
-                      text: AppString.viewAll,
+                      text: AppString.report,
+                      color: AppColors.clientColor,
                     ),
                   ),
                 ],

@@ -87,18 +87,20 @@ class AppString {
   static const String filter = "Filter";
   static const String sort = "Sort";
   static const String availableTasks = "Available Tasks";
-  static const String workplace = "Workplace";
+  static const String workplace = "Work place";
   static const String viewAll = "View All";
+  static const String report = "Report";
   static const String price = "Price";
   static const String category = "Category";
   static const String apply = "Apply";
   static const String dueDate = "Due Date";
   static const String postDate = "Post Date";
-  static const String sendYourOffer = "Send Your Offer";
+  static const String sendYourOffer = "Make Offer";
   static const String acceptTask = "Accept Task";
   static const String taskProvider = "Task provider";
   static const String location = "Location";
   static const String taskDetails = "Task details";
+  static const String taskTitle = "Task Title";
   static const String taskType = "Task Type";
   static const String date = "Date";
   static const String time = "Time";
@@ -108,6 +110,7 @@ class AppString {
   static const String reasonForOfferPrice = "Reason for offer price (Optional)";
   static const String map = "Map";
   static const String myTask = "My task";
+  static const String myTasks = "My tasks";
   static const String onboarding = "Onboarding";
   static const String ongoing = "Ongoing";
   static const String pending = "Pending";
@@ -145,9 +148,10 @@ class AppString {
   static const String accountNumber = "Account Number";
   static const String amount = "Amount";
   static const String overview = "Overview";
-  static const String report = "Report";
   static const String taskOverview = "Task overview";
-  static const String exportData = "Export Data";
+  static const String completedTasks = "Completed Tasks";
+  static const String incomeOverview = "Income Overview";
+  static const String exportData = "Generate Statement";
   static const String switchDetails =
       "If you want to post a task, then you should switch your profile to “Poster”.";
   static const String switchTaskerDetails =
@@ -170,11 +174,15 @@ class AppString {
   static const String next = "Next";
   static const String whereDoYouNeedItDone = "Where do you need it done?";
   static const String inPerson = "In-person";
-  static const String inPersonDetails = "Select this if you need the worker physically there.";
+  static const String inPersonDetails =
+      "Select this if you need the worker physically there.";
   static const String online = "Online";
-  static const String onlineDetails = "Select this if the worker can do it from home.";
+  static const String onlineDetails =
+      "Select this if the worker can do it from home.";
   static const String needCertainTimeDay = "I need certain time of day";
-  static const String whatTimeDoYouNeedTheWorker = "What time do you need the Worker?";
+  static const String whatTimeDoYouNeedTheWorker =
+      "What time do you need the Worker?";
   static const String whatIsYourBudget = "What is your budget?";
-  static const String priceDetails = "This is just an estimate. You can negotiate the final price later.";
+  static const String priceDetails =
+      "This is just an estimate. You can negotiate the final price later.";
 }

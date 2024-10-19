@@ -35,13 +35,19 @@ class SendOffer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GestureDetector(
-                    onTap: () => Get.back(), child: const Icon(Icons.clear))
-                .end,
-            const CommonText(
-              text: AppString.sendYourOffer,
-              fontSize: 24,
-            ).center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const SizedBox(),
+                const CommonText(
+                  text: AppString.sendYourOffer,
+                  fontSize: 24,
+                ),
+                GestureDetector(
+                    onTap: () => Get.back(), child: const Icon(Icons.clear)),
+              ],
+            ),
+            16.height,
             // const CommonText(
             //   text: AppString.taskName,
             //   bottom: 12,
@@ -124,7 +130,7 @@ class SendOffer extends StatelessWidget {
                   buttonHeight: 44,
                 )),
                 16.width,
-                              Expanded(
+                Expanded(
                     child: CommonButton(
                   titleText: AppString.sendYourOffer,
                   buttonColor: AppColors.primaryColor,

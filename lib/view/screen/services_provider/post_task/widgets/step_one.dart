@@ -13,63 +13,76 @@ class StepOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        const CommonText(
-          text: AppString.whatDoYouNeed,
-          bottom: 8,
-          top: 20,
-        ),
-        CommonTextField(
-          hintText: AppString.enterYourTaskName,
-          fillColor: AppColors.p_50,
-        ),
-        const CommonText(
-          text: AppString.whatDoYouNeed,
-          bottom: 8,
-          top: 12,
-        ),
-        CommonTextField(
-          hintText: AppString.giveDetailsAboutYourTask,
-          fillColor: AppColors.p_50,
-          maxLines: 5,
-        ),
-        const Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CommonText(
-              text: AppString.uploadImage,
-              bottom: 8,
-              top: 20,
-            ),
-            CommonText(
-              text: AppString.optional,
-              bottom: 8,
-              top: 20,
-            ),
-          ],
-        ),
-        Container(
-          decoration: BoxDecoration(
-              color: AppColors.p_50, borderRadius: BorderRadius.circular(8)),
-          padding: const EdgeInsets.all(8),
-          child: const Center(
-            child: Icon(
-              Icons.photo_library_outlined,
-              size: 55,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const CommonText(
+            text: AppString.taskTitle,
+            bottom: 8,
+            top: 20,
+          ),
+          CommonTextField(
+            hintText: AppString.taskTitle,
+            fillColor: AppColors.p_50,
+          ),
+          const CommonText(
+            text: AppString.whatDoYouNeed,
+            bottom: 8,
+            top: 20,
+          ),
+          CommonTextField(
+            hintText: AppString.enterYourTaskName,
+            fillColor: AppColors.p_50,
+            mexLength: 30,
+          ),
+          const CommonText(
+            text: AppString.taskDetails,
+            bottom: 8,
+            top: 12,
+          ),
+          CommonTextField(
+            hintText: AppString.giveDetailsAboutYourTask,
+            fillColor: AppColors.p_50,
+            maxLines: 5,
+            mexLength: 200,
+          ),
+          const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CommonText(
+                text: AppString.uploadImage,
+                bottom: 8,
+                top: 20,
+              ),
+              CommonText(
+                text: AppString.optional,
+                bottom: 8,
+                top: 20,
+              ),
+            ],
+          ),
+          Container(
+            decoration: BoxDecoration(
+                color: AppColors.p_50, borderRadius: BorderRadius.circular(8)),
+            padding: const EdgeInsets.all(8),
+            child: const Center(
+              child: Icon(
+                Icons.photo_library_outlined,
+                size: 55,
+              ),
             ),
           ),
-        ),
-        const Spacer(),
-        CommonButton(
-          titleText: AppString.next,
-          onTap: () => PostTaskController.instance.changeStep(1),
-        ),
-        30.height
-      ],
+          20.height,
+          CommonButton(
+            titleText: AppString.next,
+            onTap: () => PostTaskController.instance.changeStep(1),
+          ),
+          30.height
+        ],
+      ),
     );
   }
 }

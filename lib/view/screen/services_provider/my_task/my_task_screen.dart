@@ -35,7 +35,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
     return Scaffold(
       appBar: AppBar(
         title: const CommonText(
-          text: AppString.myTask,
+          text: AppString.myTasks,
           fontSize: 24,
           fontWeight: FontWeight.w700,
         ),

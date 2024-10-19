@@ -16,11 +16,6 @@ class ProviderInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CommonText(
-          text: AppString.taskProvider,
-          color: AppColors.textIcon_500,
-          fontSize: 18,
-        ).start,
         10.height,
         Row(
           children: [
@@ -36,25 +31,8 @@ class ProviderInfo extends StatelessWidget {
               ),
             ),
             8.width,
-            const Column(
-              children: [
-                CommonText(
-                  text: "Mostain Billah",
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.location_on,
-                      size: 12,
-                    ),
-                    CommonText(
-                      text: "Road 5, Banasree.",
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ],
-                ),
-              ],
+            const CommonText(
+              text: "Most ain Billah",
             ),
             20.width,
             const Spacer(),

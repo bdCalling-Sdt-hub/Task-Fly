@@ -20,7 +20,7 @@ class TaskOverviewChart extends StatelessWidget {
       child: Column(
         children: [
           const CommonText(
-            text: AppString.taskOverview,
+            text: AppString.completedTasks,
             fontSize: 20,
             top: 30,
           ).start,

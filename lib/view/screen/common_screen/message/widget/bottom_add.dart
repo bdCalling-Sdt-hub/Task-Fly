@@ -43,7 +43,7 @@ class _FilterState extends State<Filter> {
               const CommonButton(
                 titleText: AppString.adjust,
                 onTap: sendOfferPanel,
-                buttonColor: AppColors.p_500,
+                buttonColor: AppColors.textIcon_500,
                 titleColor: AppColors.white,
                 borderColor: AppColors.transparent,
               ),
@@ -51,7 +51,7 @@ class _FilterState extends State<Filter> {
               CommonButton(
                 titleText: AppString.requestForPayment,
                 onTap: () => Get.back(),
-                buttonColor: AppColors.textIcon_500,
+                buttonColor: AppColors.p_500,
                 titleColor: AppColors.white,
                 borderColor: AppColors.transparent,
               )

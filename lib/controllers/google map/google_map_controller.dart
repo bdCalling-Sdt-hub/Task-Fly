@@ -64,8 +64,8 @@ class ShowGoogleMapController extends GetxController {
         ImageConfiguration(
             devicePixelRatio: MediaQuery.of(Get.context!).devicePixelRatio),
         icon,
-        height: 40,
-        width: 40);
+        height: 60,
+        width: 50);
   }
 
 /*  Future<void> fetchNearbyPlaces() async {

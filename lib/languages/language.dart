@@ -39,6 +39,7 @@ class LocalConstants extends Translations {
           "Resend code in": "Resend code in",
           "Minute": "Minute",
           "Verify": "Verify",
+          "Completed Tasks": "Completed Tasks",
           "Login to Your Account": "Login to Your Account",
           "Forgot the password": "Forgot the password",
           "Sign in": "Sign in",

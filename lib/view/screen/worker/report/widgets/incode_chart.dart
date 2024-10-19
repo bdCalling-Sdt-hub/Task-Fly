@@ -2,6 +2,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
+import 'package:task_fly/utils/app_string.dart';
+import 'package:task_fly/view/component/text/common_text.dart';
 
 class IncomeChartPage extends StatelessWidget {
   const IncomeChartPage({super.key});
@@ -12,10 +14,11 @@ class IncomeChartPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         20.height,
-        const Text(
-          'Income',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        ).start,
+        const CommonText(
+                text: AppString.incomeOverview,
+                fontSize: 18,
+                fontWeight: FontWeight.bold)
+            .start,
         12.height,
         Container(
           padding: const EdgeInsets.all(16),
