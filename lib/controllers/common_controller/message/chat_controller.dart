@@ -123,7 +123,7 @@ class ChatController extends GetxController {
   @override
   void onInit() {
     getChatRepo();
-    getActiveUser();
+    // getActiveUser();
     super.onInit();
   }
 }

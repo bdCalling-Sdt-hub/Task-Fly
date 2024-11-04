@@ -19,6 +19,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: GetBuilder<ProfileController>(
         builder: (controller) {
           return Stack(
