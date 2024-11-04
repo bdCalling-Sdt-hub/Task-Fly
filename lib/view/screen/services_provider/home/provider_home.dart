@@ -6,6 +6,7 @@ import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_icons.dart';
+import 'package:task_fly/utils/app_images.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/button_with_icon.dart';
 import 'package:task_fly/view/component/image/common_image.dart';
@@ -23,7 +24,19 @@ class ServiceProviderHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 12),
+          child: CommonImage(
+            imageSrc: AppImages.tLogo,
+            imageType: ImageType.png,
+            height: 70,
+            width: 48,
+          ),
+        ),
+        centerTitle: false,
         actions: [
           IconButton(
               onPressed: () => print("vdfasf"),
@@ -116,7 +129,7 @@ class ServiceProviderHome extends StatelessWidget {
                 ],
               ),
               Positioned(
-                bottom: 0,
+                bottom: 80,
                 right: (MediaQuery.of(context).size.width / 2) - 60.w,
                 child: GestureDetector(
                   onTap: () => Get.toNamed(AppRoutes.location),

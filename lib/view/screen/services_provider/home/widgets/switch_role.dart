@@ -33,13 +33,13 @@ switchPosterRole() {
               bottom: 24,
             ),
             GestureDetector(
-               onTap: PrefsHelper.changeRole,
+              onTap: () => PrefsHelper.changeRole(),
               child: Container(
                 decoration: BoxDecoration(
                     color: AppColors.primaryColor,
                     borderRadius: BorderRadius.circular(12)),
                 padding: const EdgeInsets.symmetric(vertical: 8),
-                child: const Row(
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

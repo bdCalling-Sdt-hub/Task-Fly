@@ -28,7 +28,9 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const CommonText(
           text: AppString.myTasks,
           fontSize: 24,
@@ -63,123 +65,130 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     var item = controller.overviewList[index];
-                    return OverviewItem(
-                      item: item,
+                    return GestureDetector(
+                      onTap: () {
+                        controller.tabController.index = index;
+                        print(controller.tabController.index);
+                        setState(() {});
+                      },
+                      child: OverviewItem(
+                        item: item,
+                      ),
                     );
                   },
                 ),
               ),
-              TabBar(
-                controller: controller.tabController,
-                indicatorColor: AppColors.transparent,
-                dividerColor: AppColors.transparent,
-                isScrollable: true,
-                tabAlignment: TabAlignment.start,
-                padding: EdgeInsets.zero,
-                labelPadding: const EdgeInsets.only(left: 16),
-                onTap: (value) {
-                  print(controller.tabController.index);
-                  setState(() {});
-                },
-                tabs: [
-                  Tab(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: controller.tabController.index == 0
-                            ? AppColors.clientColor
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: controller.tabController.index == 0
-                              ? Colors.transparent
-                              : AppColors.clientColor,
-                        ),
-                      ),
-                      child: Center(
-                        child: CommonText(
-                          text: AppString.ongoing,
-                          color: controller.tabController.index == 0
-                              ? Colors.white
-                              : AppColors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: controller.tabController.index == 1
-                            ? AppColors.clientColor
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: controller.tabController.index == 1
-                              ? Colors.transparent
-                              : AppColors.clientColor,
-                        ),
-                      ),
-                      child: Center(
-                        child: CommonText(
-                          text: AppString.pending,
-                          color: controller.tabController.index == 1
-                              ? Colors.white
-                              : AppColors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: controller.tabController.index == 2
-                            ? AppColors.clientColor
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: controller.tabController.index == 2
-                              ? Colors.transparent
-                              : AppColors.clientColor,
-                        ),
-                      ),
-                      child: Center(
-                        child: CommonText(
-                          text: AppString.completed,
-                          color: controller.tabController.index == 2
-                              ? Colors.white
-                              : AppColors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: controller.tabController.index == 3
-                            ? AppColors.clientColor
-                            : Colors.transparent,
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: controller.tabController.index == 3
-                              ? Colors.transparent
-                              : AppColors.clientColor,
-                        ),
-                      ),
-                      child: Center(
-                        child: CommonText(
-                          text: AppString.canceled,
-                          color: controller.tabController.index == 3
-                              ? Colors.white
-                              : AppColors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // TabBar(
+              //   controller: controller.tabController,
+              //   indicatorColor: AppColors.transparent,
+              //   dividerColor: AppColors.transparent,
+              //   isScrollable: true,
+              //   tabAlignment: TabAlignment.start,
+              //   padding: EdgeInsets.zero,
+              //   labelPadding: const EdgeInsets.only(left: 16),
+              //   onTap: (value) {
+              //     print(controller.tabController.index);
+              //     setState(() {});
+              //   },
+              //   tabs: [
+              //     Tab(
+              //       child: Container(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16),
+              //         decoration: BoxDecoration(
+              //           color: controller.tabController.index == 0
+              //               ? AppColors.clientColor
+              //               : Colors.transparent,
+              //           borderRadius: BorderRadius.circular(8.0),
+              //           border: Border.all(
+              //             color: controller.tabController.index == 0
+              //                 ? Colors.transparent
+              //                 : AppColors.clientColor,
+              //           ),
+              //         ),
+              //         child: Center(
+              //           child: CommonText(
+              //             text: AppString.ongoing,
+              //             color: controller.tabController.index == 0
+              //                 ? Colors.white
+              //                 : AppColors.black,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     Tab(
+              //       child: Container(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16),
+              //         decoration: BoxDecoration(
+              //           color: controller.tabController.index == 1
+              //               ? AppColors.clientColor
+              //               : Colors.transparent,
+              //           borderRadius: BorderRadius.circular(8.0),
+              //           border: Border.all(
+              //             color: controller.tabController.index == 1
+              //                 ? Colors.transparent
+              //                 : AppColors.clientColor,
+              //           ),
+              //         ),
+              //         child: Center(
+              //           child: CommonText(
+              //             text: AppString.pending,
+              //             color: controller.tabController.index == 1
+              //                 ? Colors.white
+              //                 : AppColors.black,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     Tab(
+              //       child: Container(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16),
+              //         decoration: BoxDecoration(
+              //           color: controller.tabController.index == 2
+              //               ? AppColors.clientColor
+              //               : Colors.transparent,
+              //           borderRadius: BorderRadius.circular(8.0),
+              //           border: Border.all(
+              //             color: controller.tabController.index == 2
+              //                 ? Colors.transparent
+              //                 : AppColors.clientColor,
+              //           ),
+              //         ),
+              //         child: Center(
+              //           child: CommonText(
+              //             text: AppString.completed,
+              //             color: controller.tabController.index == 2
+              //                 ? Colors.white
+              //                 : AppColors.black,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     Tab(
+              //       child: Container(
+              //         padding: const EdgeInsets.symmetric(horizontal: 16),
+              //         decoration: BoxDecoration(
+              //           color: controller.tabController.index == 3
+              //               ? AppColors.clientColor
+              //               : Colors.transparent,
+              //           borderRadius: BorderRadius.circular(8.0),
+              //           border: Border.all(
+              //             color: controller.tabController.index == 3
+              //                 ? Colors.transparent
+              //                 : AppColors.clientColor,
+              //           ),
+              //         ),
+              //         child: Center(
+              //           child: CommonText(
+              //             text: AppString.canceled,
+              //             color: controller.tabController.index == 3
+              //                 ? Colors.white
+              //                 : AppColors.black,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Expanded(
                 child: TabBarView(
                   controller: controller.tabController,

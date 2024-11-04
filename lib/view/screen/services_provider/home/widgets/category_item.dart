@@ -33,6 +33,9 @@ class _WorkPlaceItemState extends State<CategoryItem> {
               side: const BorderSide(color: AppColors.p_500)),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             CommonImage(
               imageSrc: widget.item["icon"],
@@ -40,6 +43,7 @@ class _WorkPlaceItemState extends State<CategoryItem> {
               imageColor:
                   widget.item["isSelected"] ? AppColors.white : AppColors.p_500,
             ),
+            4.width,
             Flexible(
               child: CommonText(
                 text: widget.item["name"],
@@ -49,7 +53,7 @@ class _WorkPlaceItemState extends State<CategoryItem> {
                 textAlign: TextAlign.center,
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-              ).center,
+              ),
             ),
           ],
         ),

@@ -33,7 +33,10 @@ class _MyTaskScreenState extends State<MyTaskScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const CommonText(
           text: AppString.myTasks,
           fontSize: 24,

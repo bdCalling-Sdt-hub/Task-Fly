@@ -25,7 +25,7 @@ class TaskDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: GetBuilder<TaskDetailsController>(
-        builder: (controller) => SingleChildScrollView(
+        builder: (controller) => Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
@@ -79,11 +79,19 @@ class TaskDetailsScreen extends StatelessWidget {
                 titleSize: 24,
                 buttonColor: AppColors.transparent,
               ),
-              16.height,
-              const ProviderInfo(),
-              16.height,
-              const AllFiled(),
-              30.height
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      16.height,
+                      const ProviderInfo(),
+                      16.height,
+                      const AllFiled(),
+                      30.height,
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

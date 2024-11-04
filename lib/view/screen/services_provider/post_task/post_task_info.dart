@@ -31,6 +31,8 @@ class _PostTaskInfoState extends State<PostTaskInfo>
   Widget build(BuildContext context) {
     return GetBuilder<PostTaskController>(
       builder: (controller) => Scaffold(
+        extendBody: true,
+
         appBar: AppBar(
           title: CommonText(
             text: controller.appbarTitle,

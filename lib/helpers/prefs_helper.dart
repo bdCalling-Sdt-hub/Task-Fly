@@ -60,7 +60,7 @@ class PrefsHelper extends GetxController {
       await setString("myRole", myRole);
     }
 
-    Get.toNamed(AppRoutes.serviceProviderHome);
+    Get.offAllNamed(AppRoutes.serviceProviderHome);
   }
 
   ///<<<======================== Get All Data Form Shared Preference ============>

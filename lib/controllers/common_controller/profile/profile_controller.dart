@@ -11,19 +11,25 @@ class ProfileController extends GetxController {
   String selectedLanguage = "English";
   String? image;
 
-  TextEditingController nameController = TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
-  TextEditingController emailController = TextEditingController(text: kDebugMode ? "jameson@gmail.com" : "");
-  TextEditingController numberController = TextEditingController(text: kDebugMode ? "+1-9911544854" : "");
-  TextEditingController addressController = TextEditingController(text: kDebugMode ? "Featherstone street" : "");
-  TextEditingController dateOfBirthController = TextEditingController(text: kDebugMode ? "25/08/1999" : "");
+  TextEditingController nameController =
+      TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
+  TextEditingController emailController =
+      TextEditingController(text: kDebugMode ? "jameson@gmail.com" : "");
+  TextEditingController numberController =
+      TextEditingController(text: kDebugMode ? "+1-9911544854" : "");
+  TextEditingController addressController =
+      TextEditingController(text: kDebugMode ? "Featherstone street" : "");
+  TextEditingController dateOfBirthController =
+      TextEditingController(text: kDebugMode ? "08/25/1999" : "");
 
+  TextEditingController ageController =
+      TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
+  TextEditingController genderController =
+      TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
+  TextEditingController descriptionController =
+      TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
 
-  TextEditingController ageController = TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
-  TextEditingController genderController = TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
-  TextEditingController descriptionController = TextEditingController(text: kDebugMode ? "Jamesson noah" : "");
-
-
-  static ProfileController get instance => Get.put(ProfileController()) ;
+  static ProfileController get instance => Get.put(ProfileController());
 
   selectedGender(int index) {
     genderController.text = gender[index].toString();

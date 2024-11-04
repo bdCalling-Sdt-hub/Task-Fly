@@ -108,16 +108,6 @@ class PersonalInfoScreen extends StatelessWidget {
                                 disableIcon: true,
                               ),
                               const CommonText(
-                                text: AppString.dateOfBirth,
-                                fontSize: 20,
-                                top: 6,
-                                left: 24,
-                              ).start,
-                              Item(
-                                title: controller.dateOfBirthController.text,
-                                disableIcon: true,
-                              ),
-                              const CommonText(
                                 text: AppString.contactNumber,
                                 fontSize: 20,
                                 top: 6,

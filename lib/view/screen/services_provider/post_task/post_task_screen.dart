@@ -15,6 +15,7 @@ class PostTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         title: const CommonText(
           text: AppString.postTask,

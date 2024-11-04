@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/extension/my_extension.dart';
@@ -33,73 +34,92 @@ class _FilterState extends State<Filter> {
       builder: (controller) => Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
-          child: Column(
+          child: Stack(
+            clipBehavior: Clip.none,
             children: [
-              Container(
-                margin: const EdgeInsets.only(bottom: 6),
-                width: double.infinity,
-                child: const CommonText(
-                  text: " 120 € ",
-                  fontSize: 52,
-                ),
-              ),
-              const CommonButton(
-                titleText: "Clean my car",
-                titleSize: 24,
-                buttonColor: AppColors.transparent,
-              ),
-              24.height,
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Positioned(
+                  top: -40,
+                  left: (Get.width - 96) / 2,
+                  child: Container(
+                    height: 56,
+                    width: 56,
+                    decoration: const BoxDecoration(
+                        color: AppColors.clientColor, shape: BoxShape.circle),
+                    child: const Icon(
+                      CupertinoIcons.doc_plaintext,
+                      size: 36,
+                      color: AppColors.white,
+                    ),
+                  )),
+              Column(
                 children: [
-                  CommonText(
-                    text: "Location",
-                    fontWeight: FontWeight.w600,
-                  ),
-                  CommonText(
-                    text: ": Road:05, USA",
-                    fontWeight: FontWeight.w600,
-                  )
-                ],
-              ),
-              12.height,
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CommonText(
-                    text: "Due",
-                    fontWeight: FontWeight.w600,
-                  ),
-                  CommonText(
-                    text: ": 22/12/2024",
-                    fontWeight: FontWeight.w600,
-                  )
-                ],
-              ),
-              24.height,
-              Row(
-                children: [
-                  const Expanded(
-                    child: CommonButton(
-                      onTap: sendOfferPanel,
-                      titleText: AppString.sendYourOffer,
-                      buttonColor: AppColors.textIcon_500,
-                      titleColor: AppColors.white,
-                      borderColor: AppColors.transparent,
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 6),
+                    width: double.infinity,
+                    child: const CommonText(
+                      text: " 120 € ",
+                      fontSize: 52,
                     ),
                   ),
-                  16.width,
-                  const Expanded(
-                    child: CommonButton(
-                      titleText: AppString.acceptTask,
-                      buttonColor: AppColors.p_500,
-                      titleColor: AppColors.white,
-                      borderColor: AppColors.transparent,
-                    ),
+                  const CommonButton(
+                    titleText: "Clean my car",
+                    titleSize: 24,
+                    buttonColor: AppColors.transparent,
                   ),
+                  24.height,
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CommonText(
+                        text: "Location",
+                        fontWeight: FontWeight.w600,
+                      ),
+                      CommonText(
+                        text: ": Road:05, USA",
+                        fontWeight: FontWeight.w600,
+                      )
+                    ],
+                  ),
+                  12.height,
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CommonText(
+                        text: "Due",
+                        fontWeight: FontWeight.w600,
+                      ),
+                      CommonText(
+                        text: ": 22/12/2024",
+                        fontWeight: FontWeight.w600,
+                      )
+                    ],
+                  ),
+                  24.height,
+                  Row(
+                    children: [
+                      const Expanded(
+                        child: CommonButton(
+                          onTap: sendOfferPanel,
+                          titleText: AppString.sendYourOffer,
+                          buttonColor: AppColors.textIcon_500,
+                          titleColor: AppColors.white,
+                          borderColor: AppColors.transparent,
+                        ),
+                      ),
+                      16.width,
+                      const Expanded(
+                        child: CommonButton(
+                          titleText: AppString.acceptTask,
+                          buttonColor: AppColors.p_500,
+                          titleColor: AppColors.white,
+                          borderColor: AppColors.transparent,
+                        ),
+                      ),
+                    ],
+                  ),
+                  30.height,
                 ],
               ),
-              30.height,
             ],
           ),
         ),

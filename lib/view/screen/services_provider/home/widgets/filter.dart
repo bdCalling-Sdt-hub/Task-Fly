@@ -113,7 +113,7 @@ class _FilterState extends State<Filter> {
               20.height,
               if (controller.showCategory)
                 GridView.builder(
-                    itemCount: controller.category.length,
+                    itemCount: controller.category.length - 1,
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     gridDelegate:
@@ -127,6 +127,14 @@ class _FilterState extends State<Filter> {
                         item: controller.category[index],
                       );
                     }),
+              Container(
+                width: Get.width / 3,
+                height: 42,
+                margin: EdgeInsets.only(top: 12),
+                child: CategoryItem(
+                  item: controller.category[9],
+                ),
+              ),
               if (controller.showCategory) 20.height,
               CommonButton(
                 titleText: AppString.apply,

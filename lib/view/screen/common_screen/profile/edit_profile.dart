@@ -80,19 +80,6 @@ class EditProfile extends StatelessWidget {
                                   ),
                                 ),
                                 const CommonText(
-                                  text: AppString.dateOfBirth,
-                                  fontSize: 20,
-                                  top: 16,
-                                  bottom: 8,
-                                ).start,
-                                textFieldDecoration(
-                                  CommonTextField(
-                                    controller:
-                                        controller.dateOfBirthController,
-                                    hintText: AppString.dateOfBirth,
-                                  ),
-                                ),
-                                const CommonText(
                                   text: AppString.contactNumber,
                                   fontSize: 20,
                                   top: 16,
