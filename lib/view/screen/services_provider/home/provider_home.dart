@@ -36,7 +36,7 @@ class ServiceProviderHome extends StatelessWidget {
             width: 48,
           ),
         ),
-        centerTitle: false,
+        centerTitle: true,
         actions: [
           IconButton(
               onPressed: () => print("vdfasf"),
@@ -56,6 +56,8 @@ class ServiceProviderHome extends StatelessWidget {
             children: [
               Column(
                 children: [
+
+                  15.height,
                   Row(
                     children: [
                       Expanded(

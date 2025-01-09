@@ -45,6 +45,8 @@ class _MyTaskScreenState extends State<MyTaskScreen>
       ),
       body: GetBuilder<MyTaskController>(
           builder: (controller) => Column(children: [
+
+
                 TabBar(
                   controller: controller.tabController,
                   indicatorColor: AppColors.transparent,

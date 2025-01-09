@@ -24,6 +24,7 @@ class StepOne extends StatelessWidget {
             top: 20,
           ),
           CommonTextField(
+            mexLength: 30,
             hintText: AppString.taskTitle,
             fillColor: AppColors.p_50,
           ),

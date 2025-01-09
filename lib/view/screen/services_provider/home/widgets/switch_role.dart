@@ -39,7 +39,7 @@ switchPosterRole() {
                     color: AppColors.primaryColor,
                     borderRadius: BorderRadius.circular(12)),
                 padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Row(
+                child:const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

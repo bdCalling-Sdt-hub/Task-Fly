@@ -50,6 +50,7 @@ class AppString {
       "Make sure that you already have an account.";
   static const String forgotThePassword = "Forgot the password";
   static const String signIn = "Sign in";
+  static const String logIn = "Log In";
   static const String doNotHaveAccount = "Don’t have an account? ";
   static const String signUp = "Sign up";
   static const String alreadyHaveAccount = "Already have an account? ";
@@ -183,6 +184,7 @@ class AppString {
   static const String whatTimeDoYouNeedTheWorker =
       "What time do you need the Worker?";
   static const String whatIsYourBudget = "What is your budget?";
+  static const String youAreOnTheWrongProfile = "You are on the wrong profile, therefore switch to tasker";
   static const String priceDetails =
       "This is just an estimate. You can negotiate the final price later.";
 }

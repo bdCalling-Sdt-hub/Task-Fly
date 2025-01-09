@@ -42,7 +42,10 @@ class _FilterState extends State<Filter> {
             children: [
               GestureDetector(
                       onTap: () => Get.back(),
-                      child: const Icon(CupertinoIcons.clear))
+                      child:  Icon(
+                        color: AppColors.p_500,
+
+                          CupertinoIcons.clear))
                   .end,
               const CommonText(
                 text: AppString.filter,
@@ -137,6 +140,7 @@ class _FilterState extends State<Filter> {
               ),
               if (controller.showCategory) 20.height,
               CommonButton(
+                titleColor: AppColors.p_500,
                 titleText: AppString.apply,
                 onTap: () => Get.back(),
               )

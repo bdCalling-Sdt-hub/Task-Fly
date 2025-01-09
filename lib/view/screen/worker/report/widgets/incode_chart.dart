@@ -84,10 +84,7 @@ class IncomeChartPage extends StatelessWidget {
                             return const Text('Th', style: style);
                           case 4:
                             return const Text('Fr', style: style);
-                          case 5:
-                            return const Text('Sa', style: style);
-                          case 6:
-                            return const Text('Su', style: style);
+
                           default:
                             return const Text('');
                         }
@@ -122,30 +119,9 @@ class IncomeChartPage extends StatelessWidget {
                       ),
                     ],
                   ),
+
                   BarChartGroupData(
                     x: 1,
-                    barRods: [
-                      BarChartRodData(
-                        toY: 6,
-                        color: Colors.lightBlue,
-                        width: 16,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ],
-                  ),
-                  BarChartGroupData(
-                    x: 2,
-                    barRods: [
-                      BarChartRodData(
-                        toY: 8,
-                        color: Colors.blue,
-                        width: 16,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ],
-                  ),
-                  BarChartGroupData(
-                    x: 3,
                     barRods: [
                       BarChartRodData(
                         toY: 10,
@@ -156,7 +132,7 @@ class IncomeChartPage extends StatelessWidget {
                     ],
                   ),
                   BarChartGroupData(
-                    x: 4,
+                    x: 2,
                     barRods: [
                       BarChartRodData(
                         toY: 7,
@@ -167,7 +143,7 @@ class IncomeChartPage extends StatelessWidget {
                     ],
                   ),
                   BarChartGroupData(
-                    x: 5,
+                    x: 3,
                     barRods: [
                       BarChartRodData(
                         toY: 5,
@@ -178,7 +154,7 @@ class IncomeChartPage extends StatelessWidget {
                     ],
                   ),
                   BarChartGroupData(
-                    x: 6,
+                    x: 4,
                     barRods: [
                       BarChartRodData(
                         toY: 6,

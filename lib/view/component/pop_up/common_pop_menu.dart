@@ -267,7 +267,7 @@ loginPopUp() {
               bottom: 24,
             ),
             CommonButton(
-              titleText: AppString.signIn,
+              titleText: AppString.logIn,
               onTap: () => Get.toNamed(AppRoutes.signIn),
             ),
             16.height,

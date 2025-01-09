@@ -10,6 +10,7 @@ import 'package:task_fly/view/screen/services_provider/task_details/widgets/all_
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/provider%20info.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_offer.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_review.dart';
+import 'package:task_fly/view/screen/services_provider/task_details/widgets/switch_profile_popup.dart';
 
 import '../../../../controllers/provider/task_details_controller.dart';
 
@@ -41,17 +42,17 @@ class TaskDetailsScreen extends StatelessWidget {
               if (type == "sendOffer")
                 Row(
                   children: [
-                    if (PrefsHelper.myRole == 'tasker')
-                      const Expanded(
+
+                       Expanded(
                         child: CommonButton(
-                          onTap: sendOfferPanel,
+                          onTap:PrefsHelper.myRole == 'tasker'? sendOfferPanel:()=>SwitchProfilePopUp.switchProfileDialog(),
                           titleText: AppString.sendYourOffer,
                           buttonColor: AppColors.textIcon_500,
                           titleColor: AppColors.white,
                           borderColor: AppColors.transparent,
                         ),
                       ),
-                    if (PrefsHelper.myRole == 'tasker') 16.width,
+                15.width,
                     Expanded(
                       child: CommonButton(
                         onTap: controller.acceptTaskOnTap,

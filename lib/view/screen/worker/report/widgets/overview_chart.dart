@@ -54,18 +54,14 @@ class TaskOverviewChart extends StatelessWidget {
                       getTitlesWidget: (value, meta) {
                         switch (value.toInt()) {
                           case 0:
-                            return const Text('SAT');
-                          case 1:
-                            return const Text('SUN');
-                          case 2:
                             return const Text('MON');
-                          case 3:
+                          case 1:
                             return const Text('TUE');
-                          case 4:
+                          case 2:
                             return const Text('WED');
-                          case 5:
+                          case 3:
                             return const Text('THU');
-                          case 6:
+                          case 4:
                             return const Text('FRI');
                           default:
                             return const Text('');
@@ -87,9 +83,9 @@ class TaskOverviewChart extends StatelessWidget {
                   border: Border.all(color: Colors.transparent, width: 1),
                 ),
                 minX: 0,
-                maxX: 6,
+                maxX: 4,
                 minY: 0,
-                maxY: 4,
+                maxY: 5,
                 lineBarsData: [
                   LineChartBarData(
                     spots: [
@@ -98,8 +94,7 @@ class TaskOverviewChart extends StatelessWidget {
                       const FlSpot(2, 3.5),
                       const FlSpot(3, 2.8),
                       const FlSpot(4, 3.5),
-                      const FlSpot(5, 2),
-                      const FlSpot(6, 3),
+
                     ],
                     isCurved: true,
                     color: Colors.blue,
