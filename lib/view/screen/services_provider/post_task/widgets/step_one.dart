@@ -16,21 +16,21 @@ class StepOne extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const CommonText(
-            text: AppString.taskTitle,
-            bottom: 8,
-            top: 20,
-          ),
-          CommonTextField(
-            hintText: AppString.taskTitle,
-            fillColor: AppColors.p_50,
-          ),
-          const CommonText(
-            text: AppString.whatDoYouNeed,
-            bottom: 8,
-            top: 20,
+          20.height,
+          const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CommonText(
+                text: AppString.whatDoYouNeed,
+                bottom: 8,
+              ),
+              CommonText(
+                text: AppString.taskTitle,
+                bottom: 8,
+              ),
+            ],
           ),
           CommonTextField(
             hintText: AppString.enterYourTaskName,

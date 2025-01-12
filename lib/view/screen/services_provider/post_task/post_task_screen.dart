@@ -20,6 +20,7 @@ class PostTaskScreen extends StatelessWidget {
         title: const CommonText(
           text: AppString.postTask,
           fontSize: 24,
+          color: AppColors.clientColor,
           fontWeight: FontWeight.bold,
         ),
       ),

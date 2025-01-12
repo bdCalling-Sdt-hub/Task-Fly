@@ -42,8 +42,12 @@ class CommonBar extends StatelessWidget {
                   text: AppString.viewAll,
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
+                  color: AppColors.clientColor,
                 ),
-                Icon(Icons.keyboard_arrow_down_outlined)
+                Icon(
+                  Icons.keyboard_arrow_down_outlined,
+                  color: AppColors.clientColor,
+                )
               ],
             ),
           ],

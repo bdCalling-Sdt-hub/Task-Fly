@@ -115,9 +115,7 @@ class _PostTaskInfoState extends State<PostTaskInfo>
                 child: TabBarView(
                   controller: controller.tabController,
                   children: const [
-                    Center(
-                      child: StepOne(),
-                    ),
+                    StepOne(),
                     Center(
                       child: StepTwo(),
                     ),

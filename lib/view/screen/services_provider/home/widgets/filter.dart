@@ -130,7 +130,7 @@ class _FilterState extends State<Filter> {
               Container(
                 width: Get.width / 3,
                 height: 42,
-                margin: EdgeInsets.only(top: 12),
+                margin: const EdgeInsets.only(top: 12),
                 child: CategoryItem(
                   item: controller.category[9],
                 ),
