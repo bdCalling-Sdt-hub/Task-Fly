@@ -42,15 +42,14 @@ class _FilterState extends State<Filter> {
             children: [
               GestureDetector(
                       onTap: () => Get.back(),
-                      child:  Icon(
-                        color: AppColors.p_500,
-
-                          CupertinoIcons.clear))
+                      child: const Icon(
+                          color: AppColors.p_500, CupertinoIcons.clear))
                   .end,
               const CommonText(
                 text: AppString.filter,
                 fontSize: 20,
                 color: AppColors.p_500,
+                fontWeight: FontWeight.bold,
                 bottom: 16,
               ),
               CommonBar(

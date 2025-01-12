@@ -34,7 +34,7 @@ class ProviderHomeController extends GetxController {
   }
 
   postTaskOnTap() {
-
+    if (PrefsHelper.isLogIn) {
       if (kDebugMode) {
         print("kjfdsjf");
       }
@@ -43,7 +43,9 @@ class ProviderHomeController extends GetxController {
       } else {
         switchPosterRole();
       }
-
+    } else {
+      loginPopUp();
+    }
   }
 
   showSortPriceOnTap() {

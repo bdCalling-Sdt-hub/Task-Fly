@@ -45,8 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: CommonImage(
               imageSrc: AppImages.tLogo,
               height: 220,
-              width:  220,
-
+              width: 150,
               imageType: ImageType.png,
             )),
           ],
