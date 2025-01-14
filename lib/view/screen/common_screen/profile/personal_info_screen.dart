@@ -7,7 +7,6 @@ import 'package:task_fly/view/screen/common_screen/profile/widget/profile_image.
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
-import '../../../component/back.dart';
 import '../../../component/other_widgets/item.dart';
 import '../../../component/text/common_text.dart';
 

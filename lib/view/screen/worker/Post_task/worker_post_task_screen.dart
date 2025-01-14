@@ -203,7 +203,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                               onTap: () => Get.toNamed(AppRoutes.taskDetails,
                                   parameters: {"type": "ongoing"}),
                               child: const TaskCard(
-                                colors: Color(0xFF9CA6F2),
+                                colors: Color(0xFF023e8a),
                               ));
                         },
                       ),
@@ -230,7 +230,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                               onTap: () => Get.toNamed(AppRoutes.taskDetails,
                                   parameters: {"type": "completed"}),
                               child: const TaskCard(
-                                colors: Color(0xFFB0EDC6),
+                                colors: Color(0xFF3e8a02),
                               ));
                         },
                       ),
@@ -244,7 +244,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                                     AppRoutes.taskDetails,
                                   ),
                               child: const TaskCard(
-                                colors: Color(0xFFEE9393),
+                                colors: Color(0xFF8a0a02),
                               ));
                         },
                       ),

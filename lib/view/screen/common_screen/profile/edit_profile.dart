@@ -8,7 +8,6 @@ import '../../../../controllers/common_controller/profile/profile_controller.dar
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
-import '../../../component/back.dart';
 import '../../../component/button/common_button.dart';
 import '../../../component/text/common_text.dart';
 

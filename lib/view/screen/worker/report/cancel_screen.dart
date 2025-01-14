@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/controllers/worker/report_controller.dart';
 import 'package:task_fly/utils/app_string.dart';
+import 'package:task_fly/view/component/back.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
 import '../../../../core/app_routes.dart';
@@ -14,6 +15,7 @@ class CancelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.cancel,
           fontSize: 24,
@@ -28,7 +30,7 @@ class CancelScreen extends StatelessWidget {
             return GestureDetector(
                 onTap: () => Get.toNamed(AppRoutes.taskDetails),
                 child: const TaskCard(
-                  colors: Color(0xFFEE9393),
+                  colors: Color(0xFF8a0a02),
                 ));
           },
         ),
