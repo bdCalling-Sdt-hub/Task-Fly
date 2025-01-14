@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../../controllers/common_controller/setting/terms_of_services_controller.dart';
 import '../../../../models/api_response_model.dart';
 import '../../../../utils/app_string.dart';
+import '../../../component/back.dart';
 import '../../../component/other_widgets/common_loader.dart';
 import '../../../component/screen/error_screen.dart';
 import '../../../component/text/common_text.dart';
@@ -16,6 +17,7 @@ class TermsOfServicesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: backButton(),
           centerTitle: true,
           title: const CommonText(
             text: AppString.termsOfServices,

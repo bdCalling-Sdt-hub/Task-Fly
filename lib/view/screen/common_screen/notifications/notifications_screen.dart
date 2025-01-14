@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/utils/app_string.dart';
+import 'package:task_fly/view/component/back.dart';
 import 'package:task_fly/view/screen/common_screen/notifications/widget/empty_notification.dart';
 import '../../../../controllers/common_controller/notifications/notifications_controller.dart';
 import '../../../../models/api_response_model.dart';
@@ -20,6 +21,7 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         centerTitle: true,
         title: CommonText(
           text: AppString.notifications,
@@ -50,8 +52,8 @@ class NotificationScreen extends StatelessWidget {
           };
         },
       ),
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 9,
-
+      bottomNavigationBar: const CommonBottomNavBar(
+        currentIndex: 9,
       ),
     );
   }

@@ -4,7 +4,6 @@ import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/view/component/image/common_image.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
-import '../../../../../controllers/provider/provider_home_controller.dart';
 
 class PostItem extends StatefulWidget {
   PostItem({super.key, required this.item});

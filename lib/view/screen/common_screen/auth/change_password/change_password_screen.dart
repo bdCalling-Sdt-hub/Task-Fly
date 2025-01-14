@@ -7,6 +7,7 @@ import '../../../../../core/app_routes.dart';
 import '../../../../../helpers/reg_exp_helper.dart';
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_string.dart';
+import '../../../../component/back.dart';
 import '../../../../component/button/common_button.dart';
 import '../../../../component/text/common_text.dart';
 import '../../../../component/text_field/common_text_field.dart';
@@ -20,6 +21,7 @@ class ChangePasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         centerTitle: true,
         title: const CommonText(
           text: AppString.changePassword,
@@ -111,7 +113,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   ),
                   50.height,
                   CommonButton(
-                    titleText: AppString.changePassword      ,
+                    titleText: AppString.changePassword,
                     isLoading: controller.isLoading,
                     onTap: () {
                       if (formKey.currentState!.validate()) {

@@ -6,6 +6,7 @@ import '../../../../controllers/common_controller/setting/setting_controller.dar
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
+import '../../../component/back.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../component/other_widgets/item.dart';
 import '../../../component/pop_up/common_pop_menu.dart';
@@ -18,6 +19,7 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         centerTitle: true,
         title: const CommonText(
           text: AppString.settings,

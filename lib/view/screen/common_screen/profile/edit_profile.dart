@@ -8,6 +8,7 @@ import '../../../../controllers/common_controller/profile/profile_controller.dar
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
+import '../../../component/back.dart';
 import '../../../component/button/common_button.dart';
 import '../../../component/text/common_text.dart';
 
@@ -21,6 +22,19 @@ class EditProfile extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        leading: InkWell(
+          onTap: Get.back,
+          child: Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.white, width: 2),
+                  shape: BoxShape.circle,
+                  color: AppColors.transparent),
+              child: const Icon(
+                Icons.arrow_back,
+                color: AppColors.white,
+              )),
+        ),
         backgroundColor: AppColors.transparent,
         iconTheme: const IconThemeData(
           color: AppColors.white,

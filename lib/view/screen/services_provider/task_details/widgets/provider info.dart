@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_images.dart';
-import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/image/common_image.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 

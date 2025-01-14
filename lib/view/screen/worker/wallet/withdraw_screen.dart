@@ -8,6 +8,8 @@ import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/worker/wallet/widgets/balance_card.dart';
 import 'package:task_fly/view/screen/worker/wallet/widgets/withdraw_all_filed.dart';
 
+import '../../../component/back.dart';
+
 class WithdrawScreen extends StatelessWidget {
   const WithdrawScreen({super.key});
 
@@ -15,6 +17,7 @@ class WithdrawScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.withdraw,
           fontSize: 24,

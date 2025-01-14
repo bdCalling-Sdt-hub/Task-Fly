@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/core/app_routes.dart';
@@ -8,7 +7,6 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
-import '../../../../../controllers/provider/post_task_controller.dart';
 
 class StepThree extends StatefulWidget {
   const StepThree({super.key});
@@ -26,7 +24,7 @@ class _StepThreeState extends State<StepThree> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        CommonText(text: AppString.whatIsYourBudget),
+        const CommonText(text: AppString.whatIsYourBudget),
         const CommonText(
           text: AppString.priceDetails,
           fontSize: 14,

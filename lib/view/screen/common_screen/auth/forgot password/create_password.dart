@@ -7,6 +7,7 @@ import '../../../../../controllers/common_controller/auth/forget_password_contro
 import '../../../../../helpers/reg_exp_helper.dart';
 import '../../../../../utils/app_images.dart';
 import '../../../../../utils/app_string.dart';
+import '../../../../component/back.dart';
 import '../../../../component/button/common_button.dart';
 import '../../../../component/image/common_image.dart';
 import '../../../../component/text/common_text.dart';
@@ -21,6 +22,7 @@ class CreatePassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.resetPassword,
           fontWeight: FontWeight.w700,

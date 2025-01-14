@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import '../../../../../controllers/common_controller/auth/forget_password_controller.dart';
 import '../../../../../helpers/reg_exp_helper.dart';
 import '../../../../../utils/app_string.dart';
+import '../../../../component/back.dart';
 import '../../../../component/button/common_button.dart';
 import '../../../../component/text/common_text.dart';
 import '../../../../component/text_field/common_text_field.dart';
@@ -21,6 +22,7 @@ class ForgotPasswordScreen extends StatelessWidget {
     return GetBuilder<ForgetPasswordController>(
       builder: (controller) => Scaffold(
         appBar: AppBar(
+          leading: backButton(),
           title: const CommonText(
             text: AppString.forgotPassword,
             fontWeight: FontWeight.w700,

@@ -89,7 +89,7 @@ class ReportScreen extends StatelessWidget {
                       icon: Icon(Icons.arrow_drop_down,
                           color: Colors.grey.shade600),
                       // Arrow icon
-                      underline: SizedBox(),
+                      underline: const SizedBox(),
                       // Removes underline
                       style: const TextStyle(
                         color: Colors.black,

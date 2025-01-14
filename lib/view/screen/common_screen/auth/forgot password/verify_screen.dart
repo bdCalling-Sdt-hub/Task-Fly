@@ -8,6 +8,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../../utils/app_images.dart';
 import '../../../../../utils/app_string.dart';
+import '../../../../component/back.dart';
 import '../../../../component/button/common_button.dart';
 import '../../../../component/image/common_image.dart';
 import '../../../../component/text/common_text.dart';
@@ -32,6 +33,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.forgotPassword,
           fontWeight: FontWeight.w700,

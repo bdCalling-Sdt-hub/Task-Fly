@@ -7,7 +7,8 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/post_task/widgets/post_item.dart';
 
-import '../home/widgets/category_item.dart';
+import '../../../component/back.dart';
+
 
 class PostTaskScreen extends StatelessWidget {
   const PostTaskScreen({super.key});
@@ -17,6 +18,7 @@ class PostTaskScreen extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.postTask,
           fontSize: 24,

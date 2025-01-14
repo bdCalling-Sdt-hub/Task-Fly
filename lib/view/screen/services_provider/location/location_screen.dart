@@ -34,6 +34,17 @@ class _LocationScreenState extends State<LocationScreen> {
       extendBody: true,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        leading: InkWell(
+          onTap: Get.back,
+          child: Container(
+              margin: const EdgeInsets.all(8),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: AppColors.clientColor),
+              child: const Icon(
+                Icons.arrow_back,
+                color: AppColors.white,
+              )),
+        ),
         backgroundColor: AppColors.transparent,
         actions: const [
           Padding(

@@ -8,7 +8,7 @@ class PriceBox extends StatelessWidget {
   final int price;
   final String label;
 
-  const PriceBox({
+  const PriceBox({super.key, 
     required this.price,
     required this.label,
   });

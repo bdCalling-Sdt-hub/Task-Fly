@@ -7,6 +7,7 @@ import 'package:task_fly/view/screen/common_screen/profile/widget/profile_image.
 import '../../../../controllers/common_controller/profile/profile_controller.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
+import '../../../component/back.dart';
 import '../../../component/other_widgets/item.dart';
 import '../../../component/text/common_text.dart';
 
@@ -18,10 +19,20 @@ class PersonalInfoScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: AppColors.transparent,
-        iconTheme: const IconThemeData(
-          color: AppColors.white,
+        leading:  InkWell(
+          onTap: Get.back,
+          child: Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.white, width: 2),
+                  shape: BoxShape.circle,
+                  color: AppColors.transparent),
+              child: const Icon(
+                Icons.arrow_back,
+                color: AppColors.white,
+              )),
         ),
+        backgroundColor: AppColors.transparent,
         title: const CommonText(
           text: AppString.personalInformation,
           fontSize: 24,

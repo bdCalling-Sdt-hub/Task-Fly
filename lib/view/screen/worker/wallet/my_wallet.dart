@@ -6,6 +6,7 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/worker/wallet/widgets/history_item.dart';
 
+import '../../../component/back.dart';
 import 'widgets/balance_card.dart';
 
 class MyWallet extends StatelessWidget {
@@ -15,6 +16,7 @@ class MyWallet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.myWallet,
           fontSize: 24,

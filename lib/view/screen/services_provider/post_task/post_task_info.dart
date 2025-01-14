@@ -4,10 +4,9 @@ import 'package:task_fly/controllers/provider/post_task_controller.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/post_task/widgets/step_one.dart';
 
-import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_string.dart';
-import '../../worker/Post_task/widgets/task_card.dart';
+import '../../../component/back.dart';
 import 'widgets/step_three.dart';
 import 'widgets/step_two.dart';
 
@@ -34,6 +33,7 @@ class _PostTaskInfoState extends State<PostTaskInfo>
         extendBody: true,
 
         appBar: AppBar(
+          leading: backButton(),
           title: CommonText(
             text: controller.appbarTitle,
             fontSize: 24,

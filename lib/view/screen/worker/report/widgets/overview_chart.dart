@@ -63,6 +63,10 @@ class TaskOverviewChart extends StatelessWidget {
                             return const Text('THU');
                           case 4:
                             return const Text('FRI');
+                          case 5:
+                            return const Text('SAT');
+                          case 6:
+                            return const Text('SUN');
                           default:
                             return const Text('');
                         }
@@ -83,9 +87,9 @@ class TaskOverviewChart extends StatelessWidget {
                   border: Border.all(color: Colors.transparent, width: 1),
                 ),
                 minX: 0,
-                maxX: 4,
+                maxX: 6,
                 minY: 0,
-                maxY: 5,
+                maxY: 4,
                 lineBarsData: [
                   LineChartBarData(
                     spots: [
@@ -94,17 +98,18 @@ class TaskOverviewChart extends StatelessWidget {
                       const FlSpot(2, 3.5),
                       const FlSpot(3, 2.8),
                       const FlSpot(4, 3.5),
-
+                      const FlSpot(5, 2.5),
+                      const FlSpot(6, 2),
                     ],
                     isCurved: true,
-                    color: Colors.blue,
+                    color: AppColors.p_500,
                     barWidth: 3,
                     dotData: const FlDotData(show: true),
                     belowBarData: BarAreaData(
                       show: true,
                       gradient: LinearGradient(
                         colors: [
-                          Colors.blue.withOpacity(0.5),
+                          const Color(0xff394CFF).withOpacity(0.5),
                           Colors.transparent,
                         ],
                         begin: Alignment.topCenter,
@@ -121,5 +126,3 @@ class TaskOverviewChart extends StatelessWidget {
     );
   }
 }
-
-

@@ -9,6 +9,7 @@ import 'package:task_fly/view/screen/services_provider/my_task/widgets/no_task.d
 
 import '../../../../controllers/provider/my_task_controller.dart';
 import '../../../../utils/app_colors.dart';
+import '../../../component/back.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../home/widgets/available_task_card.dart';
 
@@ -34,7 +35,6 @@ class _MyTaskScreenState extends State<MyTaskScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const CommonText(
@@ -45,8 +45,6 @@ class _MyTaskScreenState extends State<MyTaskScreen>
       ),
       body: GetBuilder<MyTaskController>(
           builder: (controller) => Column(children: [
-
-
                 TabBar(
                   controller: controller.tabController,
                   indicatorColor: AppColors.transparent,

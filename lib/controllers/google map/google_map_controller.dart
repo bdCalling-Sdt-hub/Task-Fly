@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:task_fly/utils/app_icons.dart';
 import 'package:task_fly/view/screen/services_provider/location/widgets/offer.dart';
 
 import '../../services/location_service.dart';
@@ -130,10 +131,19 @@ class ShowGoogleMapController extends GetxController {
       AppImages.locationAssemble,
       AppImages.locationCleaning,
       AppImages.locationDelivery,
-      AppImages.locationGardenig,
       AppImages.locationIt,
       AppImages.locationPhotography,
       AppImages.locationRemovailsts,
+    ];
+
+    List icons = [
+      AppIcons.admin,
+      AppIcons.assemble,
+      AppIcons.cleaning,
+      AppIcons.delivery,
+      AppIcons.it,
+      AppIcons.photography,
+      AppIcons.removeLists,
     ];
 
     for (int i = 0; i < iconList.length; i++) {
@@ -150,7 +160,7 @@ class ShowGoogleMapController extends GetxController {
       Marker newMarker = Marker(
           markerId: MarkerId("${marker.length}"),
           icon: customMarker,
-          onTap: () => offerPanel(),
+          onTap: () => offerPanel(icons[i]),
           position: LatLng(latitude, longitude));
 
       marker.add(newMarker);
