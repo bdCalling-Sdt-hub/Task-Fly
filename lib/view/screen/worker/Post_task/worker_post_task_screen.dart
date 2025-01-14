@@ -23,7 +23,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
   void initState() {
     super.initState();
     WorkerPostTaskController.instance.tabController =
-        TabController(length: 4, vsync: this);
+        TabController(length: 3, vsync: this);
   }
 
   @override

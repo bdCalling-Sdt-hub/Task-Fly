@@ -18,12 +18,12 @@ class WorkerPostTaskController extends GetxController {
       "title": "on going",
       "count": "1",
     },
-    {
-      "image": AppImages.pending,
-      "icon": AppIcons.pending,
-      "title": "Pending",
-      "count": "41",
-    },
+    // {
+    //   "image": AppImages.pending,
+    //   "icon": AppIcons.pending,
+    //   "title": "Pending",
+    //   "count": "41",
+    // },
     {
       "image": AppImages.completed,
       "icon": AppIcons.completed,
