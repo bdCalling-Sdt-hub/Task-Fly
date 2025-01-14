@@ -18,10 +18,20 @@ class PersonalInfoScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: AppColors.transparent,
-        iconTheme: const IconThemeData(
-          color: AppColors.white,
+        leading:  InkWell(
+          onTap: Get.back,
+          child: Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.white, width: 2),
+                  shape: BoxShape.circle,
+                  color: AppColors.transparent),
+              child: const Icon(
+                Icons.arrow_back,
+                color: AppColors.white,
+              )),
         ),
+        backgroundColor: AppColors.transparent,
         title: const CommonText(
           text: AppString.personalInformation,
           fontSize: 24,

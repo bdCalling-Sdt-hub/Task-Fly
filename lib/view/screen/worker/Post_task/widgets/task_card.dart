@@ -14,6 +14,7 @@ class TaskCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8),
       decoration: BoxDecoration(
         border: Border.all(color: colors),
+
         gradient: LinearGradient(
           colors: [
             colors.withOpacity(0.60),

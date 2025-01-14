@@ -42,7 +42,7 @@ extension View3 on DateTime {
         return ("${difference.inHours} hours ago");
       }
     } else {
-      var createdAtTime = this.toIso8601String().split(".")[0];
+      var createdAtTime = toIso8601String().split(".")[0];
       var date = createdAtTime.split("T")[0];
       var time = createdAtTime.split("T")[1];
       return "$date at $time";

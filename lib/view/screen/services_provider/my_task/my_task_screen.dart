@@ -26,7 +26,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
   @override
   void initState() {
     super.initState();
-    incomeController.tabController = TabController(length: 4, vsync: this);
+    incomeController.tabController = TabController(length: 3, vsync: this);
     incomeController.changeTab();
   }
 
@@ -34,7 +34,6 @@ class _MyTaskScreenState extends State<MyTaskScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const CommonText(
@@ -83,12 +82,36 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         ),
                       ),
                     ),
+                    // Tab(
+                    //   child: Container(
+                    //     padding: const EdgeInsets.symmetric(horizontal: 16),
+                    //     decoration: BoxDecoration(
+                    //       color: controller.tabController.index == 1
+                    //           ? AppColors.clientColor
+                    //           : Colors.transparent,
+                    //       borderRadius: BorderRadius.circular(8.0),
+                    //       border: Border.all(
+                    //         color: controller.tabController.index == 1
+                    //             ? Colors.transparent
+                    //             : AppColors.clientColor,
+                    //       ),
+                    //     ),
+                    //     child: Center(
+                    //       child: CommonText(
+                    //         text: AppString.pending,
+                    //         color: controller.tabController.index == 1
+                    //             ? Colors.white
+                    //             : AppColors.black,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                     Tab(
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         decoration: BoxDecoration(
                           color: controller.tabController.index == 1
-                              ? AppColors.clientColor
+                              ? const Color(0xFF3e8a02)
                               : Colors.transparent,
                           borderRadius: BorderRadius.circular(8.0),
                           border: Border.all(
@@ -99,7 +122,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         ),
                         child: Center(
                           child: CommonText(
-                            text: AppString.pending,
+                            text: AppString.completed,
                             color: controller.tabController.index == 1
                                 ? Colors.white
                                 : AppColors.black,
@@ -112,35 +135,11 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         decoration: BoxDecoration(
                           color: controller.tabController.index == 2
-                              ? AppColors.clientColor
+                              ? const Color(0xFF8a0a02)
                               : Colors.transparent,
                           borderRadius: BorderRadius.circular(8.0),
                           border: Border.all(
                             color: controller.tabController.index == 2
-                                ? Colors.transparent
-                                : AppColors.clientColor,
-                          ),
-                        ),
-                        child: Center(
-                          child: CommonText(
-                            text: AppString.completed,
-                            color: controller.tabController.index == 2
-                                ? Colors.white
-                                : AppColors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        decoration: BoxDecoration(
-                          color: controller.tabController.index == 3
-                              ? AppColors.clientColor
-                              : Colors.transparent,
-                          borderRadius: BorderRadius.circular(8.0),
-                          border: Border.all(
-                            color: controller.tabController.index == 3
                                 ? Colors.transparent
                                 : AppColors.clientColor,
                           ),
@@ -148,7 +147,7 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                         child: Center(
                           child: CommonText(
                             text: AppString.canceled,
-                            color: controller.tabController.index == 3
+                            color: controller.tabController.index == 2
                                 ? Colors.white
                                 : AppColors.black,
                           ),
@@ -171,13 +170,15 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                               return GestureDetector(
                                   onTap: () =>
                                       Get.toNamed(AppRoutes.taskDetails),
-                                  child: const AvailableTaskCard());
+                                  child: const AvailableTaskCard(
+                                    color: Color(0xFF023e8a),
+                                  ));
                             },
                           ),
                         ),
-                        const Center(
-                          child: NoTask(),
-                        ),
+                        // const Center(
+                        //   child: NoTask(),
+                        // ),
                         Center(
                           child: ListView.builder(
                             itemCount: 3,
@@ -186,7 +187,9 @@ class _MyTaskScreenState extends State<MyTaskScreen>
                                   onTap: () => Get.toNamed(
                                       AppRoutes.taskDetails,
                                       parameters: {"type": "completed "}),
-                                  child: const AvailableTaskCard());
+                                  child: const AvailableTaskCard(
+                                    color: Color(0xFF3e8a02),
+                                  ));
                             },
                           ),
                         ),

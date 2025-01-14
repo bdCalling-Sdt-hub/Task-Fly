@@ -20,12 +20,12 @@ class ReportController extends GetxController {
       "count": "41",
       "route": AppRoutes.completedScreen
     },
-    {
-      "image": AppImages.pendingReport,
-      "title": "Pending",
-      "count": "41",
-      "route": AppRoutes.pendingScreen
-    },
+    // {
+    //   "image": AppImages.pendingReport,
+    //   "title": "Pending",
+    //   "count": "41",
+    //   "route": AppRoutes.pendingScreen
+    // },
     {
       "image": AppImages.cancelReport,
       "title": "Cancel",

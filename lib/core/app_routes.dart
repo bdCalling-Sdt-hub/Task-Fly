@@ -71,134 +71,134 @@ class AppRoutes {
 
   static List<GetPage> routes = [
     GetPage(
-        name: test, page: () => TestScreen(), transition: Transition.cupertino),
+        name: test, page: () => const TestScreen(), transition: Transition.fadeIn),
     GetPage(
         name: splash,
-        page: () => SplashScreen(),
-        transition: Transition.cupertino),
+        page: () => const SplashScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: onboarding,
-        page: () => OnboardingScreen(),
-        transition: Transition.cupertino),
+        page: () => const OnboardingScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: signUp,
         page: () => SignUpScreen(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: verifyUser,
-        page: () => VerifyUser(),
-        transition: Transition.cupertino),
+        page: () => const VerifyUser(),
+        transition: Transition.fadeIn),
     GetPage(
         name: signIn,
         page: () => SignInScreen(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: forgotPassword,
         page: () => ForgotPasswordScreen(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: verifyEmail,
-        page: () => VerifyScreen(),
-        transition: Transition.cupertino),
+        page: () => const VerifyScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: createPassword,
         page: () => CreatePassword(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: changePassword,
         page: () => ChangePasswordScreen(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: notifications,
-        page: () => NotificationScreen(),
-        transition: Transition.cupertino),
+        page: () => const NotificationScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: chat,
-        page: () => ChatListScreen(),
-        transition: Transition.cupertino),
+        page: () => const ChatListScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: message,
-        page: () => MessageScreen(),
-        transition: Transition.cupertino),
+        page: () => const MessageScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: profile,
-        page: () => ProfileScreen(),
-        transition: Transition.cupertino),
+        page: () => const ProfileScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: editProfile,
         page: () => EditProfile(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: privacyPolicy,
-        page: () => PrivacyPolicyScreen(),
-        transition: Transition.cupertino),
+        page: () => const PrivacyPolicyScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: termsOfServices,
-        page: () => TermsOfServicesScreen(),
-        transition: Transition.cupertino),
+        page: () => const TermsOfServicesScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: setting,
-        page: () => SettingScreen(),
-        transition: Transition.cupertino),
+        page: () => const SettingScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: serviceProviderHome,
-        page: () => ServiceProviderHome(),
-        transition: Transition.cupertino),
+        page: () => const ServiceProviderHome(),
+        transition: Transition.fadeIn),
     GetPage(
         name: taskDetails,
         page: () => TaskDetailsScreen(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: location,
-        page: () => LocationScreen(),
-        transition: Transition.cupertino),
+        page: () => const LocationScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: myTask,
-        page: () => MyTaskScreen(),
-        transition: Transition.cupertino),
+        page: () => const MyTaskScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: personalInfo,
-        page: () => PersonalInfoScreen(),
-        transition: Transition.cupertino),
+        page: () => const PersonalInfoScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.myWallet,
-        page: () => MyWallet(),
-        transition: Transition.cupertino),
+        page: () => const MyWallet(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.withdraw,
-        page: () => WithdrawScreen(),
-        transition: Transition.cupertino),
+        page: () => const WithdrawScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.workerPostTask,
-        page: () => WorkerPostTaskScreen(),
-        transition: Transition.cupertino),
+        page: () => const WorkerPostTaskScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.report,
-        page: () => ReportScreen(),
-        transition: Transition.cupertino),
+        page: () => const ReportScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.cancelScreen,
-        page: () => CancelScreen(),
-        transition: Transition.cupertino),
+        page: () => const CancelScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.completedScreen,
-        page: () => CompletedScreen(),
-        transition: Transition.cupertino),
+        page: () => const CompletedScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.ongoingScreen,
-        page: () => OngoingScreen(),
-        transition: Transition.cupertino),
+        page: () => const OngoingScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.pendingScreen,
         page: () => const PendingScreen(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.postTask,
         page: () => const PostTaskScreen(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.postTaskInfo,
         page: () => const PostTaskInfo(),
-        transition: Transition.cupertino),
+        transition: Transition.fadeIn),
   ];
 }

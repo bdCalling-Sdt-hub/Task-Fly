@@ -31,7 +31,7 @@ class StepTwo extends StatelessWidget {
           fillColor: AppColors.p_50,
         ),
         12.height,
-        DateSelector(),
+        const DateSelector(),
         const TaskScheduling(),
         const Spacer(),
         CommonButton(
@@ -45,6 +45,8 @@ class StepTwo extends StatelessWidget {
 }
 
 class DateSelector extends StatefulWidget {
+  const DateSelector({super.key});
+
   @override
   _DateSelectorState createState() => _DateSelectorState();
 }
@@ -140,7 +142,7 @@ class _DateSelectorState extends State<DateSelector> {
   void _selectDateOption(BuildContext context) {
     showMenu(
       context: context,
-      position: RelativeRect.fromLTRB(100, 100, 100, 100),
+      position: const RelativeRect.fromLTRB(100, 100, 100, 100),
       items: [
         const PopupMenuItem(
           value: 'Before Sep 20',

@@ -9,7 +9,7 @@ class AppColors {
 
   static const Color transparent = Colors.transparent;
   static const Color white = Colors.white;
-  static const Color black = Colors.black;
+  static const Color black = Color(0xFF1F2852);
   static const Color red = Colors.red;
   static const Color bottomNavColor = Color(0xff023E8A);
   static const Color gray = Color(0xffCFCFCF);

@@ -3,7 +3,6 @@ import 'package:task_fly/controllers/provider/post_task_controller.dart';
 import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
-import 'package:task_fly/view/component/button/button_with_icon.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/component/text_field/common_text_field.dart';
@@ -16,21 +15,22 @@ class StepOne extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          20.height,
-          const Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CommonText(
-                text: AppString.whatDoYouNeed,
-                bottom: 8,
-              ),
-              CommonText(
-                text: AppString.taskTitle,
-                bottom: 8,
-              ),
-            ],
+          const CommonText(
+            text: AppString.taskTitle,
+            bottom: 8,
+            top: 20,
+          ),
+          CommonTextField(
+            mexLength: 30,
+            hintText: AppString.taskTitle,
+            fillColor: AppColors.p_50,
+          ),
+          const CommonText(
+            text: AppString.whatDoYouNeed,
+            bottom: 8,
+            top: 20,
           ),
           CommonTextField(
             hintText: AppString.enterYourTaskName,

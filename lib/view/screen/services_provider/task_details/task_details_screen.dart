@@ -10,8 +10,10 @@ import 'package:task_fly/view/screen/services_provider/task_details/widgets/all_
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/provider%20info.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_offer.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/send_review.dart';
+import 'package:task_fly/view/screen/services_provider/task_details/widgets/switch_profile_popup.dart';
 
 import '../../../../controllers/provider/task_details_controller.dart';
+import '../../../component/back.dart';
 
 class TaskDetailsScreen extends StatelessWidget {
   TaskDetailsScreen({
@@ -23,7 +25,9 @@ class TaskDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: backButton(),
+      ),
       body: GetBuilder<TaskDetailsController>(
         builder: (controller) => Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -41,17 +45,18 @@ class TaskDetailsScreen extends StatelessWidget {
               if (type == "sendOffer")
                 Row(
                   children: [
-                    if (PrefsHelper.myRole == 'tasker')
-                      const Expanded(
-                        child: CommonButton(
-                          onTap: sendOfferPanel,
-                          titleText: AppString.sendYourOffer,
-                          buttonColor: AppColors.textIcon_500,
-                          titleColor: AppColors.white,
-                          borderColor: AppColors.transparent,
-                        ),
+                    Expanded(
+                      child: CommonButton(
+                        onTap: PrefsHelper.myRole == 'tasker'
+                            ? sendOfferPanel
+                            : () => SwitchProfilePopUp.switchProfileDialog(),
+                        titleText: AppString.sendYourOffer,
+                        buttonColor: AppColors.textIcon_500,
+                        titleColor: AppColors.white,
+                        borderColor: AppColors.transparent,
                       ),
-                    if (PrefsHelper.myRole == 'tasker') 16.width,
+                    ),
+                    15.width,
                     Expanded(
                       child: CommonButton(
                         onTap: controller.acceptTaskOnTap,

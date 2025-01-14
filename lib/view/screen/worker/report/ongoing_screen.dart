@@ -5,6 +5,7 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
 import '../../../../core/app_routes.dart';
+import '../../../component/back.dart';
 import '../Post_task/widgets/task_card.dart';
 
 class OngoingScreen extends StatelessWidget {
@@ -14,6 +15,7 @@ class OngoingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.ongoing,
           fontSize: 24,
@@ -29,7 +31,7 @@ class OngoingScreen extends StatelessWidget {
                 onTap: () => Get.toNamed(AppRoutes.taskDetails,
                     parameters: {"type": "ongoing"}),
                 child: const TaskCard(
-                  colors: Color(0xFF9CA6F2),
+                  colors: Color(0xFF023e8a),
                 ));
           },
         ),

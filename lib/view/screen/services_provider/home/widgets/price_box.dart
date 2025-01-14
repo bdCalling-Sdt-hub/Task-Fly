@@ -8,7 +8,7 @@ class PriceBox extends StatelessWidget {
   final int price;
   final String label;
 
-  const PriceBox({
+  const PriceBox({super.key, 
     required this.price,
     required this.label,
   });
@@ -35,7 +35,7 @@ class PriceBox extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: CommonText(
-            text: '€ $price',
+            text: '€ $price${price >= 500 ? "+" : ""}',
             fontSize: 18,
             fontWeight: FontWeight.w400,
             color: AppColors.p_500,

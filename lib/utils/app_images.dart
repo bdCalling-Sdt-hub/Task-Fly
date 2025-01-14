@@ -19,7 +19,6 @@ class AppImages {
   static const String locationAssemble = "$baseurl/location_assemble.png";
   static const String locationCleaning = "$baseurl/location_cleaning.png";
   static const String locationDelivery = "$baseurl/location_delivary.png";
-  static const String locationGardenig = "$baseurl/location_it.png";
   static const String locationIt = "$baseurl/location_it.png";
   static const String locationPhotography = "$baseurl/location_photography.png";
   static const String locationRemovailsts = "$baseurl/location_removailsts.png";

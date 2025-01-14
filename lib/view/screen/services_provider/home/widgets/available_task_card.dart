@@ -3,21 +3,32 @@ import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
 class AvailableTaskCard extends StatelessWidget {
-  const AvailableTaskCard({super.key});
+  const AvailableTaskCard({super.key, this.color = Colors.blue});
+
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 6),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [
-            Color(0xFF90CAF9),
-            Color(0xFFE3F2FD),
-          ],
-          begin: Alignment(0.90, -1.90),
-          end: Alignment(0.30, -0.10),
-        ),
+        gradient: color == Colors.blue
+            ? const LinearGradient(
+                colors: [
+                  Color(0xFF90CAF9),
+                  Color(0xFFE3F2FD),
+                ],
+                begin: Alignment(0.90, -1.90),
+                end: Alignment(0.30, -0.10),
+              )
+            : LinearGradient(
+                colors: [
+                  color.withOpacity(0.60),
+                  color.withOpacity(0.00),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -33,9 +44,9 @@ class AvailableTaskCard extends StatelessWidget {
             width: 4,
             height: 40,
             margin: const EdgeInsets.only(top: 16),
-            decoration: const BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: const BorderRadius.only(
                   bottomRight: Radius.circular(20),
                   topRight: Radius.circular(20)),
             ),

@@ -22,73 +22,75 @@ class ProfileScreen extends StatelessWidget {
       extendBody: true,
       body: GetBuilder<ProfileController>(
         builder: (controller) {
-          return Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                height: Get.height,
-                width: Get.width,
-                color: AppColors.clientColor,
-              ),
-              Positioned(
-                top: 170,
-                left: 0,
-                right: 0,
-                child: Container(
+          return SingleChildScrollView(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Container(
                   height: Get.height,
-                  decoration: const BoxDecoration(
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          topRight: Radius.circular(40))),
-                  child: Column(
-                    children: [
-                      70.height,
-                      const CommonText(
-                        text: "Naimul Hassan",
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        bottom: 24,
-                      ),
-                      Item(
-                        icon: Icons.person,
-                        title: AppString.personalInformation,
-                        onTap: () => Get.toNamed(AppRoutes.personalInfo),
-                      ),
-                      if (PrefsHelper.myRole == "tasker")
-                        Item(
-                          icon: Icons.wallet,
-                          title: AppString.wallet,
-                          onTap: () => Get.toNamed(AppRoutes.myWallet),
+                  width: Get.width,
+                  color: AppColors.clientColor,
+                ),
+                Positioned(
+                  top: 170,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: Get.height,
+                    decoration: const BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(40),
+                            topRight: Radius.circular(40))),
+                    child: Column(
+                      children: [
+                        70.height,
+                        const CommonText(
+                          text: "Naimul Hassan",
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          bottom: 24,
                         ),
-                      Item(
-                        icon: Icons.settings,
-                        title: AppString.settings,
-                        onTap: () => Get.toNamed(AppRoutes.setting),
-                      ),
-                      Item(
-                        icon: Icons.sync_alt,
-                        title: PrefsHelper.myRole == "tasker"
-                            ? "Switch to Poster"
-                            : "Switch to Tasker",
-                        onTap: PrefsHelper.changeRole,
-                      ),
-                      100.height,
-                      Item(
-                        icon: Icons.logout,
-                        title: AppString.logOut,
-                        onTap: () => logOutPopUp(),
-                      ),
-                    ],
+                        Item(
+                          icon: Icons.person,
+                          title: AppString.personalInformation,
+                          onTap: () => Get.toNamed(AppRoutes.personalInfo),
+                        ),
+                        if (PrefsHelper.myRole == "tasker")
+                          Item(
+                            icon: Icons.wallet,
+                            title: AppString.wallet,
+                            onTap: () => Get.toNamed(AppRoutes.myWallet),
+                          ),
+                        Item(
+                          icon: Icons.settings,
+                          title: AppString.settings,
+                          onTap: () => Get.toNamed(AppRoutes.setting),
+                        ),
+                        Item(
+                          icon: Icons.sync_alt,
+                          title: PrefsHelper.myRole == "tasker"
+                              ? "Switch to Poster"
+                              : "Switch to Tasker",
+                          onTap: PrefsHelper.changeRole,
+                        ),
+                        100.height,
+                        Item(
+                          icon: Icons.logout,
+                          title: AppString.logOut,
+                          onTap: () => logOutPopUp(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Positioned(
-                top: 100,
-                left: (Get.width - 140.sp) / 2,
-                child: const ProfileImage(),
-              )
-            ],
+                Positioned(
+                  top: 100,
+                  left: (Get.width - 140.sp) / 2,
+                  child: const ProfileImage(),
+                )
+              ],
+            ),
           );
         },
       ),

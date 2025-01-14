@@ -46,6 +46,7 @@ class _FilterState extends State<Sort> {
                 text: AppString.sort,
                 fontSize: 20,
                 color: AppColors.p_500,
+                fontWeight: FontWeight.bold,
                 bottom: 16,
               ),
               CommonBar(
@@ -117,7 +118,7 @@ class _FilterState extends State<Sort> {
                   },
                 ),
               if (controller.showPostDate) 20.height,
-                     CommonButton(
+              CommonButton(
                 titleText: AppString.apply,
                 onTap: () => Get.back(),
               )

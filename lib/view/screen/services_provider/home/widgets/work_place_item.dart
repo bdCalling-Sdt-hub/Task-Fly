@@ -5,7 +5,7 @@ import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
 class WorkPlaceItem extends StatefulWidget {
-  WorkPlaceItem(
+  const WorkPlaceItem(
       {super.key,
       required this.title,
       required this.selectedItem,

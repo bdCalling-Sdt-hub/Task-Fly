@@ -88,6 +88,7 @@ class IncomeChartPage extends StatelessWidget {
                             return const Text('Sa', style: style);
                           case 6:
                             return const Text('Su', style: style);
+
                           default:
                             return const Text('');
                         }
@@ -126,7 +127,7 @@ class IncomeChartPage extends StatelessWidget {
                     x: 1,
                     barRods: [
                       BarChartRodData(
-                        toY: 6,
+                        toY: 10,
                         color: Colors.lightBlue,
                         width: 16,
                         borderRadius: BorderRadius.circular(4),
@@ -137,7 +138,7 @@ class IncomeChartPage extends StatelessWidget {
                     x: 2,
                     barRods: [
                       BarChartRodData(
-                        toY: 8,
+                        toY: 7,
                         color: Colors.blue,
                         width: 16,
                         borderRadius: BorderRadius.circular(4),
@@ -148,7 +149,7 @@ class IncomeChartPage extends StatelessWidget {
                     x: 3,
                     barRods: [
                       BarChartRodData(
-                        toY: 10,
+                        toY: 5,
                         color: Colors.lightBlue,
                         width: 16,
                         borderRadius: BorderRadius.circular(4),
@@ -159,7 +160,7 @@ class IncomeChartPage extends StatelessWidget {
                     x: 4,
                     barRods: [
                       BarChartRodData(
-                        toY: 7,
+                        toY: 6,
                         color: Colors.blue,
                         width: 16,
                         borderRadius: BorderRadius.circular(4),
@@ -170,8 +171,8 @@ class IncomeChartPage extends StatelessWidget {
                     x: 5,
                     barRods: [
                       BarChartRodData(
-                        toY: 5,
-                        color: Colors.lightBlue,
+                        toY: 8,
+                        color: Colors.blue,
                         width: 16,
                         borderRadius: BorderRadius.circular(4),
                       ),
@@ -181,7 +182,7 @@ class IncomeChartPage extends StatelessWidget {
                     x: 6,
                     barRods: [
                       BarChartRodData(
-                        toY: 6,
+                        toY: 4,
                         color: Colors.blue,
                         width: 16,
                         borderRadius: BorderRadius.circular(4),

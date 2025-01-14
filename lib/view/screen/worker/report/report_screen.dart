@@ -8,6 +8,7 @@ import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/worker/report/widgets/incode_chart.dart';
 
+import '../../../component/back.dart';
 import 'widgets/overview_chart.dart';
 
 class ReportScreen extends StatelessWidget {
@@ -17,6 +18,7 @@ class ReportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.report,
           fontSize: 24,
@@ -89,7 +91,7 @@ class ReportScreen extends StatelessWidget {
                       icon: Icon(Icons.arrow_drop_down,
                           color: Colors.grey.shade600),
                       // Arrow icon
-                      underline: SizedBox(),
+                      underline: const SizedBox(),
                       // Removes underline
                       style: const TextStyle(
                         color: Colors.black,

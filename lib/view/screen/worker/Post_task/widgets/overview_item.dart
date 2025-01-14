@@ -18,7 +18,7 @@ class OverviewItem extends StatelessWidget {
       height: 110,
       width: 110,
       margin: const EdgeInsets.only(right: 12),
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage(item["image"]))),
       child: Column(

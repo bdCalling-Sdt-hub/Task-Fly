@@ -5,6 +5,7 @@ import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
 import '../../../../core/app_routes.dart';
+import '../../../component/back.dart';
 import '../Post_task/widgets/task_card.dart';
 
 class PendingScreen extends StatelessWidget {
@@ -14,6 +15,7 @@ class PendingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: backButton(),
         title: const CommonText(
           text: AppString.pending,
           fontSize: 24,

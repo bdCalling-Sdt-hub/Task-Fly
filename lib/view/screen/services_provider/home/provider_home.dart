@@ -36,7 +36,7 @@ class ServiceProviderHome extends StatelessWidget {
             width: 48,
           ),
         ),
-        centerTitle: false,
+        centerTitle: true,
         actions: [
           IconButton(
               onPressed: () => print("vdfasf"),
@@ -56,6 +56,7 @@ class ServiceProviderHome extends StatelessWidget {
             children: [
               Column(
                 children: [
+                  15.height,
                   Row(
                     children: [
                       Expanded(
@@ -95,6 +96,8 @@ class ServiceProviderHome extends StatelessWidget {
                           iconData: Icons.tune,
                           borderColor: AppColors.p_500,
                           buttonColor: AppColors.transparent,
+                          titleColor: AppColors.textColor,
+                          iconColor: AppColors.textColor,
                         ),
                       ),
                       16.width,
@@ -105,6 +108,8 @@ class ServiceProviderHome extends StatelessWidget {
                           svg: AppIcons.sort,
                           buttonColor: AppColors.transparent,
                           borderColor: AppColors.p_500,
+                          titleColor: AppColors.textColor,
+                          iconColor: AppColors.textColor,
                         ),
                       ),
                     ],

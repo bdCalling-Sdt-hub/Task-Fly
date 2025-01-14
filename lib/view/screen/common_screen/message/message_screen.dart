@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import '../../../../controllers/common_controller/message/message_controller.dart';
 import '../../../../models/chat_message_model.dart';
 import '../../../../utils/app_string.dart';
+import '../../../component/back.dart';
 import '../../../component/image/common_image.dart';
 import '../../../component/text/common_text.dart';
 import '../../../component/text_field/common_text_field.dart';
@@ -46,6 +47,7 @@ class _MessageScreenState extends State<MessageScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  backButton(),
                   CircleAvatar(
                     radius: 30.sp,
                     backgroundColor: Colors.grey,
@@ -125,22 +127,22 @@ class _MessageScreenState extends State<MessageScreen> {
               padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 24.h),
               child: Row(
                 children: [
-                  if(PrefsHelper.myRole =="tasker")
-                  GestureDetector(
-                    onTap: bottomAdd,
-                    child: Container(
-                      height: 42,
-                      width: 42,
-                      margin: const EdgeInsets.only(right: 12),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: AppColors.textIcon_500)),
-                      child: const Icon(
-                        Icons.add,
-                        size: 36,
+                  if (PrefsHelper.myRole == "tasker")
+                    GestureDetector(
+                      onTap: bottomAdd,
+                      child: Container(
+                        height: 42,
+                        width: 42,
+                        margin: const EdgeInsets.only(right: 12),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: AppColors.textIcon_500)),
+                        child: const Icon(
+                          Icons.add,
+                          size: 36,
+                        ),
                       ),
                     ),
-                  ),
                   Expanded(
                     child: CommonTextField(
                       hintText: AppString.messageHere,

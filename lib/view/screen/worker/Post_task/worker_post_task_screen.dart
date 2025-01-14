@@ -6,6 +6,7 @@ import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/worker/Post_task/widgets/task_card.dart';
 import '../../../../core/app_routes.dart';
 import '../../../../utils/app_colors.dart';
+import '../../../component/back.dart';
 import '../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import 'widgets/overview_item.dart';
 
@@ -22,7 +23,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
   void initState() {
     super.initState();
     WorkerPostTaskController.instance.tabController =
-        TabController(length: 4, vsync: this);
+        TabController(length: 3, vsync: this);
   }
 
   @override
@@ -30,6 +31,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
+        leading: backButton(),
         automaticallyImplyLeading: false,
         title: const CommonText(
           text: AppString.myTasks,
@@ -201,7 +203,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                               onTap: () => Get.toNamed(AppRoutes.taskDetails,
                                   parameters: {"type": "ongoing"}),
                               child: const TaskCard(
-                                colors: Color(0xFF9CA6F2),
+                                colors: Color(0xFF023e8a),
                               ));
                         },
                       ),
@@ -228,7 +230,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                               onTap: () => Get.toNamed(AppRoutes.taskDetails,
                                   parameters: {"type": "completed"}),
                               child: const TaskCard(
-                                colors: Color(0xFFB0EDC6),
+                                colors: Color(0xFF3e8a02),
                               ));
                         },
                       ),
@@ -242,7 +244,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                                     AppRoutes.taskDetails,
                                   ),
                               child: const TaskCard(
-                                colors: Color(0xFFEE9393),
+                                colors: Color(0xFF8a0a02),
                               ));
                         },
                       ),

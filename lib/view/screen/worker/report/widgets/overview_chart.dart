@@ -54,19 +54,19 @@ class TaskOverviewChart extends StatelessWidget {
                       getTitlesWidget: (value, meta) {
                         switch (value.toInt()) {
                           case 0:
-                            return const Text('SAT');
-                          case 1:
-                            return const Text('SUN');
-                          case 2:
                             return const Text('MON');
-                          case 3:
+                          case 1:
                             return const Text('TUE');
-                          case 4:
+                          case 2:
                             return const Text('WED');
-                          case 5:
+                          case 3:
                             return const Text('THU');
-                          case 6:
+                          case 4:
                             return const Text('FRI');
+                          case 5:
+                            return const Text('SAT');
+                          case 6:
+                            return const Text('SUN');
                           default:
                             return const Text('');
                         }
@@ -98,18 +98,18 @@ class TaskOverviewChart extends StatelessWidget {
                       const FlSpot(2, 3.5),
                       const FlSpot(3, 2.8),
                       const FlSpot(4, 3.5),
-                      const FlSpot(5, 2),
-                      const FlSpot(6, 3),
+                      const FlSpot(5, 2.5),
+                      const FlSpot(6, 2),
                     ],
                     isCurved: true,
-                    color: Colors.blue,
+                    color: AppColors.p_500,
                     barWidth: 3,
                     dotData: const FlDotData(show: true),
                     belowBarData: BarAreaData(
                       show: true,
                       gradient: LinearGradient(
                         colors: [
-                          Colors.blue.withOpacity(0.5),
+                          const Color(0xff394CFF).withOpacity(0.5),
                           Colors.transparent,
                         ],
                         begin: Alignment.topCenter,
@@ -126,5 +126,3 @@ class TaskOverviewChart extends StatelessWidget {
     );
   }
 }
-
-
