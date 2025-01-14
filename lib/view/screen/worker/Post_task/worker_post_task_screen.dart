@@ -208,20 +208,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                         },
                       ),
                     ),
-                    Center(
-                      child: ListView.builder(
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                              onTap: () => Get.toNamed(
-                                    AppRoutes.taskDetails,
-                                  ),
-                              child: const TaskCard(
-                                colors: Color(0xFFFFAC76),
-                              ));
-                        },
-                      ),
-                    ),
+
                     Center(
                       child: ListView.builder(
                         itemCount: 3,

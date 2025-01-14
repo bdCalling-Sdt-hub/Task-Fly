@@ -17,7 +17,7 @@ class TaskCard extends StatelessWidget {
 
         gradient: LinearGradient(
           colors: [
-            colors.withOpacity(0.60),
+            colors.withOpacity(0.50),
             colors.withOpacity(0.00),
           ],
           begin: Alignment.topCenter,

@@ -23,7 +23,7 @@ class AvailableTaskCard extends StatelessWidget {
               )
             : LinearGradient(
                 colors: [
-                  color.withOpacity(0.60),
+                  color.withOpacity(0.50),
                   color.withOpacity(0.00),
                 ],
                 begin: Alignment.topCenter,
