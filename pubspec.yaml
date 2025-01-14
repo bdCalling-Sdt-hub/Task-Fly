@@ -55,7 +55,6 @@ dependencies:
   google_maps_flutter: ^2.7.0
   geocoding: ^3.0.0
   fl_chart: ^0.69.0
-  slider_button: ^2.1.0
 
   http: any
   http_parser: any
