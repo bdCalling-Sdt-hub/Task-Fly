@@ -198,6 +198,7 @@ deletePopUp(
               ),
               CommonTextField(
                 controller: controller,
+                borderColor: AppColors.clientColor,
                 labelText: AppString.enterYouPassword,
                 validator: OtherHelper.validator,
                 isPassword: true,
@@ -228,7 +229,7 @@ deletePopUp(
                   buttonHeight: 48,
                   onTap: () {
                     if (formKey.currentState!.validate()) {
-                      onTap();
+                      Get.back();
                     }
                   },
                 ),

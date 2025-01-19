@@ -4,6 +4,7 @@ import 'package:task_fly/extension/my_extension.dart';
 import 'package:task_fly/helpers/prefs_helper.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
+import 'package:task_fly/utils/app_utils.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/services_provider/task_details/widgets/all_filed.dart';
@@ -74,9 +75,12 @@ class TaskDetailsScreen extends StatelessWidget {
                   onTap: sendReview,
                 ),
               if (type == "ongoing")
-                const CommonButton(
+                CommonButton(
                   titleText: AppString.requestForPayment,
-                  onTap: sendReview,
+                  onTap: () {
+                    Utils.snackBarMessage(
+                        "Payment Request", "Payment Request Sent");
+                  },
                 ),
               if (type.isNotEmpty) 24.height,
               const CommonButton(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/controllers/worker/report_controller.dart';
 import 'package:task_fly/extension/my_extension.dart';
+import 'package:task_fly/helpers/other_helper.dart';
 import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
@@ -12,7 +13,9 @@ import '../../../component/back.dart';
 import 'widgets/overview_chart.dart';
 
 class ReportScreen extends StatelessWidget {
-  const ReportScreen({super.key});
+  ReportScreen({super.key});
+
+  TextEditingController dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +28,12 @@ class ReportScreen extends StatelessWidget {
           fontWeight: FontWeight.w700,
         ),
         actions: [
-          const Icon(
-            Icons.date_range,
-            color: AppColors.p_500,
+          IconButton(
+            onPressed: () => OtherHelper.dateOfBirthPicker(dateController),
+            icon: const Icon(
+              Icons.date_range,
+              color: AppColors.p_500,
+            ),
           ),
           20.width
         ],

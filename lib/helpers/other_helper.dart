@@ -32,7 +32,7 @@ class OtherHelper {
       builder: (context, child) => Theme(
           data: Theme.of(context).copyWith(
             colorScheme: const ColorScheme.light(
-              primary: AppColors.primaryColor, // <-- SEE HERE
+              primary: AppColors.clientColor, // <-- SEE HERE
               onPrimary: AppColors.white, // <-- SEE HERE
               onSurface: AppColors.black, // <-- SEE HERE
             ),

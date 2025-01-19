@@ -71,7 +71,9 @@ class AppRoutes {
 
   static List<GetPage> routes = [
     GetPage(
-        name: test, page: () => const TestScreen(), transition: Transition.fadeIn),
+        name: test,
+        page: () => const TestScreen(),
+        transition: Transition.fadeIn),
     GetPage(
         name: splash,
         page: () => const SplashScreen(),
@@ -174,7 +176,7 @@ class AppRoutes {
         transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.report,
-        page: () => const ReportScreen(),
+        page: () => ReportScreen(),
         transition: Transition.fadeIn),
     GetPage(
         name: AppRoutes.cancelScreen,
