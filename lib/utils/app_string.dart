@@ -144,6 +144,7 @@ class AppString {
   static const String myWallet = "My wallet";
   static const String yourBalance = "Your balance";
   static const String withdraw = "Withdraw";
+  static const String proceedToWithdraw = "Proceed to Withdraw";
   static const String history = "History";
   static const String accountHolderName = "Account holder Name";
   static const String accountNumber = "Account Number";

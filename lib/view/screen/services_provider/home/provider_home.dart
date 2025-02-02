@@ -38,15 +38,17 @@ class ServiceProviderHome extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
-          IconButton(
-              onPressed: () => print("vdfasf"),
-              icon: const Icon(Icons.headset_mic_outlined)),
+          InkWell(
+              onTap: () => print("vdfasf"),
+              child: CommonImage(
+                imageSrc: AppIcons.support,
+              )),
           IconButton(
               onPressed: () => Get.toNamed(AppRoutes.notifications),
-              icon: const Icon(
-                Icons.notifications,
-                color: AppColors.primaryColor,
-              ))
+              icon: CommonImage(
+                imageSrc: AppIcons.notification,
+              )),
+          16.width
         ],
       ),
       body: GetBuilder<ProviderHomeController>(

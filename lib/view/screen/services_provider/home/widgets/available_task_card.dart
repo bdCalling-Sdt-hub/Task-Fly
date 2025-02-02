@@ -13,10 +13,10 @@ class AvailableTaskCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 6),
       decoration: BoxDecoration(
         gradient: color == Colors.blue
-            ? const LinearGradient(
+            ? LinearGradient(
                 colors: [
-                  Color(0xFF90CAF9),
-                  Color(0xFFE3F2FD),
+                  Color(0xFF90CAF9).withOpacity(0.9),
+                  Color(0xFFE3F2FD).withOpacity(0.5),
                 ],
                 begin: Alignment(0.90, -1.90),
                 end: Alignment(0.30, -0.10),
@@ -33,7 +33,7 @@ class AvailableTaskCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
+            blurRadius: 0,
             offset: const Offset(0, 4),
           ),
         ],

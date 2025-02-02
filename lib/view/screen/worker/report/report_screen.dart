@@ -43,45 +43,45 @@ class ReportScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              const CommonText(
-                text: AppString.taskOverview,
-                fontSize: 20,
-              ).start,
-              GridView.builder(
-                itemCount: controller.overviewList.length,
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 12,
-                    crossAxisSpacing: 16),
-                itemBuilder: (context, index) {
-                  var item = controller.overviewList[index];
-                  return GestureDetector(
-                    onTap: () => Get.toNamed(item['route']),
-                    child: Container(
-                      height: 150,
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(item['image']))),
-                      child: Column(
-                        children: [
-                          CommonText(
-                            text: item['count'],
-                            fontSize: 32,
-                            color: AppColors.white,
-                          ),
-                          CommonText(
-                            text: item['title'],
-                            color: AppColors.white,
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
+              // const CommonText(
+              //   text: AppString.taskOverview,
+              //   fontSize: 20,
+              // ).start,
+              // GridView.builder(
+              //   itemCount: controller.overviewList.length,
+              //   physics: const NeverScrollableScrollPhysics(),
+              //   shrinkWrap: true,
+              //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              //       crossAxisCount: 2,
+              //       mainAxisSpacing: 12,
+              //       crossAxisSpacing: 16),
+              //   itemBuilder: (context, index) {
+              //     var item = controller.overviewList[index];
+              //     return GestureDetector(
+              //       onTap: () => Get.toNamed(item['route']),
+              //       child: Container(
+              //         height: 150,
+              //         padding: const EdgeInsets.all(16),
+              //         decoration: BoxDecoration(
+              //             image: DecorationImage(
+              //                 image: AssetImage(item['image']))),
+              //         child: Column(
+              //           children: [
+              //             CommonText(
+              //               text: item['count'],
+              //               fontSize: 32,
+              //               color: AppColors.white,
+              //             ),
+              //             CommonText(
+              //               text: item['title'],
+              //               color: AppColors.white,
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     );
+              //   },
+              // ),
               SizedBox(
                   height: 30,
                   child: Container(

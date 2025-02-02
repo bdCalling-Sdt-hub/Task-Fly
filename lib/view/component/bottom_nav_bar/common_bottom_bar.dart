@@ -81,11 +81,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
       }
     } else if (index == 1) {
       if (!(widget.currentIndex == 1)) {
-        if (PrefsHelper.myRole == "tasker") {
-          Get.toNamed(AppRoutes.workerPostTask);
-        } else {
-          Get.toNamed(AppRoutes.myTask);
-        }
+        Get.toNamed(AppRoutes.workerPostTask);
       }
     } else if (index == 2) {
       if (!(widget.currentIndex == 2)) {

@@ -19,4 +19,6 @@ class AppIcons {
   static const String completed = "$baseurl/completed.svg";
   static const String ongoing = "$baseurl/task-planning 2.svg";
   static const String pending = "$baseurl/pending.svg";
+  static const String notification = "$baseurl/notification.svg";
+  static const String support = "$baseurl/support.svg";
 }

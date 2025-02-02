@@ -9,7 +9,6 @@ class SocketServices {
   static late io.Socket socket;
   bool show = false;
 
-
   ///<<<============ Connect with socket ====================>>>
   static void connectToSocket() {
     socket = io.io(
@@ -17,24 +16,46 @@ class SocketServices {
         io.OptionBuilder()
             .setTransports(['websocket'])
             .enableAutoConnect()
+            .setReconnectionAttempts(5)
+            .setReconnectionDelay(2000)
             .build());
 
-    socket.onConnect((data) {
-      debugPrint("=============================> Connection $data");
+    socket.onConnect((_) {
+      debugPrint("=============================> Connected to Socket");
     });
+
     socket.onConnectError((data) {
-      if (kDebugMode) {
-        print("============================>Connection Error $data");
-      }
+      debugPrint("============================> Connection Error: $data");
+    });
+
+    socket.onDisconnect((_) {
+      debugPrint("============================> Disconnected from Socket");
+    });
+
+    socket.onReconnect((attempt) {
+      debugPrint(
+          "===================> Reconnected to Socket (Attempt: $attempt)");
+    });
+
+    socket.onReconnectAttempt((attempt) {
+      debugPrint(
+          "============================> Trying to Reconnect (Attempt: $attempt)");
+    });
+
+    socket.onReconnectError((error) {
+      debugPrint("============================> Reconnection Failed: $error");
+    });
+
+    socket.onReconnectFailed((_) {
+      debugPrint(
+          "============================> Reconnection Failed: Max attempts reached");
+    });
+
+    socket.on("user-notification::${PrefsHelper.userId}", (data) {
+      debugPrint("================> Received Data on Socket: $data");
+      NotificationService.showNotification(data);
     });
 
     socket.connect();
-
-    socket.on("user-notification::${PrefsHelper.userId}", (data) {
-      if (kDebugMode) {
-        print("================> get Data on socket: $data");
-      }
-      NotificationService.showNotification(data);
-    });
   }
 }

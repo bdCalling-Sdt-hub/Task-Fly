@@ -28,7 +28,7 @@ class OverviewItem extends StatelessWidget {
           CommonImage(
             imageSrc: item['icon'],
             imageType:
-                item['title'] == "on going" ? ImageType.png : ImageType.svg,
+                item['title'] == "Ongoing" ? ImageType.png : ImageType.svg,
           ),
           const Spacer(),
           CommonText(

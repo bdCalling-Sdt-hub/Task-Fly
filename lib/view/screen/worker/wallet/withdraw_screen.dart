@@ -29,12 +29,15 @@ class WithdrawScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              const Center(child: BalanceCard()),
+              const Center(
+                  child: BalanceCard(
+                buttonText: "Enter your amount",
+              )),
               40.height,
               const WithdrawAllFiled(),
               40.height,
               CommonButton(
-                titleText: AppString.withdraw,
+                titleText: AppString.proceedToWithdraw,
                 onTap: () => Get.back(),
               )
             ],

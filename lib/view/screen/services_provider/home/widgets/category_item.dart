@@ -24,7 +24,7 @@ class _WorkPlaceItemState extends State<CategoryItem> {
               onTap: () => controller.selectCategoryItem(widget.item),
               child: Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(4),
+                padding: const EdgeInsets.symmetric(vertical: 4),
                 decoration: ShapeDecoration(
                   color: widget.item["isSelected"]
                       ? AppColors.clientColor
@@ -45,7 +45,6 @@ class _WorkPlaceItemState extends State<CategoryItem> {
                           ? AppColors.white
                           : AppColors.p_500,
                     ),
-                    4.width,
                     Flexible(
                       child: CommonText(
                         text: widget.item["name"],
@@ -53,7 +52,7 @@ class _WorkPlaceItemState extends State<CategoryItem> {
                             ? AppColors.white
                             : AppColors.p_500,
                         textAlign: TextAlign.center,
-                        fontSize: 14,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                       ),
                     ),

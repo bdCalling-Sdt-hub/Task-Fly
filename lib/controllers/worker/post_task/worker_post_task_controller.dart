@@ -15,7 +15,7 @@ class WorkerPostTaskController extends GetxController {
     {
       "image": AppImages.ongoing,
       "icon": AppImages.ongoingIcon,
-      "title": "on going",
+      "title": "Ongoing",
       "count": "1",
     },
     // {
@@ -33,7 +33,7 @@ class WorkerPostTaskController extends GetxController {
     {
       "image": AppImages.cancel,
       "icon": AppIcons.cancel,
-      "title": "Cancel",
+      "title": "Canceled",
       "count": "19",
     },
   ];

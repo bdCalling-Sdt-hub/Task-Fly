@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/extension/my_extension.dart';
+import 'package:task_fly/utils/app_colors.dart';
 import 'package:task_fly/utils/app_images.dart';
 import 'package:task_fly/utils/app_string.dart';
 import 'package:task_fly/view/component/button/common_button.dart';
 import 'package:task_fly/view/component/text/common_text.dart';
 
 class BalanceCard extends StatelessWidget {
-  const BalanceCard({super.key});
+  const BalanceCard({super.key, this.buttonText = AppString.withdraw});
+
+  final String buttonText;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,13 @@ class BalanceCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: CommonButton(
-              titleText: AppString.withdraw,
+              titleText: buttonText,
+              titleColor: buttonText == AppString.withdraw
+                  ? AppColors.black
+                  : AppColors.white,
+              buttonColor: buttonText == AppString.withdraw
+                  ? AppColors.primaryColor
+                  : AppColors.transparent,
               onTap: () => Get.toNamed(AppRoutes.withdraw),
             ),
           ),
