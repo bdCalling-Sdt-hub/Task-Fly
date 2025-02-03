@@ -10,6 +10,7 @@ import 'package:task_fly/view/component/text/common_text.dart';
 import 'package:task_fly/view/screen/worker/report/widgets/incode_chart.dart';
 
 import '../../../component/back.dart';
+import 'widgets/date_filter.dart';
 import 'widgets/overview_chart.dart';
 
 class ReportScreen extends StatelessWidget {
@@ -28,9 +29,9 @@ class ReportScreen extends StatelessWidget {
           fontWeight: FontWeight.w700,
         ),
         actions: [
-          IconButton(
-            onPressed: () => OtherHelper.dateOfBirthPicker(dateController),
-            icon: const Icon(
+          const IconButton(
+            onPressed: dateFilter,
+            icon: Icon(
               Icons.date_range,
               color: AppColors.p_500,
             ),

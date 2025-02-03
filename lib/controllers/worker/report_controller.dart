@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:task_fly/core/app_routes.dart';
 import 'package:task_fly/utils/app_images.dart';
@@ -6,6 +7,10 @@ class ReportController extends GetxController {
   String dropdownValue = "Weekly";
 
   List<String> filterList = ['Weekly', 'Monthly', 'Yearly'];
+
+  TextEditingController startDateController = TextEditingController();
+
+  TextEditingController endDateController = TextEditingController();
 
   List overviewList = [
     {

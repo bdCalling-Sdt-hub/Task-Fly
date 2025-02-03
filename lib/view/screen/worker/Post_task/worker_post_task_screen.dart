@@ -51,7 +51,7 @@ class _WorkerPostTaskScreenState extends State<WorkerPostTaskScreen>
                     text: AppString.overview,
                     fontSize: 24,
                   ),
-                  if (PrefsHelper.myRole != "tasker")
+                  if (PrefsHelper.myRole == "tasker")
                     GestureDetector(
                       onTap: () => Get.toNamed(AppRoutes.report),
                       child: const CommonText(

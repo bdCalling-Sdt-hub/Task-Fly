@@ -11,6 +11,8 @@ class AppString {
   static const String areYouSure = "Are you sure";
   static const String deleteTitle = "Want to delete account !";
   static const String enterYouPassword = "Enter you password";
+  static const String startDate = "Start Date";
+  static const String endDate = "End Date";
   static const String cancel = "Cancel";
   static const String done = "Done";
   static const String deleteDetails =
